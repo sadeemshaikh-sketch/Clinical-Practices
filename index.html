@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practicum Placements — Alberta &amp; Ontario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF1EA;
+    --card:#FCFDFB;
+    --ink:#212B27;
+    --muted:#64726B;
+    --sage:#4E6B5E;
+    --sage-deep:#3B5348;
+    --sage-soft:#DCE6DF;
+    --honey:#B7823F;
+    --honey-soft:#F0E4CF;
+    --line:#D6DDD4;
+    --shadow:0 1px 2px rgba(33,43,39,.04), 0 8px 24px rgba(33,43,39,.06);
+    --shadow-hover:0 2px 4px rgba(33,43,39,.06), 0 14px 34px rgba(33,43,39,.10);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Instrument Sans",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header{padding:56px 0 28px;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage);font-weight:600;margin:0 0 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--sage);display:inline-block;}
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.3rem);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:0 0 14px;
+    max-width:16ch;
+  }
+  h1 em{font-style:italic;color:var(--sage-deep);}
+  .lede{font-size:1.06rem;color:var(--muted);max-width:56ch;margin:0;}
+
+  .sample-note{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:20px;padding:7px 13px;border-radius:999px;
+    background:var(--honey-soft);color:#7A5620;
+    font-size:12.5px;font-weight:500;letter-spacing:.01em;
+  }
+  .sample-note .dot{width:7px;height:7px;border-radius:50%;background:var(--honey);}
+
+  /* ---------- Stats ---------- */
+  .stats{
+    display:flex;flex-wrap:wrap;gap:36px;margin-top:34px;
+  }
+  .stat .num{font-family:"Fraunces",serif;font-size:2rem;font-weight:500;line-height:1;}
+  .stat .lbl{font-size:12.5px;color:var(--muted);margin-top:6px;letter-spacing:.02em;}
+  .stat .num.accent{color:var(--sage-deep);}
+
+  /* ---------- Controls ---------- */
+  .controls{
+    position:sticky;top:0;z-index:20;
+    background:var(--paper);
+    padding:18px 0;margin-bottom:4px;
+    border-bottom:1px solid var(--line);
+  }
+  .controls-inner{display:flex;flex-wrap:wrap;gap:14px 16px;align-items:center;}
+  .search{position:relative;flex:1 1 260px;min-width:220px;}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);}
+  .search input{
+    width:100%;padding:12px 14px 12px 42px;
+    border:1px solid var(--line);border-radius:11px;
+    background:var(--card);color:var(--ink);
+    font-family:inherit;font-size:15px;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .search input::placeholder{color:#9AA69F;}
+  .search input:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(78,107,94,.13);}
+
+  .toggle{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:11px 15px;border:1px solid var(--line);border-radius:11px;
+    background:var(--card);cursor:pointer;user-select:none;
+    font-size:14px;font-weight:500;transition:border-color .15s,background .15s;
+    white-space:nowrap;
+  }
+  .toggle:hover{border-color:#BEC8BC;}
+  .toggle .box{
+    width:17px;height:17px;border:1.5px solid var(--muted);border-radius:5px;
+    display:grid;place-items:center;transition:all .15s;
+  }
+  .toggle.on{border-color:var(--sage);background:var(--sage-soft);color:var(--sage-deep);}
+  .toggle.on .box{background:var(--sage);border-color:var(--sage);}
+  .toggle .box svg{opacity:0;transition:opacity .15s;}
+  .toggle.on .box svg{opacity:1;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 4px;}
+  .chip{
+    padding:7px 13px;border-radius:999px;border:1px solid var(--line);
+    background:var(--card);color:var(--muted);
+    font-size:13px;font-weight:500;cursor:pointer;
+    transition:all .14s;font-family:inherit;
+  }
+  .chip:hover{border-color:#BEC8BC;color:var(--ink);}
+  .chip.on{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+  .chips-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:14px 0 2px;}
+
+  /* ---------- Results meta ---------- */
+  .results-meta{font-size:13.5px;color:var(--muted);margin:22px 0 16px;}
+
+  /* ---------- Grid ---------- */
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:18px;padding-bottom:20px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 20px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+    animation:rise .5s ease both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
+  .card h2{
+    font-family:"Fraunces",serif;font-weight:500;font-size:1.28rem;
+    line-height:1.15;margin:0;letter-spacing:-.005em;
+  }
+  .avail{
+    flex-shrink:0;display:inline-flex;align-items:center;gap:6px;
+    font-size:11.5px;font-weight:600;letter-spacing:.02em;
+    padding:5px 10px;border-radius:999px;white-space:nowrap;margin-top:2px;
+  }
+  .avail .d{width:6px;height:6px;border-radius:50%;}
+  .avail.yes{background:var(--sage-soft);color:var(--sage-deep);}
+  .avail.yes .d{background:var(--sage);}
+  .avail.no{background:#EDEDEA;color:#7C7C74;}
+  .avail.no .d{background:#A6A69C;}
+
+  .mods{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .mod{font-size:12px;color:var(--sage-deep);background:rgba(78,107,94,.09);
+    padding:4px 9px;border-radius:6px;font-weight:500;}
+
+  .detail{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);padding:5px 0;}
+  .detail svg{flex-shrink:0;margin-top:2px;color:#9AA69F;}
+  .detail a{color:var(--sage-deep);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;}
+  .detail a:hover{border-color:var(--sage);}
+  .divider{height:1px;background:var(--line);margin:14px 0;}
+
+  /* ---------- Empty ---------- */
+  .empty{
+    grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--muted);
+  }
+  .empty h3{font-family:"Fraunces",serif;font-weight:500;color:var(--ink);font-size:1.4rem;margin:0 0 8px;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 60px;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;}
+  .foot-note{font-size:12.5px;color:var(--muted);max-width:60ch;line-height:1.6;}
+  .attr{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
+  .attr .g{font-weight:600;letter-spacing:.02em;}
+
+  @media (max-width:560px){
+    header{padding:40px 0 22px;}
+    .grid{grid-template-columns:1fr;}
+    .stats{gap:26px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .card{animation:none;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Counselling practicum · Alberta &amp; Ontario</p>
+    <h1>Places to do your <em>practicum</em>, in one view.</h1>
+    <p class="lede">Private practices and counselling centres across Alberta and Ontario, with the details that actually decide a placement — what they treat, and whether they're taking students right now.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Practices listed</div></div>
+      <div class="stat"><div class="num accent" id="stat-open">—</div><div class="lbl">Accepting students</div></div>
+      <div class="stat"><div class="num" id="stat-mod">—</div><div class="lbl">Modalities covered</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap controls-inner">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <input id="search" type="search" placeholder="Search by practice name…" autocomplete="off">
+    </div>
+    <div class="toggle" id="openToggle" role="button" tabindex="0" aria-pressed="false">
+      <span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg></span>
+      Only show practices taking students
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="chips-label">Filter by focus</div>
+    <div class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <p class="results-meta" id="meta"></p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-note">
+      <strong>How this stays current:</strong> listings refresh automatically each week — a script pulls practices from Google Maps and reads each practice's website for contact details and focus areas. No one edits this page by hand.
+      <br><strong>Availability for students</strong> is not published by practices, so it's recorded manually as placements are confirmed. Always contact a practice directly to check.
+      <br>Business information sourced from Google Maps and practices' own public websites. To request a correction or removal, contact <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>.
+      <br><span id="updated"></span>
+    </p>
+    <div class="attr">
+      <span class="g">Powered by Google</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA
+   ------------------------------------------------------------
+   This is placeholder SAMPLE data so the layout is visible.
+   Every entry is fictional; emails/sites use example.com so
+   nothing points at a real business.
+
+   TO GO LIVE: have the pull-script write a file called data.json
+   next to this page, shaped exactly like the objects below.
+   loadData() below will fetch it automatically when hosted, and
+   fall back to this sample when it can't (e.g. opened locally).
+   ============================================================ */
+const SAMPLE_DATA = [
+  { name:"Bow River Counselling Collective", address:"SW Calgary", phone:"(403) 555-0142", email:"intake@example.com", website:"https://example.com", modalities:["CBT","EMDR","Trauma"], acceptingStudents:true },
+  { name:"Sage & Stone Therapy", address:"Inglewood, Calgary", phone:"(403) 555-0187", email:"hello@example.org", website:"https://example.org", modalities:["ACT","Mindfulness","Anxiety"], acceptingStudents:true },
+  { name:"Northlight Family Practice", address:"NW Calgary", phone:"(403) 555-0110", email:"reception@example.com", website:"https://example.com", modalities:["Family","Couples","EFT"], acceptingStudents:false },
+  { name:"Elbow Valley Psychology", address:"Springbank", phone:"(403) 555-0163", email:"office@example.org", website:"https://example.org", modalities:["CBT","DBT","Assessment"], acceptingStudents:true },
+  { name:"Prairie Roots Wellness", address:"SE Calgary", phone:"(403) 555-0195", email:"care@example.com", website:"https://example.com", modalities:["Trauma","EMDR","Grief"], acceptingStudents:false },
+  { name:"Confluence Counselling", address:"Downtown Calgary", phone:"(403) 555-0128", email:"connect@example.org", website:"https://example.org", modalities:["ACT","Anxiety","Depression"], acceptingStudents:true },
+  { name:"Willow Bend Therapy Studio", address:"Kensington, Calgary", phone:"(403) 555-0176", email:"studio@example.com", website:"https://example.com", modalities:["Play Therapy","Child","Family"], acceptingStudents:true },
+  { name:"Cornerstone Mental Health", address:"NE Calgary", phone:"(403) 555-0139", email:"admin@example.org", website:"https://example.org", modalities:["CBT","DBT","Addiction"], acceptingStudents:false },
+  { name:"Riverstone Psychological Services", address:"Bridgeland, Calgary", phone:"(403) 555-0154", email:"intake@example.com", website:"https://example.com", modalities:["Assessment","ADHD","CBT"], acceptingStudents:true },
+  { name:"Open Sky Counselling", address:"Bowness, Calgary", phone:"(403) 555-0182", email:"team@example.org", website:"https://example.org", modalities:["Mindfulness","Couples","EFT"], acceptingStudents:true },
+  { name:"Meridian Therapy Group", address:"SW Calgary", phone:"(403) 555-0117", email:"hello@example.com", website:"https://example.com", modalities:["Trauma","DBT","Anxiety"], acceptingStudents:false },
+  { name:"Foothills Family Counselling", address:"Okotoks", phone:"(403) 555-0148", email:"reception@example.org", website:"https://example.org", modalities:["Family","Child","Play Therapy"], acceptingStudents:true }
+];
+
+let DATA = [];
+const state = { q:"", openOnly:false, mods:new Set() };
+
+async function loadData(){
+  try{
+    const res = await fetch("data.json", {cache:"no-store"});
+    if(res.ok){
+      const json = await res.json();
+      if(Array.isArray(json) && json.length){ return json.map(d=>({acceptingStudents:false,modalities:[],...d})); }
+    }
+  }catch(e){ /* falls back to sample below (e.g. opened via file://) */ }
+  return SAMPLE_DATA;
+}
+
+/* ---------- Icons ---------- */
+const ic = {
+  pin:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  phone:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>',
+  mail:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6.5L21 6"/></svg>',
+  web:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 6 3.8 9.5S14.5 18.9 12 21.5C9.5 18.9 8.2 15.5 8.2 12S9.5 5.1 12 2.5Z"/></svg>'
+};
+
+function hostOf(url){ try{ return new URL(url).hostname.replace(/^www\./,""); }catch(e){ return url; } }
+
+function render(){
+  const grid = document.getElementById("grid");
+  const q = state.q.trim().toLowerCase();
+  const list = DATA.filter(d=>{
+    if(state.openOnly && !d.acceptingStudents) return false;
+    if(q && !d.name.toLowerCase().includes(q)) return false;
+    if(state.mods.size){
+      const set = new Set((d.modalities||[]).map(m=>m.toLowerCase()));
+      for(const m of state.mods){ if(!set.has(m)) return false; }
+    }
+    return true;
+  });
+
+  document.getElementById("meta").textContent =
+    `${list.length} ${list.length===1?"practice":"practices"}` +
+    (state.openOnly||q||state.mods.size ? " matching your filters" : " in this snapshot");
+
+  if(!list.length){
+    grid.innerHTML = `<div class="empty"><h3>Nothing matches yet</h3><p>Try clearing a filter or searching a different name.</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map((d,i)=>{
+    const av = d.acceptingStudents
+      ? '<span class="avail yes"><span class="d"></span>Taking students</span>'
+      : '<span class="avail no"><span class="d"></span>Not currently</span>';
+    const mods = (d.modalities||[]).map(m=>`<span class="mod">${esc(m)}</span>`).join("");
+    return `<article class="card" style="animation-delay:${Math.min(i*35,320)}ms">
+      <div class="card-top"><h2>${esc(d.name)}</h2>${av}</div>
+      <div class="mods">${mods}</div>
+      <div class="detail">${ic.pin}<span>${esc(d.address||"—")}</span></div>
+      <div class="detail">${ic.phone}<span>${esc(d.phone||"—")}</span></div>
+      <div class="divider"></div>
+      <div class="detail">${ic.mail}<a href="mailto:${esc(d.email)}">${esc(d.email||"—")}</a></div>
+      <div class="detail">${ic.web}<a href="${esc(d.website)}" target="_blank" rel="noopener">${esc(hostOf(d.website||""))}</a></div>
+    </article>`;
+  }).join("");
+}
+
+function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function buildChips(){
+  const all = new Set();
+  DATA.forEach(d=>(d.modalities||[]).forEach(m=>all.add(m)));
+  const chips = document.getElementById("chips");
+  chips.innerHTML = [...all].sort().map(m=>`<button class="chip" data-m="${esc(m.toLowerCase())}">${esc(m)}</button>`).join("");
+  chips.querySelectorAll(".chip").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const m=b.dataset.m;
+      if(state.mods.has(m)){ state.mods.delete(m); b.classList.remove("on"); }
+      else{ state.mods.add(m); b.classList.add("on"); }
+      render();
+    });
+  });
+}
+
+function setStats(){
+  document.getElementById("stat-total").textContent = DATA.length;
+  document.getElementById("stat-open").textContent = DATA.filter(d=>d.acceptingStudents).length;
+  const mods = new Set(); DATA.forEach(d=>(d.modalities||[]).forEach(m=>mods.add(m)));
+  document.getElementById("stat-mod").textContent = mods.size;
+  document.getElementById("updated").textContent =
+    "Snapshot preview generated " + new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"}) + ".";
+}
+
+/* ---------- Wire up ---------- */
+document.getElementById("search").addEventListener("input",e=>{ state.q=e.target.value; render(); });
+const ot = document.getElementById("openToggle");
+function toggleOpen(){
+  state.openOnly=!state.openOnly;
+  ot.classList.toggle("on",state.openOnly);
+  ot.setAttribute("aria-pressed",String(state.openOnly));
+  render();
+}
+ot.addEventListener("click",toggleOpen);
+ot.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggleOpen(); }});
+
+(async function init(){
+  DATA = await loadData();
+  setStats(); buildChips(); render();
+})();
+</script>
+</body>
+</html>
