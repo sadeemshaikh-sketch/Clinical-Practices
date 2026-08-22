@@ -1,0 +1,35 @@
+name: Update practice data
+
+# WHEN this runs:
+on:
+  schedule:
+    - cron: "0 13 * * 1"     # every Monday ~13:00 UTC (early morning in Calgary)
+  workflow_dispatch: {}        # also adds a manual "Run workflow" button you can press anytime
+
+permissions:
+  contents: write              # lets the job save the refreshed data.json back to the repo
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the pull script
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}   # your key, read from the encrypted Secret
+        run: python practicum_pull.py
+
+      - name: Save the updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json practice_notes.csv
+          git commit -m "Auto-update practice data" || echo "Nothing to update"
+          git push
