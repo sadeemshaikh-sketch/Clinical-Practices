@@ -174,6 +174,19 @@
   }
   .more-toggle:hover{text-decoration:underline;}
 
+  /* Nested location rows: province (parent) → cities / main areas */
+  .fopt.parent{font-weight:600;}
+  .fopt.parent .flbl{font-weight:600;}
+  .fsub{
+    margin:2px 0 8px 12px;padding-left:14px;
+    border-left:2px solid var(--sage-soft);
+    display:flex;flex-direction:column;gap:1px;
+  }
+  .fopt.sub{font-size:13.5px;padding:4px 2px;}
+  .fopt.sub input{width:15px;height:15px;}
+  .fopt.sub.implied:not(.checked){opacity:.55;}
+  .more-toggle.sub{font-size:12.5px;padding:5px 2px 2px;}
+
   /* ---------- Active filter chips ---------- */
   .active-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;min-height:0;}
   .achip{
@@ -445,12 +458,89 @@ const ic = {
 function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function hostOf(url){ try{ return new URL(url).hostname.replace(/^www\./,""); }catch(e){ return url; } }
 
-/* Pull a Canadian province code out of a Google-formatted address like
-   "998 Ridge Valley Dr, Oshawa, ON L1K 2G3, Canada". */
+/* ---------- Location: province → city / main area ----------
+   Google-formatted addresses look like
+   "998 Ridge Valley Dr, Oshawa, ON L1K 2G3, Canada".
+   We pull out the province code and the locality, then fold small
+   suburbs / boroughs into the main area they belong to (North York →
+   Toronto, Nepean → Ottawa, Stony Plain → Spruce Grove, …) so the
+   sidebar shows a manageable list of areas instead of 120 localities.
+   Anything not in the map falls into "Other Alberta" / "Other Ontario". */
 const PROVINCE_NAMES = { AB:"Alberta", ON:"Ontario" };
-function provinceOf(addr){
-  const m = String(addr||"").match(/\b(AB|ON)\b\s*[A-Z]\d[A-Z]?/);
-  return m ? m[1] : null;
+const AREA_MAP = {
+  AB: {
+    "Calgary":        ["Calgary"],
+    "Edmonton":       ["Edmonton"],
+    "St. Albert":     ["St. Albert"],
+    "Sherwood Park":  ["Sherwood Park","Fort Saskatchewan"],
+    "Spruce Grove":   ["Spruce Grove","Stony Plain"],
+    "Leduc":          ["Leduc","Leduc County","Nisku","Beaumont"],
+    "Airdrie":        ["Airdrie"],
+    "Cochrane":       ["Cochrane","Canmore"],
+    "Okotoks":        ["Okotoks","Aldersyde","High River"],
+    "Red Deer":       ["Red Deer","Red Deer County","Lacombe","Olds"],
+    "Lethbridge":     ["Lethbridge","Lethbridge County","Coalhurst"],
+    "Medicine Hat":   ["Medicine Hat","Brooks"],
+    "Grande Prairie": ["Grande Prairie","Grande Prairie County No. 1","Grande Cache"],
+    "Fort McMurray":  ["Fort McMurray"],
+    "Camrose":        ["Camrose","Camrose County"],
+    "Lloydminster":   ["Lloydminster","Cold Lake"]
+  },
+  ON: {
+    "Toronto":                  ["Toronto","North York","Scarborough","Etobicoke","East York","York"],
+    "Ottawa":                   ["Ottawa","Nepean","Kanata","Orléans","Orleans","Gloucester","Stittsville"],
+    "Mississauga":              ["Mississauga"],
+    "Brampton":                 ["Brampton"],
+    "Markham & York Region":    ["Markham","Vaughan","Richmond Hill","Thornhill","Woodbridge","Concord","Maple","Kleinburg","Newmarket","Aurora"],
+    "Hamilton":                 ["Hamilton","Ancaster","Stoney Creek","Dundas"],
+    "Burlington":               ["Burlington"],
+    "Oakville":                 ["Oakville","Milton"],
+    "Oshawa & Durham Region":   ["Oshawa","Whitby","Courtice","Ajax","Pickering","Bowmanville","Clarington"],
+    "Barrie":                   ["Barrie","Innisfil","Orillia"],
+    "Kitchener–Waterloo":       ["Kitchener","Waterloo","Cambridge"],
+    "Guelph":                   ["Guelph"],
+    "London":                   ["London","St Thomas","St. Thomas"],
+    "Windsor":                  ["Windsor","LaSalle","Tecumseh"],
+    "Kingston":                 ["Kingston"],
+    "St. Catharines & Niagara": ["St. Catharines","Niagara Falls","Thorold","Welland","Niagara-on-the-Lake"],
+    "Sudbury":                  ["Greater Sudbury","Sudbury"],
+    "Thunder Bay":              ["Thunder Bay"]
+  }
+};
+const OTHER_AREA = { AB:"Other Alberta", ON:"Other Ontario" };
+// locality (lowercased) -> area name, built once from AREA_MAP
+const LOCALITY_INDEX = {};
+for(const prov in AREA_MAP){
+  LOCALITY_INDEX[prov] = {};
+  for(const area in AREA_MAP[prov]){
+    AREA_MAP[prov][area].forEach(loc=>{ LOCALITY_INDEX[prov][loc.toLowerCase()] = area; });
+  }
+}
+const _locCache = new Map();
+function locationOf(addr){
+  const key = String(addr||"");
+  if(_locCache.has(key)) return _locCache.get(key);
+  let out = { prov:null, area:null };
+  // "..., <City>, <AB|ON> <postal...>, Canada"  (postal code may be missing/odd)
+  const m = key.match(/,\s*([^,]+?),\s*(AB|ON)\b/);
+  if(m){
+    const prov = m[2];
+    const city = m[1].trim();
+    const area = LOCALITY_INDEX[prov][city.toLowerCase()] || OTHER_AREA[prov];
+    out = { prov, area };
+  }
+  _locCache.set(key,out);
+  return out;
+}
+function provinceOf(addr){ return locationOf(addr).prov; }
+/* Location filter keys: "AB" (whole province) or "AB|Calgary" (one area). */
+function locKey(prov, area){ return area ? `${prov}|${area}` : prov; }
+function passesLocation(d){
+  const sel = state.filters.province;
+  if(!sel.size) return true;
+  const {prov, area} = locationOf(d.address);
+  if(!prov) return false;
+  return sel.has(prov) || sel.has(locKey(prov,area));
 }
 
 /* ---------- Build option lists (label, value, count) per group,
@@ -462,9 +552,7 @@ function passesExcept(d, exceptGroup){
     const hay = (d.name+" "+(d.address||"")).toLowerCase();
     if(!hay.includes(q)) return false;
   }
-  if(exceptGroup!=="province" && state.filters.province.size){
-    if(!state.filters.province.has(provinceOf(d.address))) return false;
-  }
+  if(exceptGroup!=="province" && !passesLocation(d)) return false;
   if(exceptGroup!=="students" && state.filters.students.size){
     if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
   }
@@ -484,13 +572,29 @@ function passesExcept(d, exceptGroup){
 function optionCounts(groupKey){
   const counts = new Map();
   if(groupKey==="province"){
+    // Nested: each province option carries its own list of area options.
+    const provCounts = new Map(), areaCounts = new Map();
     DATA.forEach(d=>{
       if(!passesExcept(d,"province")) return;
-      const p = provinceOf(d.address);
-      if(p) counts.set(p,(counts.get(p)||0)+1);
+      const {prov, area} = locationOf(d.address);
+      if(!prov) return;
+      provCounts.set(prov,(provCounts.get(prov)||0)+1);
+      const k = locKey(prov,area);
+      areaCounts.set(k,(areaCounts.get(k)||0)+1);
     });
-    return ["AB","ON"].filter(p=>counts.has(p)||state.filters.province.has(p))
-      .map(p=>({value:p,label:PROVINCE_NAMES[p],count:counts.get(p)||0}));
+    return ["AB","ON"].map(p=>{
+      const areaNames = [...Object.keys(AREA_MAP[p]), OTHER_AREA[p]];
+      const children = areaNames
+        .map(a=>({value:locKey(p,a),label:a,count:areaCounts.get(locKey(p,a))||0}))
+        .filter(o=>o.count>0 || state.filters.province.has(o.value))
+        .sort((a,b)=>{
+          // keep "Other …" last, otherwise by count desc then name
+          const ao=a.label.startsWith("Other "), bo=b.label.startsWith("Other ");
+          if(ao!==bo) return ao?1:-1;
+          return b.count-a.count || a.label.localeCompare(b.label);
+        });
+      return {value:p,label:PROVINCE_NAMES[p],count:provCounts.get(p)||0,children};
+    }).filter(o=>o.count>0 || state.filters.province.has(o.value) || o.children.length);
   }
   if(groupKey==="students"){
     let n=0; DATA.forEach(d=>{ if(passesExcept(d,"students") && d.acceptingStudents) n++; });
@@ -516,21 +620,51 @@ function renderFilters(){
     const meta = GROUP_META[g];
     const opts = optionCounts(g);
     if(!opts.length) return "";
-    const expanded = !!state.expanded[g];
-    const visible = expanded ? opts : opts.slice(0,INITIAL_VISIBLE);
-    const hiddenCount = opts.length - visible.length;
     const collapsed = !!state.collapsed[g];
-    const rows = visible.map(o=>{
-      const checked = state.filters[g].has(o.value);
-      return `<label class="fopt${checked?" checked":""}">
-        <input type="checkbox" data-group="${g}" data-value="${esc(o.value)}" ${checked?"checked":""}>
-        <span class="flbl">${esc(o.label)}</span>
-        <span class="fcount">${o.count}</span>
-      </label>`;
-    }).join("");
-    const moreBtn = hiddenCount>0
-      ? `<button class="more-toggle" data-more="${g}" type="button">+ ${hiddenCount} more</button>`
-      : (expanded && opts.length>INITIAL_VISIBLE ? `<button class="more-toggle" data-more="${g}" type="button">Show less</button>` : "");
+    let rows, moreBtn = "";
+
+    if(g==="province"){
+      // Nested render: province row, then its areas indented beneath.
+      rows = opts.map(p=>{
+        const pChecked = state.filters[g].has(p.value);
+        const expKey = `${g}:${p.value}`;
+        const expanded = !!state.expanded[expKey];
+        const kids = expanded ? p.children : p.children.slice(0,INITIAL_VISIBLE);
+        const hidden = p.children.length - kids.length;
+        const kidRows = kids.map(o=>{
+          const checked = state.filters[g].has(o.value);
+          return `<label class="fopt sub${checked?" checked":""}${pChecked?" implied":""}">
+            <input type="checkbox" data-group="${g}" data-value="${esc(o.value)}" ${checked?"checked":""}>
+            <span class="flbl">${esc(o.label)}</span>
+            <span class="fcount">${o.count}</span>
+          </label>`;
+        }).join("");
+        const kidMore = hidden>0
+          ? `<button class="more-toggle sub" data-more="${expKey}" type="button">+ ${hidden} more</button>`
+          : (expanded && p.children.length>INITIAL_VISIBLE ? `<button class="more-toggle sub" data-more="${expKey}" type="button">Show less</button>` : "");
+        return `<label class="fopt parent${pChecked?" checked":""}">
+            <input type="checkbox" data-group="${g}" data-value="${esc(p.value)}" ${pChecked?"checked":""}>
+            <span class="flbl">${esc(p.label)}</span>
+            <span class="fcount">${p.count}</span>
+          </label>
+          <div class="fsub">${kidRows}${kidMore}</div>`;
+      }).join("");
+    } else {
+      const expanded = !!state.expanded[g];
+      const visible = expanded ? opts : opts.slice(0,INITIAL_VISIBLE);
+      const hiddenCount = opts.length - visible.length;
+      rows = visible.map(o=>{
+        const checked = state.filters[g].has(o.value);
+        return `<label class="fopt${checked?" checked":""}">
+          <input type="checkbox" data-group="${g}" data-value="${esc(o.value)}" ${checked?"checked":""}>
+          <span class="flbl">${esc(o.label)}</span>
+          <span class="fcount">${o.count}</span>
+        </label>`;
+      }).join("");
+      moreBtn = hiddenCount>0
+        ? `<button class="more-toggle" data-more="${g}" type="button">+ ${hiddenCount} more</button>`
+        : (expanded && opts.length>INITIAL_VISIBLE ? `<button class="more-toggle" data-more="${g}" type="button">Show less</button>` : "");
+    }
     return `<div class="fgroup${collapsed?" collapsed":""}" data-group-box="${g}">
       <div class="fgroup-title" data-toggle="${g}">${esc(meta.label)} ${ic.chevron}</div>
       <div class="fgroup-body">${rows}${moreBtn}</div>
@@ -566,7 +700,11 @@ function activeFilterEntries(){
   const list=[];
   for(const g of Object.keys(state.filters)){
     state.filters[g].forEach(v=>{
-      const label = g==="province" ? PROVINCE_NAMES[v] : (g==="students" ? "Accepting students" : v);
+      let label = v;
+      if(g==="province"){
+        const [prov, area] = v.split("|");
+        label = area ? `${area}, ${prov}` : PROVINCE_NAMES[prov];
+      } else if(g==="students"){ label = "Accepting students"; }
       list.push({group:g,value:v,label});
     });
   }
@@ -607,7 +745,7 @@ function matchingList(){
       const hay=(d.name+" "+(d.address||"")).toLowerCase();
       if(!hay.includes(q)) return false;
     }
-    if(state.filters.province.size && !state.filters.province.has(provinceOf(d.address))) return false;
+    if(!passesLocation(d)) return false;
     if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
     const modSet = new Set(d.modalities||[]);
     for(const g of ["issues","population","approach"]){
