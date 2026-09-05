@@ -33,7 +33,7 @@
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px;}
 
   /* ---------- Header ---------- */
   header{padding:56px 0 28px;border-bottom:1px solid var(--line);}
@@ -71,15 +71,15 @@
   .stat .lbl{font-size:12.5px;color:var(--muted);margin-top:6px;letter-spacing:.02em;}
   .stat .num.accent{color:var(--sage-deep);}
 
-  /* ---------- Controls ---------- */
+  /* ---------- Top search bar ---------- */
   .controls{
-    position:sticky;top:0;z-index:20;
+    position:sticky;top:0;z-index:30;
     background:var(--paper);
-    padding:18px 0;margin-bottom:4px;
+    padding:16px 0;margin-bottom:4px;
     border-bottom:1px solid var(--line);
   }
-  .controls-inner{display:flex;flex-wrap:wrap;gap:14px 16px;align-items:center;}
-  .search{position:relative;flex:1 1 260px;min-width:220px;}
+  .controls-inner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .search{position:relative;flex:1 1 320px;min-width:220px;}
   .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);}
   .search input{
     width:100%;padding:12px 14px 12px 42px;
@@ -91,40 +91,111 @@
   .search input::placeholder{color:#9AA69F;}
   .search input:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(78,107,94,.13);}
 
-  .toggle{
-    display:inline-flex;align-items:center;gap:9px;
-    padding:11px 15px;border:1px solid var(--line);border-radius:11px;
-    background:var(--card);cursor:pointer;user-select:none;
-    font-size:14px;font-weight:500;transition:border-color .15s,background .15s;
-    white-space:nowrap;
+  .filters-btn{
+    display:none;align-items:center;gap:8px;
+    padding:11px 16px;border:1px solid var(--line);border-radius:11px;
+    background:var(--card);cursor:pointer;font-family:inherit;
+    font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;
   }
-  .toggle:hover{border-color:#BEC8BC;}
-  .toggle .box{
-    width:17px;height:17px;border:1.5px solid var(--muted);border-radius:5px;
-    display:grid;place-items:center;transition:all .15s;
+  .filters-btn .count{
+    background:var(--sage-deep);color:#fff;font-size:11.5px;font-weight:700;
+    min-width:18px;height:18px;border-radius:999px;display:inline-flex;
+    align-items:center;justify-content:center;padding:0 5px;
   }
-  .toggle.on{border-color:var(--sage);background:var(--sage-soft);color:var(--sage-deep);}
-  .toggle.on .box{background:var(--sage);border-color:var(--sage);}
-  .toggle .box svg{opacity:0;transition:opacity .15s;}
-  .toggle.on .box svg{opacity:1;}
+  .sort-select{
+    padding:11px 34px 11px 14px;border:1px solid var(--line);border-radius:11px;
+    background:var(--card) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%2364726B" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 12px center;
+    color:var(--ink);font-family:inherit;font-size:14px;font-weight:500;
+    appearance:none;-webkit-appearance:none;cursor:pointer;
+  }
 
-  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 4px;}
-  .chip{
-    padding:7px 13px;border-radius:999px;border:1px solid var(--line);
-    background:var(--card);color:var(--muted);
-    font-size:13px;font-weight:500;cursor:pointer;
-    transition:all .14s;font-family:inherit;
+  /* ---------- Layout: sidebar + results ---------- */
+  .layout{display:flex;align-items:flex-start;gap:32px;padding-top:24px;}
+  .sidebar{
+    width:288px;flex-shrink:0;
+    position:sticky;top:82px;
+    max-height:calc(100vh - 100px);overflow-y:auto;
+    padding-right:4px;
   }
-  .chip:hover{border-color:#BEC8BC;color:var(--ink);}
-  .chip.on{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
-  .chips-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:14px 0 2px;}
+  .sidebar-head{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:14px;
+  }
+  .sidebar-head h2{
+    font-family:"Fraunces",serif;font-weight:500;font-size:1.15rem;margin:0;
+  }
+  .clear-all{
+    font-size:12.5px;font-weight:600;color:var(--sage-deep);
+    background:none;border:none;cursor:pointer;font-family:inherit;
+    padding:2px;text-decoration:underline;text-underline-offset:2px;
+  }
+  .clear-all:disabled{color:#AEB8B0;cursor:default;text-decoration:none;}
+
+  .fgroup{border-bottom:1px solid var(--line);padding:16px 0;}
+  .fgroup:first-of-type{padding-top:0;}
+  .fgroup-title{
+    display:flex;align-items:center;justify-content:space-between;
+    cursor:pointer;user-select:none;font-weight:600;font-size:14.5px;
+    padding:2px 0;
+  }
+  .fgroup-title svg{transition:transform .18s ease;color:var(--muted);flex-shrink:0;}
+  .fgroup.collapsed .fgroup-title svg{transform:rotate(-90deg);}
+  .fgroup-body{margin-top:12px;display:flex;flex-direction:column;gap:2px;}
+  .fgroup.collapsed .fgroup-body{display:none;}
+
+  .fopt{
+    display:flex;align-items:center;gap:10px;
+    padding:6px 2px;cursor:pointer;border-radius:7px;
+    font-size:14px;color:var(--ink);
+  }
+  .fopt:hover{background:rgba(78,107,94,.06);}
+  .fopt input{
+    appearance:none;-webkit-appearance:none;
+    width:17px;height:17px;flex-shrink:0;
+    border:1.5px solid #B9C3BB;border-radius:5px;
+    display:grid;place-items:center;
+    background:var(--card);cursor:pointer;
+  }
+  .fopt input::after{
+    content:"";width:9px;height:9px;border-radius:2px;
+    background:var(--sage-deep);clip-path:polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform:scale(0);transition:transform .1s ease;
+  }
+  .fopt input:checked{border-color:var(--sage-deep);}
+  .fopt input:checked::after{transform:scale(1.3);}
+  .fopt .flbl{flex:1;line-height:1.3;}
+  .fopt .fcount{font-size:12.5px;color:var(--muted);}
+  .fopt.checked .flbl{font-weight:600;}
+
+  .more-toggle{
+    font-size:13px;font-weight:600;color:var(--sage-deep);
+    background:none;border:none;cursor:pointer;font-family:inherit;
+    padding:8px 2px 2px;text-align:left;
+  }
+  .more-toggle:hover{text-decoration:underline;}
+
+  /* ---------- Active filter chips ---------- */
+  .active-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;min-height:0;}
+  .achip{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:6px 8px 6px 13px;border-radius:999px;
+    background:var(--sage-deep);color:#fff;
+    font-size:13px;font-weight:500;
+  }
+  .achip button{
+    width:17px;height:17px;border-radius:50%;border:none;
+    background:rgba(255,255,255,.22);color:#fff;cursor:pointer;
+    display:grid;place-items:center;padding:0;line-height:1;
+  }
+  .achip button:hover{background:rgba(255,255,255,.36);}
 
   /* ---------- Results meta ---------- */
-  .results-meta{font-size:13.5px;color:var(--muted);margin:22px 0 16px;}
+  .main{flex:1;min-width:0;}
+  .results-meta{font-size:13.5px;color:var(--muted);margin:0 0 14px;}
 
   /* ---------- Grid ---------- */
   .grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
     gap:18px;padding-bottom:20px;
   }
   .card{
@@ -138,7 +209,7 @@
   .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
   .card h2{
-    font-family:"Fraunces",serif;font-weight:500;font-size:1.28rem;
+    font-family:"Fraunces",serif;font-weight:500;font-size:1.22rem;
     line-height:1.15;margin:0;letter-spacing:-.005em;
   }
   .avail{
@@ -155,6 +226,7 @@
   .mods{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
   .mod{font-size:12px;color:var(--sage-deep);background:rgba(78,107,94,.09);
     padding:4px 9px;border-radius:6px;font-weight:500;}
+  .mod.match{background:var(--sage-deep);color:#fff;}
 
   .detail{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);padding:5px 0;}
   .detail svg{flex-shrink:0;margin-top:2px;color:#9AA69F;}
@@ -167,6 +239,10 @@
     grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--muted);
   }
   .empty h3{font-family:"Fraunces",serif;font-weight:500;color:var(--ink);font-size:1.4rem;margin:0 0 8px;}
+  .empty button{
+    margin-top:14px;padding:9px 18px;border-radius:999px;border:1px solid var(--line);
+    background:var(--card);cursor:pointer;font-family:inherit;font-weight:600;font-size:13.5px;
+  }
 
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 60px;}
@@ -175,11 +251,37 @@
   .attr{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
   .attr .g{font-weight:600;letter-spacing:.02em;}
 
-  @media (max-width:560px){
+  /* ---------- Mobile: sidebar becomes a slide-in panel ---------- */
+  .sidebar-backdrop{
+    display:none;position:fixed;inset:0;background:rgba(33,43,39,.35);z-index:39;
+  }
+  @media (max-width:860px){
     header{padding:40px 0 22px;}
     .grid{grid-template-columns:1fr;}
     .stats{gap:26px;}
+    .filters-btn{display:inline-flex;}
+    .sort-select{order:3;flex:1 1 100%;}
+    .layout{padding-top:16px;}
+    .sidebar{
+      position:fixed;top:0;right:0;bottom:0;
+      width:min(340px,86vw);max-height:none;
+      background:var(--paper);z-index:40;
+      padding:20px 20px 100px;
+      transform:translateX(100%);
+      transition:transform .22s ease;
+      box-shadow:-8px 0 30px rgba(0,0,0,.15);
+    }
+    .sidebar.open{transform:translateX(0);}
+    .sidebar-backdrop.open{display:block;}
+    .sidebar-close{
+      display:flex;align-items:center;justify-content:center;
+      width:32px;height:32px;border-radius:50%;border:1px solid var(--line);
+      background:var(--card);cursor:pointer;flex-shrink:0;
+    }
   }
+  .sidebar-close{display:none;}
+  @media (max-width:860px){ .sidebar-close{display:flex;} }
+
   @media (prefers-reduced-motion:reduce){
     .card{animation:none;}
     *{transition:none !important;}
@@ -206,22 +308,39 @@
   <div class="wrap controls-inner">
     <div class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="search" type="search" placeholder="Search by practice name…" autocomplete="off">
+      <input id="search" type="search" placeholder="Search by name, city, or postal code…" autocomplete="off">
     </div>
-    <div class="toggle" id="openToggle" role="button" tabindex="0" aria-pressed="false">
-      <span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg></span>
-      Only show practices taking students
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="chips-label">Filter by focus</div>
-    <div class="chips" id="chips"></div>
+    <button class="filters-btn" id="filtersBtn" type="button" aria-haspopup="true" aria-expanded="false">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+      Filters
+      <span class="count" id="filtersCount" hidden>0</span>
+    </button>
+    <select class="sort-select" id="sort">
+      <option value="name">Sort: Name (A–Z)</option>
+      <option value="students">Sort: Accepting students first</option>
+    </select>
   </div>
 </div>
 
-<main class="wrap">
-  <p class="results-meta" id="meta"></p>
-  <div class="grid" id="grid"></div>
+<main class="wrap layout">
+  <div class="sidebar-backdrop" id="backdrop"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Filter practices">
+    <div class="sidebar-head">
+      <h2>Filters</h2>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close filters" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button class="clear-all" id="clearAll" type="button" disabled>Clear all</button>
+    </div>
+    <div id="filterGroups"></div>
+  </aside>
+
+  <div class="main">
+    <div class="active-row" id="activeRow"></div>
+    <p class="results-meta" id="meta"></p>
+    <div class="grid" id="grid"></div>
+  </div>
 </main>
 
 <footer>
@@ -252,22 +371,56 @@
    fall back to this sample when it can't (e.g. opened locally).
    ============================================================ */
 const SAMPLE_DATA = [
-  { name:"Bow River Counselling Collective", address:"SW Calgary", phone:"(403) 555-0142", email:"intake@example.com", website:"https://example.com", modalities:["CBT","EMDR","Trauma"], acceptingStudents:true },
-  { name:"Sage & Stone Therapy", address:"Inglewood, Calgary", phone:"(403) 555-0187", email:"hello@example.org", website:"https://example.org", modalities:["ACT","Mindfulness","Anxiety"], acceptingStudents:true },
-  { name:"Northlight Family Practice", address:"NW Calgary", phone:"(403) 555-0110", email:"reception@example.com", website:"https://example.com", modalities:["Family","Couples","EFT"], acceptingStudents:false },
-  { name:"Elbow Valley Psychology", address:"Springbank", phone:"(403) 555-0163", email:"office@example.org", website:"https://example.org", modalities:["CBT","DBT","Assessment"], acceptingStudents:true },
-  { name:"Prairie Roots Wellness", address:"SE Calgary", phone:"(403) 555-0195", email:"care@example.com", website:"https://example.com", modalities:["Trauma","EMDR","Grief"], acceptingStudents:false },
-  { name:"Confluence Counselling", address:"Downtown Calgary", phone:"(403) 555-0128", email:"connect@example.org", website:"https://example.org", modalities:["ACT","Anxiety","Depression"], acceptingStudents:true },
-  { name:"Willow Bend Therapy Studio", address:"Kensington, Calgary", phone:"(403) 555-0176", email:"studio@example.com", website:"https://example.com", modalities:["Play Therapy","Child","Family"], acceptingStudents:true },
-  { name:"Cornerstone Mental Health", address:"NE Calgary", phone:"(403) 555-0139", email:"admin@example.org", website:"https://example.org", modalities:["CBT","DBT","Addiction"], acceptingStudents:false },
-  { name:"Riverstone Psychological Services", address:"Bridgeland, Calgary", phone:"(403) 555-0154", email:"intake@example.com", website:"https://example.com", modalities:["Assessment","ADHD","CBT"], acceptingStudents:true },
-  { name:"Open Sky Counselling", address:"Bowness, Calgary", phone:"(403) 555-0182", email:"team@example.org", website:"https://example.org", modalities:["Mindfulness","Couples","EFT"], acceptingStudents:true },
-  { name:"Meridian Therapy Group", address:"SW Calgary", phone:"(403) 555-0117", email:"hello@example.com", website:"https://example.com", modalities:["Trauma","DBT","Anxiety"], acceptingStudents:false },
-  { name:"Foothills Family Counselling", address:"Okotoks", phone:"(403) 555-0148", email:"reception@example.org", website:"https://example.org", modalities:["Family","Child","Play Therapy"], acceptingStudents:true }
+  { name:"Bow River Counselling Collective", address:"SW Calgary, AB", phone:"(403) 555-0142", email:"intake@example.com", website:"https://example.com", modalities:["CBT","EMDR","Trauma & PTSD"], acceptingStudents:true },
+  { name:"Sage & Stone Therapy", address:"Inglewood, Calgary, AB", phone:"(403) 555-0187", email:"hello@example.org", website:"https://example.org", modalities:["ACT","Mindfulness","Anxiety"], acceptingStudents:true },
+  { name:"Northlight Family Practice", address:"NW Calgary, AB", phone:"(403) 555-0110", email:"reception@example.com", website:"https://example.com", modalities:["Family","Couples","EFT"], acceptingStudents:false },
+  { name:"Elbow Valley Psychology", address:"Springbank, AB", phone:"(403) 555-0163", email:"office@example.org", website:"https://example.org", modalities:["CBT","DBT","Assessment"], acceptingStudents:true },
+  { name:"Prairie Roots Wellness", address:"SE Calgary, AB", phone:"(403) 555-0195", email:"care@example.com", website:"https://example.com", modalities:["Trauma & PTSD","EMDR","Grief"], acceptingStudents:false },
+  { name:"Confluence Counselling", address:"Downtown Calgary, AB", phone:"(403) 555-0128", email:"connect@example.org", website:"https://example.org", modalities:["ACT","Anxiety","Depression"], acceptingStudents:true },
+  { name:"Willow Bend Therapy Studio", address:"Kensington, Calgary, AB", phone:"(403) 555-0176", email:"studio@example.com", website:"https://example.com", modalities:["Play Therapy","Child","Family"], acceptingStudents:true },
+  { name:"Cornerstone Mental Health", address:"NE Calgary, AB", phone:"(403) 555-0139", email:"admin@example.org", website:"https://example.org", modalities:["CBT","DBT","Addiction"], acceptingStudents:false },
+  { name:"Riverstone Psychological Services", address:"Bridgeland, Calgary, AB", phone:"(403) 555-0154", email:"intake@example.com", website:"https://example.com", modalities:["Assessment","ADHD","CBT"], acceptingStudents:true },
+  { name:"Open Sky Counselling", address:"Bowness, Calgary, AB", phone:"(403) 555-0182", email:"team@example.org", website:"https://example.org", modalities:["Mindfulness","Couples","EFT"], acceptingStudents:true },
+  { name:"Meridian Therapy Group", address:"SW Calgary, AB", phone:"(403) 555-0117", email:"hello@example.com", website:"https://example.com", modalities:["Trauma & PTSD","DBT","Anxiety"], acceptingStudents:false },
+  { name:"Foothills Family Counselling", address:"Okotoks, AB", phone:"(403) 555-0148", email:"reception@example.org", website:"https://example.org", modalities:["Family","Child","Play Therapy"], acceptingStudents:true }
 ];
 
 let DATA = [];
-const state = { q:"", openOnly:false, mods:new Set() };
+
+/* Category buckets for the sidebar groups — mirrors how a directory
+   like Psychology Today splits "Issues", "Populations & Identity"
+   and "Approach & Format" into separate filter sections rather than
+   one long flat list. Anything not recognized falls back to "issues"
+   so a newly-scraped modality still shows up somewhere. */
+const CATEGORY_MAP = {
+  "Anxiety":"issues","Trauma & PTSD":"issues","Depression":"issues","Grief":"issues","ADHD":"issues",
+  "Addiction":"issues","Stress":"issues","Self Esteem":"issues","Autism":"issues","OCD":"issues",
+  "Relationship Issues":"issues","Chronic Pain":"issues","Anger Management":"issues","Eating Disorders":"issues",
+  "Perinatal":"issues","Sleep":"issues","Veterans & First Responders":"issues","Divorce":"issues",
+  "Teen":"population","Family":"population","Couples":"population","Parenting":"population","Child":"population",
+  "Seniors":"population","LGBTQ+":"population","Indigenous":"population","Marriage":"population",
+  "CBT":"approach","EMDR":"approach","DBT":"approach","Mindfulness":"approach","Assessment":"approach",
+  "Solution-Focused":"approach","Group Therapy":"approach","Play Therapy":"approach","Art Therapy":"approach",
+  "ACT":"approach","EFT":"approach","Narrative Therapy":"approach","Online / Virtual":"approach"
+};
+const GROUP_META = {
+  province:  { label:"Location",                order:1 },
+  students:  { label:"Availability",             order:2 },
+  issues:    { label:"Concerns & Issues",        order:3 },
+  population:{ label:"Populations & Identity",   order:4 },
+  approach:  { label:"Approach & Format",        order:5 }
+};
+const INITIAL_VISIBLE = 8; // options shown before "+N more"
+
+/* state.filters: groupKey -> Set of selected option values (OR within a
+   group). state.q: free-text search. Groups are ANDed together. */
+const state = {
+  q:"",
+  filters:{ province:new Set(), students:new Set(), issues:new Set(), population:new Set(), approach:new Set() },
+  expanded:{},   // groupKey -> bool, "show more" state
+  collapsed:{},  // groupKey -> bool, section collapsed state
+  sort:"name"
+};
 
 async function loadData(){
   try{
@@ -285,30 +438,210 @@ const ic = {
   pin:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
   phone:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>',
   mail:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6.5L21 6"/></svg>',
-  web:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 6 3.8 9.5S14.5 18.9 12 21.5C9.5 18.9 8.2 15.5 8.2 12S9.5 5.1 12 2.5Z"/></svg>'
+  web:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 6 3.8 9.5S14.5 18.9 12 21.5C9.5 18.9 8.2 15.5 8.2 12S9.5 5.1 12 2.5Z"/></svg>',
+  chevron:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
 };
 
+function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function hostOf(url){ try{ return new URL(url).hostname.replace(/^www\./,""); }catch(e){ return url; } }
 
-function render(){
-  const grid = document.getElementById("grid");
+/* Pull a Canadian province code out of a Google-formatted address like
+   "998 Ridge Valley Dr, Oshawa, ON L1K 2G3, Canada". */
+const PROVINCE_NAMES = { AB:"Alberta", ON:"Ontario" };
+function provinceOf(addr){
+  const m = String(addr||"").match(/\b(AB|ON)\b\s*[A-Z]\d[A-Z]?/);
+  return m ? m[1] : null;
+}
+
+/* ---------- Build option lists (label, value, count) per group,
+   counted against the data that already passes every OTHER active
+   filter — same "faceted count" behaviour PT's sidebar shows. ---------- */
+function passesExcept(d, exceptGroup){
   const q = state.q.trim().toLowerCase();
-  const list = DATA.filter(d=>{
-    if(state.openOnly && !d.acceptingStudents) return false;
-    if(q && !d.name.toLowerCase().includes(q)) return false;
-    if(state.mods.size){
-      const set = new Set((d.modalities||[]).map(m=>m.toLowerCase()));
-      for(const m of state.mods){ if(!set.has(m)) return false; }
+  if(q){
+    const hay = (d.name+" "+(d.address||"")).toLowerCase();
+    if(!hay.includes(q)) return false;
+  }
+  if(exceptGroup!=="province" && state.filters.province.size){
+    if(!state.filters.province.has(provinceOf(d.address))) return false;
+  }
+  if(exceptGroup!=="students" && state.filters.students.size){
+    if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
+  }
+  const modSet = new Set((d.modalities||[]));
+  for(const g of ["issues","population","approach"]){
+    if(g===exceptGroup) continue;
+    const sel = state.filters[g];
+    if(sel.size){
+      let any=false;
+      for(const v of sel){ if(modSet.has(v)){ any=true; break; } }
+      if(!any) return false;
+    }
+  }
+  return true;
+}
+
+function optionCounts(groupKey){
+  const counts = new Map();
+  if(groupKey==="province"){
+    DATA.forEach(d=>{
+      if(!passesExcept(d,"province")) return;
+      const p = provinceOf(d.address);
+      if(p) counts.set(p,(counts.get(p)||0)+1);
+    });
+    return ["AB","ON"].filter(p=>counts.has(p)||state.filters.province.has(p))
+      .map(p=>({value:p,label:PROVINCE_NAMES[p],count:counts.get(p)||0}));
+  }
+  if(groupKey==="students"){
+    let n=0; DATA.forEach(d=>{ if(passesExcept(d,"students") && d.acceptingStudents) n++; });
+    return [{value:"yes",label:"Currently accepting students",count:n}];
+  }
+  DATA.forEach(d=>{
+    if(!passesExcept(d,groupKey)) return;
+    (d.modalities||[]).forEach(m=>{
+      if((CATEGORY_MAP[m]||"issues")!==groupKey) return;
+      counts.set(m,(counts.get(m)||0)+1);
+    });
+  });
+  return [...counts.entries()]
+    .map(([value,count])=>({value,label:value,count}))
+    .sort((a,b)=> b.count-a.count || a.label.localeCompare(b.label));
+}
+
+/* ---------- Sidebar rendering ---------- */
+function renderFilters(){
+  const host = document.getElementById("filterGroups");
+  const groups = Object.keys(GROUP_META).sort((a,b)=>GROUP_META[a].order-GROUP_META[b].order);
+  host.innerHTML = groups.map(g=>{
+    const meta = GROUP_META[g];
+    const opts = optionCounts(g);
+    if(!opts.length) return "";
+    const expanded = !!state.expanded[g];
+    const visible = expanded ? opts : opts.slice(0,INITIAL_VISIBLE);
+    const hiddenCount = opts.length - visible.length;
+    const collapsed = !!state.collapsed[g];
+    const rows = visible.map(o=>{
+      const checked = state.filters[g].has(o.value);
+      return `<label class="fopt${checked?" checked":""}">
+        <input type="checkbox" data-group="${g}" data-value="${esc(o.value)}" ${checked?"checked":""}>
+        <span class="flbl">${esc(o.label)}</span>
+        <span class="fcount">${o.count}</span>
+      </label>`;
+    }).join("");
+    const moreBtn = hiddenCount>0
+      ? `<button class="more-toggle" data-more="${g}" type="button">+ ${hiddenCount} more</button>`
+      : (expanded && opts.length>INITIAL_VISIBLE ? `<button class="more-toggle" data-more="${g}" type="button">Show less</button>` : "");
+    return `<div class="fgroup${collapsed?" collapsed":""}" data-group-box="${g}">
+      <div class="fgroup-title" data-toggle="${g}">${esc(meta.label)} ${ic.chevron}</div>
+      <div class="fgroup-body">${rows}${moreBtn}</div>
+    </div>`;
+  }).join("");
+
+  host.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+    cb.addEventListener("change",()=>{
+      const g=cb.dataset.group, v=cb.dataset.value;
+      if(cb.checked) state.filters[g].add(v); else state.filters[g].delete(v);
+      renderAll();
+    });
+  });
+  host.querySelectorAll("[data-more]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const g=btn.dataset.more;
+      state.expanded[g] = !state.expanded[g];
+      renderFilters();
+    });
+  });
+  host.querySelectorAll("[data-toggle]").forEach(t=>{
+    t.addEventListener("click",()=>{
+      const g=t.dataset.toggle;
+      state.collapsed[g] = !state.collapsed[g];
+      renderFilters();
+    });
+  });
+
+  updateFiltersButton();
+}
+
+function activeFilterEntries(){
+  const list=[];
+  for(const g of Object.keys(state.filters)){
+    state.filters[g].forEach(v=>{
+      const label = g==="province" ? PROVINCE_NAMES[v] : (g==="students" ? "Accepting students" : v);
+      list.push({group:g,value:v,label});
+    });
+  }
+  return list;
+}
+
+function updateFiltersButton(){
+  const n = activeFilterEntries().length;
+  const badge = document.getElementById("filtersCount");
+  badge.hidden = n===0;
+  badge.textContent = n;
+  document.getElementById("clearAll").disabled = n===0 && !state.q;
+}
+
+function renderActiveRow(){
+  const entries = activeFilterEntries();
+  const row = document.getElementById("activeRow");
+  if(!entries.length){ row.innerHTML=""; return; }
+  row.innerHTML = entries.map(e=>`
+    <span class="achip" data-g="${e.group}" data-v="${esc(e.value)}">
+      ${esc(e.label)}
+      <button type="button" aria-label="Remove filter ${esc(e.label)}">${ic.chevron.replace('polyline points="6 9 12 15 18 9"','path d="M6 6l8 8M14 6l-8 8"')}</button>
+    </span>`).join("");
+  row.querySelectorAll(".achip button").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const chip=btn.closest(".achip");
+      state.filters[chip.dataset.g].delete(chip.dataset.v);
+      renderAll();
+    });
+  });
+}
+
+/* ---------- Results ---------- */
+function matchingList(){
+  const q = state.q.trim().toLowerCase();
+  let list = DATA.filter(d=>{
+    if(q){
+      const hay=(d.name+" "+(d.address||"")).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    if(state.filters.province.size && !state.filters.province.has(provinceOf(d.address))) return false;
+    if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
+    const modSet = new Set(d.modalities||[]);
+    for(const g of ["issues","population","approach"]){
+      const sel = state.filters[g];
+      if(sel.size){
+        let any=false;
+        for(const v of sel){ if(modSet.has(v)){ any=true; break; } }
+        if(!any) return false;
+      }
     }
     return true;
   });
+  if(state.sort==="students"){
+    list = list.slice().sort((a,b)=> (b.acceptingStudents===true)-(a.acceptingStudents===true) || a.name.localeCompare(b.name));
+  } else {
+    list = list.slice().sort((a,b)=> a.name.localeCompare(b.name));
+  }
+  return list;
+}
+
+function renderResults(){
+  const grid = document.getElementById("grid");
+  const list = matchingList();
+  const activeCount = activeFilterEntries().length;
+  const highlight = new Set();
+  ["issues","population","approach"].forEach(g=> state.filters[g].forEach(v=>highlight.add(v)));
 
   document.getElementById("meta").textContent =
     `${list.length} ${list.length===1?"practice":"practices"}` +
-    (state.openOnly||q||state.mods.size ? " matching your filters" : " in this snapshot");
+    (activeCount || state.q ? " matching your filters" : " in this snapshot");
 
   if(!list.length){
-    grid.innerHTML = `<div class="empty"><h3>Nothing matches yet</h3><p>Try clearing a filter or searching a different name.</p></div>`;
+    grid.innerHTML = `<div class="empty"><h3>Nothing matches yet</h3><p>Try clearing a filter or searching a different name or city.</p><button type="button" id="emptyClear">Clear all filters</button></div>`;
+    document.getElementById("emptyClear").addEventListener("click",clearAll);
     return;
   }
 
@@ -316,7 +649,7 @@ function render(){
     const av = d.acceptingStudents
       ? '<span class="avail yes"><span class="d"></span>Taking students</span>'
       : '<span class="avail no"><span class="d"></span>Not currently</span>';
-    const mods = (d.modalities||[]).map(m=>`<span class="mod">${esc(m)}</span>`).join("");
+    const mods = (d.modalities||[]).map(m=>`<span class="mod${highlight.has(m)?" match":""}">${esc(m)}</span>`).join("");
     return `<article class="card" style="animation-delay:${Math.min(i*35,320)}ms">
       <div class="card-top"><h2>${esc(d.name)}</h2>${av}</div>
       <div class="mods">${mods}</div>
@@ -329,21 +662,16 @@ function render(){
   }).join("");
 }
 
-function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function clearAll(){
+  state.q=""; document.getElementById("search").value="";
+  Object.values(state.filters).forEach(s=>s.clear());
+  renderAll();
+}
 
-function buildChips(){
-  const all = new Set();
-  DATA.forEach(d=>(d.modalities||[]).forEach(m=>all.add(m)));
-  const chips = document.getElementById("chips");
-  chips.innerHTML = [...all].sort().map(m=>`<button class="chip" data-m="${esc(m.toLowerCase())}">${esc(m)}</button>`).join("");
-  chips.querySelectorAll(".chip").forEach(b=>{
-    b.addEventListener("click",()=>{
-      const m=b.dataset.m;
-      if(state.mods.has(m)){ state.mods.delete(m); b.classList.remove("on"); }
-      else{ state.mods.add(m); b.classList.add("on"); }
-      render();
-    });
-  });
+function renderAll(){
+  renderFilters();
+  renderActiveRow();
+  renderResults();
 }
 
 function setStats(){
@@ -355,21 +683,24 @@ function setStats(){
     "Snapshot preview generated " + new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"}) + ".";
 }
 
-/* ---------- Wire up ---------- */
-document.getElementById("search").addEventListener("input",e=>{ state.q=e.target.value; render(); });
-const ot = document.getElementById("openToggle");
-function toggleOpen(){
-  state.openOnly=!state.openOnly;
-  ot.classList.toggle("on",state.openOnly);
-  ot.setAttribute("aria-pressed",String(state.openOnly));
-  render();
-}
-ot.addEventListener("click",toggleOpen);
-ot.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggleOpen(); }});
+/* ---------- Wire up top bar + mobile filter drawer ---------- */
+document.getElementById("search").addEventListener("input",e=>{ state.q=e.target.value; renderAll(); });
+document.getElementById("sort").addEventListener("change",e=>{ state.sort=e.target.value; renderResults(); });
+document.getElementById("clearAll").addEventListener("click",clearAll);
+
+const sidebar = document.getElementById("sidebar");
+const backdrop = document.getElementById("backdrop");
+const filtersBtn = document.getElementById("filtersBtn");
+function openSidebar(){ sidebar.classList.add("open"); backdrop.classList.add("open"); filtersBtn.setAttribute("aria-expanded","true"); }
+function closeSidebar(){ sidebar.classList.remove("open"); backdrop.classList.remove("open"); filtersBtn.setAttribute("aria-expanded","false"); }
+filtersBtn.addEventListener("click",openSidebar);
+document.getElementById("sidebarClose").addEventListener("click",closeSidebar);
+backdrop.addEventListener("click",closeSidebar);
 
 (async function init(){
   DATA = await loadData();
-  setStats(); buildChips(); render();
+  setStats();
+  renderAll();
 })();
 </script>
 </body>
