@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EEF1EA">
+<meta name="color-scheme" content="light">
 <title>Practicum Placements — Alberta &amp; Ontario</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233B5348'/%3E%3Cpath d='M32 14s14 11.4 14 22a14 14 0 1 1-28 0c0-10.6 14-22 14-22Z' fill='%23DCE6DF'/%3E%3Ccircle cx='32' cy='36' r='5' fill='%233B5348'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -344,6 +346,64 @@
   .sidebar-close{display:none;}
   @media (max-width:860px){ .sidebar-close{display:flex;} }
 
+  /* ---------- Phones ----------
+     Everything below is touch/small-screen behaviour: no horizontal
+     overflow, 16px inputs (anything smaller makes iOS Safari zoom in on
+     focus and never zoom back out), finger-sized tap targets, and a filter
+     panel that doesn't let the page scroll behind it. */
+  /* clip, not hidden: `overflow-x:hidden` here turns the page into a scroll
+     container and breaks the sticky search bar. */
+  html, body{max-width:100%;overflow-x:clip;}
+  body.no-scroll{overflow:hidden;}
+  img, svg{max-width:100%;}
+  a, button, input, select{-webkit-tap-highlight-color:rgba(78,107,94,.14);}
+  .sidebar-apply{display:none;}
+
+  @media (max-width:860px){
+    .wrap{padding:0 18px;}
+    /* 16px minimum stops iOS from zooming the page when a field is focused. */
+    .search input, .sort-select, .filters-btn{font-size:16px;}
+    .sidebar{
+      height:100dvh;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      overscroll-behavior:contain;
+      padding-bottom:calc(90px + env(safe-area-inset-bottom));
+    }
+    /* Pinned to the bottom of the drawer (fixed, not sticky: sticky lands
+       above the panel's bottom padding and floats mid-list). */
+    body.no-scroll .sidebar-apply{
+      display:block;position:fixed;bottom:0;right:0;z-index:41;
+      width:min(340px,86vw);
+      padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+      background:var(--paper);border:none;border-top:1px solid var(--line);
+      font-family:inherit;font-size:15px;font-weight:600;
+      color:#fff;cursor:pointer;
+    }
+    .sidebar-apply span{
+      display:block;background:var(--sage-deep);border-radius:11px;padding:13px;
+    }
+    .to-top{bottom:calc(14px + env(safe-area-inset-bottom));}
+    footer{padding-bottom:calc(60px + env(safe-area-inset-bottom));}
+  }
+
+  @media (max-width:560px){
+    header{padding:30px 0 18px;}
+    .stats{gap:22px;margin-top:26px;}
+    .stat .num{font-size:1.7rem;}
+    .lede{font-size:1rem;}
+    .controls-inner{gap:10px;}
+    .search{flex:1 1 100%;}
+    .filters-btn{flex:1 1 auto;justify-content:center;}
+    .sort-select{flex:1 1 100%;width:100%;}
+    .card{padding:18px;}
+    .card-top h2{font-size:1.12rem;}
+    /* Tap targets: ~44px is the smallest a thumb hits reliably. */
+    .act{padding:10px 13px;min-height:42px;font-size:13.5px;}
+    .card-actions{gap:7px;}
+    .foot-grid{flex-direction:column;align-items:flex-start;}
+  }
+
   @media (prefers-reduced-motion:reduce){
     .card{animation:none;}
     *{transition:none !important;}
@@ -393,6 +453,9 @@
     </div>
     <div id="filterGroups"></div>
   </aside>
+  <!-- Outside the drawer on purpose: .sidebar is transformed, and a transform
+       makes position:fixed resolve against it instead of the viewport. -->
+  <button class="sidebar-apply" id="sidebarApply" type="button"><span>Show results</span></button>
 
   <div class="main">
     <div class="active-row" id="activeRow"></div>
@@ -897,14 +960,21 @@ function cardHTML(d, i, highlight){
   const mods = shownTags.map(m=>`<span class="mod${highlight.has(m)?" match":""}">${esc(m)}</span>`).join("") +
     (extra>0 ? `<span class="mod more" title="${esc(all.slice(MAX_TAGS).join(", "))}">+${extra}</span>` : "");
   const {city, street} = splitAddress(d.address);
-  const mapHref = d.placeId
-    ? `https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(d.placeId)}`
-    : `https://www.google.com/maps/search/${encodeURIComponent((d.name||"")+" "+(d.address||""))}`;
+  /* Google's official Maps URLs API (api=1). The older
+     /maps/place/?q=place_id: form resolves in a desktop browser but often
+     fails once a phone hands the link to the Google Maps app, which is why
+     "Map" looked broken on mobile. search + query_place_id is the documented
+     form: it deep-links correctly on iOS and Android, still works on desktop,
+     and degrades to a name/address search when a listing has no place ID. */
+  const mapQuery = ((d.name||"") + " " + (d.address||"")).trim();
+  const mapHref = "https://www.google.com/maps/search/?api=1&query="
+    + encodeURIComponent(mapQuery || (d.name||""))
+    + (d.placeId ? "&query_place_id=" + encodeURIComponent(d.placeId) : "");
   const actions = [
     d.website ? `<a class="act" href="${esc(d.website)}" target="_blank" rel="noopener">${ic.web}${esc(hostOf(d.website))}</a>` : "",
     d.email   ? `<a class="act" href="mailto:${esc(d.email)}">${ic.mail}Email</a>` : "",
     d.phone   ? `<a class="act" href="tel:${esc(String(d.phone).replace(/[^\d+]/g,""))}">${ic.phone}${esc(d.phone)}</a>` : "",
-    `<a class="act" href="${mapHref}" target="_blank" rel="noopener">${ic.pin}Map</a>`
+    `<a class="act act-map" href="${esc(mapHref)}" target="_blank" rel="noopener noreferrer">${ic.pin}Map</a>`
   ].join("");
   return `<article class="card${d.acceptingStudents?" open":""}" style="animation-delay:${Math.min(i*35,320)}ms">
     <div class="card-top"><h2>${esc(d.name)}</h2>${av}</div>
@@ -932,6 +1002,11 @@ function renderResults(resetPage=true){
     `<strong>${list.length.toLocaleString()}</strong> ${list.length===1?"practice":"practices"}` +
     (activeCount || state.q ? " match your filters" : "") +
     (openCount ? ` · <strong>${openCount}</strong> taking students` : "");
+
+  // Mobile filter panel's footer button mirrors the live result count.
+  const applyBtn = document.getElementById("sidebarApply");
+  if(applyBtn) applyBtn.querySelector("span").textContent =
+    list.length ? `Show ${list.length.toLocaleString()} ${list.length===1?"result":"results"}` : "No matches";
 
   if(!list.length){
     grid.innerHTML = `<div class="empty"><h3>Nothing matches yet</h3><p>Try clearing a filter or searching a different name or city.</p><button type="button" id="emptyClear" class="btn ghost">Clear all filters</button></div>`;
@@ -988,11 +1063,26 @@ toTop.addEventListener("click",()=>{ window.scrollTo({top:0,behavior:"smooth"});
 const sidebar = document.getElementById("sidebar");
 const backdrop = document.getElementById("backdrop");
 const filtersBtn = document.getElementById("filtersBtn");
-function openSidebar(){ sidebar.classList.add("open"); backdrop.classList.add("open"); filtersBtn.setAttribute("aria-expanded","true"); }
-function closeSidebar(){ sidebar.classList.remove("open"); backdrop.classList.remove("open"); filtersBtn.setAttribute("aria-expanded","false"); }
+/* While the drawer is open the page behind it must not scroll, otherwise a
+   swipe on a phone scrolls the results underneath and the panel feels stuck. */
+function openSidebar(){
+  sidebar.classList.add("open"); backdrop.classList.add("open");
+  document.body.classList.add("no-scroll");
+  filtersBtn.setAttribute("aria-expanded","true");
+}
+function closeSidebar(){
+  sidebar.classList.remove("open"); backdrop.classList.remove("open");
+  document.body.classList.remove("no-scroll");
+  filtersBtn.setAttribute("aria-expanded","false");
+}
 filtersBtn.addEventListener("click",openSidebar);
 document.getElementById("sidebarClose").addEventListener("click",closeSidebar);
+document.getElementById("sidebarApply").addEventListener("click",closeSidebar);
 backdrop.addEventListener("click",closeSidebar);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeSidebar(); });
+/* Resizing past the breakpoint leaves the drawer state stale, so reset it
+   once the desktop layout takes over. */
+window.addEventListener("resize",()=>{ if(window.innerWidth>860) closeSidebar(); });
 
 (async function init(){
   DATA = await loadData();
