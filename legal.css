@@ -1,0 +1,125 @@
+/* Shared styling for the Privacy Policy and Terms of Service pages.
+   Palette and type are lifted from index.html so the legal pages read as
+   part of the same site. */
+:root{
+  --paper:#EEF1EA;
+  --card:#FCFDFB;
+  --ink:#212B27;
+  --muted:#64726B;
+  --sage:#4E6B5E;
+  --sage-deep:#3B5348;
+  --sage-soft:#DCE6DF;
+  --honey:#B7823F;
+  --honey-soft:#F0E4CF;
+  --line:#D6DDD4;
+  --shadow:0 1px 2px rgba(33,43,39,.04), 0 8px 24px rgba(33,43,39,.06);
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  font-size:16.5px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+header.doc-head{
+  background:var(--sage-deep);
+  color:var(--sage-soft);
+  padding:38px 0 34px;
+}
+header.doc-head .back{
+  display:inline-flex;align-items:center;gap:7px;
+  color:var(--sage-soft);text-decoration:none;
+  font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  opacity:.82;
+}
+header.doc-head .back:hover{opacity:1;}
+header.doc-head h1{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:500;
+  font-size:clamp(1.9rem,5vw,2.6rem);
+  line-height:1.12;
+  margin:16px 0 8px;
+  color:#FCFDFB;
+}
+header.doc-head .sub{margin:0;font-size:.95rem;opacity:.85;}
+
+main{padding:34px 0 64px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:clamp(22px,4vw,40px);
+}
+
+h2{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:500;
+  font-size:1.3rem;
+  line-height:1.25;
+  margin:34px 0 10px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+h2:first-of-type{margin-top:6px;padding-top:0;border-top:0;}
+h3{font-size:1rem;margin:22px 0 6px;color:var(--sage-deep);}
+p{margin:0 0 14px;}
+ul{margin:0 0 14px;padding-left:22px;}
+li{margin:0 0 8px;}
+a{color:var(--sage-deep);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+a:hover{color:var(--honey);}
+strong{font-weight:600;}
+small{color:var(--muted);}
+
+.lead{
+  font-size:1.05rem;
+  background:var(--sage-soft);
+  border-radius:12px;
+  padding:18px 20px;
+  margin:0 0 26px;
+}
+.lead p:last-child{margin-bottom:0;}
+
+.note{
+  border-left:3px solid var(--honey);
+  background:var(--honey-soft);
+  border-radius:0 10px 10px 0;
+  padding:14px 18px;
+  margin:0 0 18px;
+}
+.note p:last-child{margin-bottom:0;}
+
+.fill{
+  background:#FFE9A8;
+  border-bottom:2px solid var(--honey);
+  padding:0 3px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.toc{margin:0 0 26px;padding:0;list-style:none;columns:2;column-gap:28px;font-size:.93rem;}
+.toc li{margin:0 0 6px;break-inside:avoid;}
+@media (max-width:560px){ .toc{columns:1;} }
+
+.cite{
+  font-size:.88rem;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  margin-top:34px;
+  padding-top:18px;
+}
+.cite ul{padding-left:20px;}
+
+footer.doc-foot{
+  padding:0 0 56px;
+  font-size:.88rem;
+  color:var(--muted);
+  text-align:center;
+}
+footer.doc-foot a{color:var(--sage-deep);}
