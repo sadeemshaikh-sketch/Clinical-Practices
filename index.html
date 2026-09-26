@@ -309,6 +309,8 @@
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 60px;}
   .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;}
+  .foot-link{color:var(--sage-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line);}
+  .foot-link:hover{border-bottom-color:var(--sage-deep);}
   .foot-note{font-size:12.5px;color:var(--muted);max-width:60ch;line-height:1.6;}
   .attr{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
   .attr .g{font-weight:600;letter-spacing:.02em;}
@@ -416,11 +418,11 @@
   <div class="wrap">
     <p class="eyebrow">Counselling practicum · Alberta &amp; Ontario</p>
     <h1>Places to do your <em>practicum</em>, in one view.</h1>
-    <p class="lede">Private practices and counselling centres across Alberta and Ontario, with the details that actually decide a placement — what they treat, and whether they're taking students right now.</p>
+    <p class="lede">Private practices and counselling centres across Alberta and Ontario, with the details that help you narrow a shortlist — where they are, what they treat, and how to reach them. Contact a practice directly to ask about practicum openings.</p>
 
     <div class="stats">
       <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Practices listed</div></div>
-      <div class="stat"><div class="num accent" id="stat-open">—</div><div class="lbl">Accepting students</div></div>
+      <div class="stat"><div class="num accent" id="stat-city">—</div><div class="lbl">Cities covered</div></div>
       <div class="stat"><div class="num" id="stat-mod">—</div><div class="lbl">Modalities covered</div></div>
     </div>
   </div>
@@ -462,8 +464,8 @@
     <div class="results-bar">
       <p class="results-meta" id="meta"></p>
       <select class="sort-select" id="sort" aria-label="Sort results">
-        <option value="students">Sort: Taking students first</option>
         <option value="name">Sort: Name (A–Z)</option>
+        <option value="city">Sort: City (A–Z)</option>
       </select>
     </div>
     <div class="grid" id="grid"></div>
@@ -477,10 +479,11 @@
 <footer>
   <div class="wrap foot-grid">
     <p class="foot-note">
-      <strong>How this stays current:</strong> listings refresh automatically each week — a script pulls practices from Google Maps and reads each practice's website for contact details and focus areas. No one edits this page by hand.
-      <br><strong>Availability for students</strong> is not published by practices, so it's recorded manually as placements are confirmed. Always contact a practice directly to check.
-      <br>Business information sourced from Google Maps and practices' own public websites. To request a correction or removal, contact <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>.
+      <strong>How this stays current:</strong> listings refresh automatically each week — a script compiles practices from Google Maps and reads each practice's own website for contact details and focus areas. No one edits this page by hand.
+      <br><strong>This is a directory, not a placement service.</strong> It does not record, confirm or advertise whether a practice is accepting practicum students. Contact a practice directly to ask.
+      <br>Listings show business contact information published by the practices themselves. To request a correction or removal, contact <a href="mailto:counsellingpsychologypracticum@gmail.com">counsellingpsychologypracticum@gmail.com</a>.
       <br><span id="updated"></span>
+      <br><a class="foot-link" href="privacy.html">Privacy Policy</a> · <a class="foot-link" href="terms.html">Terms of Service</a>
     </p>
     <div class="attr">
       <span class="g">Powered by Google</span>
@@ -502,18 +505,18 @@
    fall back to this sample when it can't (e.g. opened locally).
    ============================================================ */
 const SAMPLE_DATA = [
-  { name:"Bow River Counselling Collective", address:"SW Calgary, AB", phone:"(403) 555-0142", email:"intake@example.com", website:"https://example.com", modalities:["CBT","EMDR","Trauma & PTSD"], acceptingStudents:true },
-  { name:"Sage & Stone Therapy", address:"Inglewood, Calgary, AB", phone:"(403) 555-0187", email:"hello@example.org", website:"https://example.org", modalities:["ACT","Mindfulness","Anxiety"], acceptingStudents:true },
-  { name:"Northlight Family Practice", address:"NW Calgary, AB", phone:"(403) 555-0110", email:"reception@example.com", website:"https://example.com", modalities:["Family","Couples","EFT"], acceptingStudents:false },
-  { name:"Elbow Valley Psychology", address:"Springbank, AB", phone:"(403) 555-0163", email:"office@example.org", website:"https://example.org", modalities:["CBT","DBT","Assessment"], acceptingStudents:true },
-  { name:"Prairie Roots Wellness", address:"SE Calgary, AB", phone:"(403) 555-0195", email:"care@example.com", website:"https://example.com", modalities:["Trauma & PTSD","EMDR","Grief"], acceptingStudents:false },
-  { name:"Confluence Counselling", address:"Downtown Calgary, AB", phone:"(403) 555-0128", email:"connect@example.org", website:"https://example.org", modalities:["ACT","Anxiety","Depression"], acceptingStudents:true },
-  { name:"Willow Bend Therapy Studio", address:"Kensington, Calgary, AB", phone:"(403) 555-0176", email:"studio@example.com", website:"https://example.com", modalities:["Play Therapy","Child","Family"], acceptingStudents:true },
-  { name:"Cornerstone Mental Health", address:"NE Calgary, AB", phone:"(403) 555-0139", email:"admin@example.org", website:"https://example.org", modalities:["CBT","DBT","Addiction"], acceptingStudents:false },
-  { name:"Riverstone Psychological Services", address:"Bridgeland, Calgary, AB", phone:"(403) 555-0154", email:"intake@example.com", website:"https://example.com", modalities:["Assessment","ADHD","CBT"], acceptingStudents:true },
-  { name:"Open Sky Counselling", address:"Bowness, Calgary, AB", phone:"(403) 555-0182", email:"team@example.org", website:"https://example.org", modalities:["Mindfulness","Couples","EFT"], acceptingStudents:true },
-  { name:"Meridian Therapy Group", address:"SW Calgary, AB", phone:"(403) 555-0117", email:"hello@example.com", website:"https://example.com", modalities:["Trauma & PTSD","DBT","Anxiety"], acceptingStudents:false },
-  { name:"Foothills Family Counselling", address:"Okotoks, AB", phone:"(403) 555-0148", email:"reception@example.org", website:"https://example.org", modalities:["Family","Child","Play Therapy"], acceptingStudents:true }
+  { name:"Bow River Counselling Collective", address:"SW Calgary, AB", phone:"(403) 555-0142", email:"intake@example.com", website:"https://example.com", modalities:["CBT","EMDR","Trauma & PTSD"] },
+  { name:"Sage & Stone Therapy", address:"Inglewood, Calgary, AB", phone:"(403) 555-0187", email:"hello@example.org", website:"https://example.org", modalities:["ACT","Mindfulness","Anxiety"] },
+  { name:"Northlight Family Practice", address:"NW Calgary, AB", phone:"(403) 555-0110", email:"reception@example.com", website:"https://example.com", modalities:["Family","Couples","EFT"] },
+  { name:"Elbow Valley Psychology", address:"Springbank, AB", phone:"(403) 555-0163", email:"office@example.org", website:"https://example.org", modalities:["CBT","DBT","Assessment"] },
+  { name:"Prairie Roots Wellness", address:"SE Calgary, AB", phone:"(403) 555-0195", email:"care@example.com", website:"https://example.com", modalities:["Trauma & PTSD","EMDR","Grief"] },
+  { name:"Confluence Counselling", address:"Downtown Calgary, AB", phone:"(403) 555-0128", email:"connect@example.org", website:"https://example.org", modalities:["ACT","Anxiety","Depression"] },
+  { name:"Willow Bend Therapy Studio", address:"Kensington, Calgary, AB", phone:"(403) 555-0176", email:"studio@example.com", website:"https://example.com", modalities:["Play Therapy","Child","Family"] },
+  { name:"Cornerstone Mental Health", address:"NE Calgary, AB", phone:"(403) 555-0139", email:"admin@example.org", website:"https://example.org", modalities:["CBT","DBT","Addiction"] },
+  { name:"Riverstone Psychological Services", address:"Bridgeland, Calgary, AB", phone:"(403) 555-0154", email:"intake@example.com", website:"https://example.com", modalities:["Assessment","ADHD","CBT"] },
+  { name:"Open Sky Counselling", address:"Bowness, Calgary, AB", phone:"(403) 555-0182", email:"team@example.org", website:"https://example.org", modalities:["Mindfulness","Couples","EFT"] },
+  { name:"Meridian Therapy Group", address:"SW Calgary, AB", phone:"(403) 555-0117", email:"hello@example.com", website:"https://example.com", modalities:["Trauma & PTSD","DBT","Anxiety"] },
+  { name:"Foothills Family Counselling", address:"Okotoks, AB", phone:"(403) 555-0148", email:"reception@example.org", website:"https://example.org", modalities:["Family","Child","Play Therapy"] }
 ];
 
 let DATA = [];
@@ -536,7 +539,6 @@ const CATEGORY_MAP = {
 };
 const GROUP_META = {
   province:  { label:"Location",                order:1 },
-  students:  { label:"Availability",             order:2 },
   issues:    { label:"Concerns & Issues",        order:3 },
   population:{ label:"Populations & Identity",   order:4 },
   approach:  { label:"Approach & Format",        order:5 }
@@ -547,10 +549,10 @@ const INITIAL_VISIBLE = 8; // options shown before "+N more"
    group). state.q: free-text search. Groups are ANDed together. */
 const state = {
   q:"",
-  filters:{ province:new Set(), students:new Set(), issues:new Set(), population:new Set(), approach:new Set() },
+  filters:{ province:new Set(), issues:new Set(), population:new Set(), approach:new Set() },
   expanded:{},   // groupKey -> bool, "show more" state
   collapsed:{},  // groupKey -> bool, section collapsed state
-  sort:"students",
+  sort:"name",
   shown:0        // how many result cards are currently rendered (paging)
 };
 const PAGE_SIZE = 30;
@@ -577,26 +579,19 @@ function parseCSV(text){
   if(field.length||row.length){ row.push(field); rows.push(row); }
   return rows;
 }
-const YES = new Set(["yes","y","true","x","1"]);
-
-/* Read practice_notes.csv (the same file the pull script uses) so a "yes"
-   in the taking_students column shows on the site immediately — no need to
-   wait for the weekly workflow to rebuild data.json. Keyed by placeId. */
-async function loadNotes(){
+/* excluded.json is the removal list: any practice that has asked to be taken
+   off the directory. It is applied here as well as in the pull script, so a
+   removal takes effect on the live page immediately and is never undone by the
+   next weekly refresh. */
+async function loadExcluded(){
   try{
-    const res = await fetch("practice_notes.csv", {cache:"no-store"});
+    const res = await fetch("excluded.json", {cache:"no-store"});
     if(!res.ok) return null;
-    const rows = parseCSV(await res.text());
-    if(!rows.length) return null;
-    const head = rows[0].map(h=>h.trim().toLowerCase());
-    const iPid = head.indexOf("placeid"), iYes = head.indexOf("taking_students");
-    if(iPid<0||iYes<0) return null;
-    const yes = new Set();
-    for(let r=1;r<rows.length;r++){
-      const pid=(rows[r][iPid]||"").trim(), v=(rows[r][iYes]||"").trim().toLowerCase();
-      if(pid && YES.has(v)) yes.add(pid);
-    }
-    return yes;
+    const j = await res.json();
+    return {
+      ids:  new Set((j.placeIds||[]).map(v=>String(v).trim()).filter(Boolean)),
+      names:new Set((j.names||[]).map(v=>String(v).trim().toLowerCase()).filter(Boolean))
+    };
   }catch(e){ return null; }
 }
 
@@ -606,16 +601,17 @@ async function loadData(){
     const res = await fetch("data.json", {cache:"no-store"});
     if(res.ok){
       const json = await res.json();
-      if(Array.isArray(json) && json.length){ list = json.map(d=>({acceptingStudents:false,modalities:[],...d})); }
+      if(Array.isArray(json) && json.length){ list = json.map(d=>({modalities:[],...d})); }
     }
   }catch(e){ /* falls back to sample below (e.g. opened via file://) */ }
   if(!list) return SAMPLE_DATA;
 
-  // Overlay the notes sheet: anything marked yes there is accepting, in
-  // addition to whatever the last data.json build already recorded.
-  const yes = await loadNotes();
-  if(yes && yes.size){
-    list.forEach(d=>{ if(d.placeId && yes.has(d.placeId)) d.acceptingStudents = true; });
+  const ex = await loadExcluded();
+  if(ex && (ex.ids.size || ex.names.size)){
+    list = list.filter(d=>
+      !(d.placeId && ex.ids.has(String(d.placeId))) &&
+      !(d.name && ex.names.has(String(d.name).trim().toLowerCase()))
+    );
   }
   return list;
 }
@@ -727,9 +723,6 @@ function passesExcept(d, exceptGroup){
     if(!hay.includes(q)) return false;
   }
   if(exceptGroup!=="province" && !passesLocation(d)) return false;
-  if(exceptGroup!=="students" && state.filters.students.size){
-    if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
-  }
   const modSet = new Set((d.modalities||[]));
   for(const g of ["issues","population","approach"]){
     if(g===exceptGroup) continue;
@@ -769,10 +762,6 @@ function optionCounts(groupKey){
         });
       return {value:p,label:PROVINCE_NAMES[p],count:provCounts.get(p)||0,children};
     }).filter(o=>o.count>0 || state.filters.province.has(o.value) || o.children.length);
-  }
-  if(groupKey==="students"){
-    let n=0; DATA.forEach(d=>{ if(passesExcept(d,"students") && d.acceptingStudents) n++; });
-    return [{value:"yes",label:"Currently accepting students",count:n}];
   }
   DATA.forEach(d=>{
     if(!passesExcept(d,groupKey)) return;
@@ -878,7 +867,7 @@ function activeFilterEntries(){
       if(g==="province"){
         const [prov, area] = v.split("|");
         label = area ? `${area}, ${prov}` : PROVINCE_NAMES[prov];
-      } else if(g==="students"){ label = "Accepting students"; }
+      }
       list.push({group:g,value:v,label});
     });
   }
@@ -920,7 +909,6 @@ function matchingList(){
       if(!hay.includes(q)) return false;
     }
     if(!passesLocation(d)) return false;
-    if(state.filters.students.has("yes") && !d.acceptingStudents) return false;
     const modSet = new Set(d.modalities||[]);
     for(const g of ["issues","population","approach"]){
       const sel = state.filters[g];
@@ -932,8 +920,10 @@ function matchingList(){
     }
     return true;
   });
-  if(state.sort==="students"){
-    list = list.slice().sort((a,b)=> (b.acceptingStudents===true)-(a.acceptingStudents===true) || a.name.localeCompare(b.name));
+  if(state.sort==="city"){
+    list = list.slice().sort((a,b)=>
+      splitAddress(a.address).city.localeCompare(splitAddress(b.address).city)
+      || a.name.localeCompare(b.name));
   } else {
     list = list.slice().sort((a,b)=> a.name.localeCompare(b.name));
   }
@@ -950,9 +940,6 @@ function splitAddress(addr){
 }
 
 function cardHTML(d, i, highlight){
-  const av = d.acceptingStudents
-    ? '<span class="avail yes"><span class="d"></span>Taking students</span>'
-    : '<span class="avail no"><span class="d"></span>Not confirmed</span>';
   // Matched filters first, then cap at MAX_TAGS with a "+N" overflow chip.
   const MAX_TAGS = 8;
   const all = (d.modalities||[]).slice().sort((a,b)=>(highlight.has(b)?1:0)-(highlight.has(a)?1:0));
@@ -976,8 +963,8 @@ function cardHTML(d, i, highlight){
     d.phone   ? `<a class="act" href="tel:${esc(String(d.phone).replace(/[^\d+]/g,""))}">${ic.phone}${esc(d.phone)}</a>` : "",
     `<a class="act act-map" href="${esc(mapHref)}" target="_blank" rel="noopener noreferrer">${ic.pin}Map</a>`
   ].join("");
-  return `<article class="card${d.acceptingStudents?" open":""}" style="animation-delay:${Math.min(i*35,320)}ms">
-    <div class="card-top"><h2>${esc(d.name)}</h2>${av}</div>
+  return `<article class="card" style="animation-delay:${Math.min(i*35,320)}ms">
+    <div class="card-top"><h2>${esc(d.name)}</h2></div>
     <div class="place">
       <div class="city">${ic.pin}<span>${esc(city)}</span></div>
       ${street?`<div class="street">${esc(street)}</div>`:""}
@@ -997,11 +984,9 @@ function renderResults(resetPage=true){
   ["issues","population","approach"].forEach(g=> state.filters[g].forEach(v=>highlight.add(v)));
 
   if(resetPage) state.shown = Math.min(PAGE_SIZE, list.length);
-  const openCount = list.filter(d=>d.acceptingStudents).length;
   document.getElementById("meta").innerHTML =
     `<strong>${list.length.toLocaleString()}</strong> ${list.length===1?"practice":"practices"}` +
-    (activeCount || state.q ? " match your filters" : "") +
-    (openCount ? ` · <strong>${openCount}</strong> taking students` : "");
+    (activeCount || state.q ? " match your filters" : "");
 
   // Mobile filter panel's footer button mirrors the live result count.
   const applyBtn = document.getElementById("sidebarApply");
@@ -1044,7 +1029,9 @@ function renderAll(){
 
 function setStats(){
   document.getElementById("stat-total").textContent = DATA.length;
-  document.getElementById("stat-open").textContent = DATA.filter(d=>d.acceptingStudents).length;
+  const cities = new Set();
+  DATA.forEach(d=>{ const c = splitAddress(d.address).city; if(c && c!=="—") cities.add(c); });
+  document.getElementById("stat-city").textContent = cities.size;
   const mods = new Set(); DATA.forEach(d=>(d.modalities||[]).forEach(m=>mods.add(m)));
   document.getElementById("stat-mod").textContent = mods.size;
   document.getElementById("updated").textContent =
