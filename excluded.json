@@ -1,0 +1,10 @@
+{
+  "_readme": [
+    "Removal / suppression list. When a practice asks to be taken off the directory, add it here.",
+    "Entries are honoured by the website immediately and by the weekly refresh script, so a removed practice is never re-added.",
+    "Add the practice's Google placeId to \"placeIds\" when you have it (most reliable), or its exact listed name to \"names\" (case-insensitive).",
+    "Keep this file in the repo - it is the record that the request was acted on."
+  ],
+  "placeIds": [],
+  "names": []
+}
