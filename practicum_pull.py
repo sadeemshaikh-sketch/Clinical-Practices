@@ -2,8 +2,7 @@
 """
 practicum_pull.py
 ------------------
-Builds `data.json` for the practicum directory page, AND keeps a private
-spreadsheet of your notes ("practice_notes.csv") that survives every refresh.
+Builds `data.json` for the practicum directory page.
 
 WHAT IT NEEDS: one Google Maps API key with "Places API (New)" enabled.
 No other accounts, no `pip install` (uses only Python's built-in libraries).
@@ -19,22 +18,16 @@ WHAT IT DOES EACH RUN:
   1. Asks Google Places for counselling/therapy practices across Alberta and Ontario.
   2. Pulls name, address, phone, website from Google.
   3. Visits each practice's own website for an email + therapy approaches.
-  4. Reads your notes file (practice_notes.csv) and marks the practices YOU
-     have flagged as "taking students" — your answers are never wiped.
-  5. Writes everything to data.json (for the website) and updates
-     practice_notes.csv (for you), adding blank rows for any new practices.
+  4. Writes everything to data.json (for the website).
 
-YOUR NOTES FILE (practice_notes.csv):
-  Open it in Numbers or Excel. To mark a practice as taking students, type
-  "yes" in its taking_students column and save. The "notes" column is your
-  own private scratchpad (e.g. "emailed Aug 5"). This file stays on your
-  computer and is NEVER uploaded to the website.
+The site is a directory only. It does not track, record or publish whether a
+practice is accepting practicum students — that is asked of the practice
+directly.
 """
 
 import os
 import re
 import sys
-import csv
 import json
 import time
 import urllib.request
@@ -163,7 +156,7 @@ MODALITIES = {
 }
 
 OUTPUT_FILE = "data.json"
-NOTES_FILE = "practice_notes.csv"     # your private spreadsheet — never uploaded
+EXCLUDED_FILE = "excluded.json"       # practices that asked to be removed
 POLITE_DELAY = 0.6
 WEBSITE_TIMEOUT = 12
 UA = "Mozilla/5.0 (PracticumDirectory/1.0; personal research tool)"
@@ -264,74 +257,36 @@ def find_modalities(text):
     return found
 
 
-# ---------- Your private notes (practice_notes.csv) -------------------
-def is_yes(val):
-    return str(val).strip().lower() in ("yes", "y", "true", "x", "1")
-
-
-def load_notes():
-    """Read practice_notes.csv into a dict keyed by placeId."""
-    notes = {}
-    if not os.path.exists(NOTES_FILE):
-        return notes
+# ---------- Removal list (excluded.json) ------------------------------
+def load_excluded():
+    """Practices that have asked to be taken off the directory. Honoured on
+    every run, so a removal is never undone by a later refresh."""
+    ids, names = set(), set()
+    if not os.path.exists(EXCLUDED_FILE):
+        return ids, names
     try:
-        with open(NOTES_FILE, "r", encoding="utf-8", newline="") as f:
-            for row in csv.DictReader(f):
-                pid = (row.get("placeId") or "").strip()
-                if pid:
-                    notes[pid] = {
-                        "name": (row.get("name") or "").strip(),
-                        "taking_students": (row.get("taking_students") or "").strip(),
-                        "notes": (row.get("notes") or "").strip(),
-                    }
+        with open(EXCLUDED_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        ids = {str(v).strip() for v in data.get("placeIds", []) if str(v).strip()}
+        names = {str(v).strip().lower() for v in data.get("names", []) if str(v).strip()}
     except Exception as e:
-        print(f"  ! Couldn't read {NOTES_FILE} ({e}); continuing without your notes.")
-    return notes
+        print(f"  ! Couldn't read {EXCLUDED_FILE} ({e}).")
+        print("    Stopping rather than risk re-publishing a practice that asked to be removed.")
+        sys.exit(1)
+    return ids, names
 
 
-def apply_notes(records, notes):
-    """Flag practices you've marked 'taking students'. Returns how many."""
-    count = 0
-    for r in records:
-        pid = r.get("placeId", "")
-        if pid in notes and is_yes(notes[pid]["taking_students"]):
-            r["acceptingStudents"] = True
-            count += 1
-    return count
-
-
-def write_notes(records, notes):
-    """Rewrite practice_notes.csv: one row per practice, preserving your
-    answers, adding blank rows for new practices, and never losing old notes."""
-    seen = set()
-    rows = []
-    for r in sorted(records, key=lambda x: x["name"].lower()):
-        pid = r.get("placeId", "")
-        seen.add(pid)
-        prev = notes.get(pid, {})
-        rows.append({
-            "name": r["name"],
-            "placeId": pid,
-            "taking_students": prev.get("taking_students", ""),
-            "notes": prev.get("notes", ""),
-        })
-    for pid, prev in notes.items():   # keep notes for practices not in this pull
-        if pid not in seen:
-            rows.append({
-                "name": prev.get("name", ""),
-                "placeId": pid,
-                "taking_students": prev.get("taking_students", ""),
-                "notes": prev.get("notes", ""),
-            })
-    with open(NOTES_FILE, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["name", "placeId", "taking_students", "notes"])
-        writer.writeheader()
-        writer.writerows(rows)
+def apply_excluded(records, ids, names):
+    kept = [r for r in records
+            if r.get("placeId", "") not in ids
+            and r.get("name", "").strip().lower() not in names]
+    return kept, len(records) - len(kept)
 
 
 # ----------------------------------------------------------------------
 def main():
     api_key = get_api_key()
+    excl_ids, excl_names = load_excluded()
 
     print(f"Searching Google across {len(PLACES)} locations in Alberta and Ontario ...")
     print("(This takes a while - it searches each place separately.)\n")
@@ -369,28 +324,21 @@ def main():
             "email": email,
             "website": website,
             "modalities": modalities,
-            "acceptingStudents": False,   # set from YOUR notes below
             "placeId": p.get("id", ""),
         })
         print(f"  [{i}/{len(places)}] {name or '(no name)'}"
               f"{'  ·  email found' if email else ''}"
               f"{'  ·  ' + ', '.join(modalities) if modalities else ''}")
 
-    # --- merge in your private notes, then keep the notes sheet in sync ---
-    notes = load_notes()
-    marked = apply_notes(records, notes)
-    write_notes(records, notes)
+    records, dropped = apply_excluded(records, excl_ids, excl_names)
+    if dropped:
+        print(f"\n{dropped} practice(s) withheld per {EXCLUDED_FILE}.")
 
     records.sort(key=lambda r: r["name"].lower())
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(records, f, ensure_ascii=False, indent=2)
 
     print(f"\nDone. Wrote {len(records)} practices to {OUTPUT_FILE}.")
-    print(f"{marked} marked as 'taking students' from your notes.")
-    print(f"\nYour notes live in {NOTES_FILE} — open it in Numbers or Excel,")
-    print("type 'yes' in the taking_students column for any practice that takes")
-    print("students, save, and re-run this script to push it live.")
-    print(f"KEEP {NOTES_FILE} in this folder — it's private, never upload it.")
     print(f"\nTo update the site: copy {OUTPUT_FILE} into your website folder and re-upload.")
 
 
