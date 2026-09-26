@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json practice_notes.csv
+          git add data.json
           git commit -m "Auto-update practice data" || echo "Nothing to update"
           git push
