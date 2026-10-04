@@ -16,6 +16,9 @@ WHAT IT DOES EACH RUN:
      psychotherapy and psychology practices in Alberta and Ontario from it.
   2. Takes name, address, phone and website from that data.
   3. Visits each practice's own website for an email + therapy approaches.
+     If the home page shows no email, it follows one "contact" link that
+     stays on the same site, looks for an email there, and records that
+     page as contactUrl. Links to other sites are never followed.
   4. Writes everything to data.json (for the website).
 
 Overture places data is licensed CDLA Permissive 2.0 (Meta, Microsoft and
@@ -35,6 +38,8 @@ import json
 import time
 import urllib.request
 import urllib.error
+from html import unescape
+from urllib.parse import urljoin, urldefrag
 
 # ----------------------------------------------------------------------
 # CONFIG
@@ -149,6 +154,7 @@ UA = "Mozilla/5.0 (PracticumDirectory/1.0; personal research tool)"
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 EMAIL_JUNK = ("@sentry", "@example", "@wixpress", ".png", ".jpg", ".gif", "@2x")
+LINK_RE = re.compile(r"<a\b[^>]*?\bhref\s*=\s*[\"']([^\"']+)[\"'][^>]*>(.*?)</a>", re.S | re.I)
 
 
 
@@ -159,13 +165,14 @@ def fetch_website_text(url):
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=WEBSITE_TIMEOUT) as resp:
             raw = resp.read(600_000)
+            final_url = resp.geturl() or url
         html = raw.decode("utf-8", "ignore")
         text = re.sub(r"<script.*?</script>", " ", html, flags=re.S | re.I)
         text = re.sub(r"<style.*?</style>", " ", text, flags=re.S | re.I)
         text = re.sub(r"<[^>]+>", " ", text)
-        return html, text
+        return html, text, final_url
     except Exception:
-        return "", ""
+        return "", "", ""
 
 
 def find_email(html):
@@ -174,6 +181,24 @@ def find_email(html):
         if any(j in low for j in EMAIL_JUNK):
             continue
         return m
+    return ""
+
+
+def find_contact_url(html, page_url):
+    """The first link on the page whose address or text mentions "contact"
+    and that stays on the page's own host. mailto:/tel: links and links to
+    other sites are ignored."""
+    host = website_host(page_url)
+    here = urldefrag(page_url)[0].rstrip("/")
+    for href, label in LINK_RE.findall(html):
+        label = re.sub(r"<[^>]+>", " ", label)
+        if "contact" not in href.lower() and "contact" not in label.lower():
+            continue
+        url = urldefrag(urljoin(page_url, unescape(href.strip())))[0]
+        if not url.lower().startswith(("http://", "https://")):
+            continue
+        if website_host(url) == host and url.rstrip("/") != here:
+            return url
     return ""
 
 
@@ -358,6 +383,26 @@ def apply_excluded(records, ids, names, phones=(), hosts=()):
 
 
 # ----------------------------------------------------------------------
+def read_website(website):
+    """(email, modalities, contactUrl) for one practice website. When the
+    home page has no email, one same-site contact page is read as well."""
+    html, text, final_url = fetch_website_text(website)
+    time.sleep(POLITE_DELAY)
+    if not html:
+        return "", [], ""
+    email, modalities, contact_url = find_email(html), find_modalities(text), ""
+    if not email:
+        contact_url = find_contact_url(html, final_url or website)
+        if contact_url:
+            contact_html, _, _ = fetch_website_text(contact_url)
+            time.sleep(POLITE_DELAY)
+            if contact_html:
+                email = find_email(contact_html)
+            else:
+                contact_url = ""
+    return email, modalities, contact_url
+
+
 def main():
     excl = load_excluded()
 
@@ -399,17 +444,20 @@ def main():
         email, modalities = "", []
         if website:
             if website not in seen:
-                html, text = fetch_website_text(website)
-                seen[website] = (find_email(html), find_modalities(text)) if html else ("", [])
-                time.sleep(POLITE_DELAY)
-            email, modalities = seen[website]
+                seen[website] = read_website(website)
+            email, modalities, contact_url = seen[website]
+        else:
+            contact_url = ""
         r["email"] = email
         r["modalities"] = list(modalities)
+        r["contactUrl"] = contact_url
         print(f"  [{i}/{len(records)}] {r['name']}"
               f"{'  ·  email found' if email else ''}"
+              f"{'  ·  contact page' if contact_url else ''}"
               f"{'  ·  ' + ', '.join(modalities) if modalities else ''}")
 
-    keys = ("name", "address", "phone", "email", "website", "modalities", "placeId")
+    keys = ("name", "address", "phone", "email", "website", "contactUrl",
+            "modalities", "placeId")
     records = [{k: r[k] for k in keys} for r in records]
     records.sort(key=lambda r: r["name"].lower())
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:

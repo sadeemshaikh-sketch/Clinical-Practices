@@ -4,10 +4,61 @@
     "Entries are honoured by the website immediately and by the weekly refresh script, so a removed practice is never re-added.",
     "Add the practice's placeId (the Overture Maps id, as it appears in data.json) to \"placeIds\", and its exact listed name to \"names\" (case-insensitive).",
     "Also add its phone number to \"phones\" and its website to \"websites\". Overture ids can change if a practice renames or moves; the phone and website keep the removal in force when that happens. The website only honours placeIds and names, but the weekly refresh honours all four.",
-    "Keep this file in the repo - it is the record that the request was acted on."
+    "Keep this file in the repo - it is the record that the request was acted on.",
+    "Some entries were removed because they are not, or could not be confirmed as, counselling, psychotherapy or psychology practices — not because the business asked."
   ],
-  "placeIds": [],
-  "names": [],
-  "phones": [],
-  "websites": []
+  "placeIds": [
+    "f5fd3be0-eae6-463c-99aa-ad9d2495c073",
+    "8f12d649-ca34-4e98-bf91-598bec776dfa",
+    "047d601d-9525-43db-92e0-a94aa8082dab",
+    "827374a8-801e-4f19-aacb-9eea04796ac9",
+    "2ee2a58a-511d-4686-a362-3e53d3b02e49",
+    "15cb6716-7b9d-45f8-a30a-a15398786f45",
+    "bb402546-277c-420c-a794-7ebc0347c90a",
+    "e7a5913a-f633-4131-aa8c-fb398b1c518c",
+    "42627bc3-8147-4ff8-9f80-a7f3a699e382",
+    "145e9d24-57af-46e9-ab07-fdee9acc2ab3",
+    "91b745f0-9ed0-4d7a-8f13-f6d977ae9df1",
+    "24971d2d-8b6a-401b-8150-d41ce3d46c34",
+    "606dfbc2-b6cf-410e-9651-968b0d9f5f81"
+  ],
+  "names": [
+    "2B Free Therapies",
+    "Chime Dental",
+    "Logan Therapeutic Massage & Manual Osteopathic Therapist",
+    "New Hope Physiotherapy & Rehab Centre Inc.",
+    "Celestial Spa and wellness centre",
+    "My Little Yoga Studio",
+    "Fanjoy Culinary and Wellness Centre",
+    "Alexis Hewitt CAT(C), RMT",
+    "Derek Debono Athletic Therapy",
+    "Spencer Dungey Certified Athletic Therapist",
+    "TC Athletic Therapy Services",
+    "Tie Athletic Therapy",
+    "Waterloo Warriors Athletic Therapy"
+  ],
+  "phones": [
+    "(780) 540-9101",
+    "(780) 228-0983",
+    "(905) 846-4000",
+    "(905) 782-9015",
+    "(905) 920-8024",
+    "(519) 824-3611",
+    "(519) 357-0409",
+    "(226) 346-9448",
+    "(613) 929-9331",
+    "(403) 477-7309",
+    "(587) 849-4354"
+  ],
+  "websites": [
+    "http://www.2bfree.ca/",
+    "https://www.chimedental.com",
+    "http://www.terrylogan.co/",
+    "http://www.newhopephysio.com",
+    "http://celestial-spa.com/",
+    "http://ahtherapy.noterro.com/",
+    "https://athletictherapylab.ca/",
+    "https://at.tieathletictherapy.ca/home",
+    "http://warriors.uwaterloo.ca/sports/2010/8/11/Athletic_Therapy_Home.aspx"
+  ]
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#EEF1EA">
 <meta name="color-scheme" content="light">
-<title>Practicum Placements — Alberta &amp; Ontario</title>
+<title>Practicum Search — Alberta &amp; Ontario</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233B5348'/%3E%3Cpath d='M32 14s14 11.4 14 22a14 14 0 1 1-28 0c0-10.6 14-22 14-22Z' fill='%23DCE6DF'/%3E%3Ccircle cx='32' cy='36' r='5' fill='%233B5348'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -288,7 +288,33 @@
   .mod{font-size:12px;color:var(--sage-deep);background:rgba(78,107,94,.09);
     padding:4px 9px;border-radius:6px;font-weight:500;}
   .mod.match{background:var(--sage-deep);color:#fff;}
-  .mod.more{background:transparent;border:1px dashed var(--line);color:var(--muted);cursor:help;}
+  .mod.more{background:transparent;border:1px dashed var(--line);color:var(--muted);cursor:pointer;
+    font-family:inherit;line-height:inherit;}
+  .mod.more:hover{border-color:var(--sage);color:var(--sage-deep);}
+  .mod.more:focus-visible,.copy-btn:focus-visible,.name-link:focus-visible,.act:focus-visible{
+    outline:2px solid var(--sage);outline-offset:2px;}
+
+  /* Practice name: reads as the card heading, underlines only on hover/focus. */
+  .name-link{color:inherit;text-decoration:none;border-radius:3px;}
+  .name-link:hover,.name-link:focus-visible{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
+
+  /* An action and its copy icon sit together and wrap as one unit. */
+  .act-pair{display:inline-flex;align-items:stretch;gap:3px;}
+  .copy-btn{
+    position:relative;display:inline-flex;align-items:center;justify-content:center;
+    min-width:32px;padding:0 8px;border-radius:8px;border:1px solid var(--line);
+    background:var(--card);color:var(--sage);cursor:pointer;font-family:inherit;
+    transition:border-color .15s,background .15s;
+  }
+  .copy-btn:hover{border-color:var(--sage);background:var(--sage-soft);}
+  .copy-btn .copied{
+    position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+    background:var(--ink);color:#fff;font-size:11.5px;font-weight:600;
+    padding:3px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;
+    opacity:0;transition:opacity .15s;
+  }
+  .copy-btn.done .copied{opacity:1;}
+  .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
 
   .detail{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);padding:5px 0;}
   .detail svg{flex-shrink:0;margin-top:2px;color:#9AA69F;}
@@ -402,6 +428,8 @@
     .card-top h2{font-size:1.12rem;}
     /* Tap targets: ~44px is the smallest a thumb hits reliably. */
     .act{padding:10px 13px;min-height:42px;font-size:13.5px;}
+    .copy-btn{min-width:42px;min-height:42px;}
+    .mod.more{padding:6px 11px;}
     .card-actions{gap:7px;}
     .foot-grid{flex-direction:column;align-items:flex-start;}
   }
@@ -416,9 +444,9 @@
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">Counselling practicum · Alberta &amp; Ontario</p>
-    <h1>Places to do your <em>practicum</em>, in one view.</h1>
-    <p class="lede">Private practices and counselling centres across Alberta and Ontario, with the details that help you narrow a shortlist — where they are, what they treat, and how to reach them. Contact a practice directly to ask about practicum openings.</p>
+    <p class="eyebrow">For counselling practicum students · Alberta &amp; Ontario</p>
+    <h1>Counselling practices to <em>contact</em>, in one view.</h1>
+    <p class="lede">Private practices and counselling centres across Alberta and Ontario, with the details that help you build a shortlist: where they are, what they treat, and how to reach them. Listing here doesn&#39;t mean a practice offers practicum placements. Ask each one directly.</p>
 
     <div class="stats">
       <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Practices listed</div></div>
@@ -432,7 +460,7 @@
   <div class="wrap controls-inner">
     <div class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="search" type="search" placeholder="Search by name, city, or postal code…" autocomplete="off">
+      <input id="search" type="search" placeholder="Search by name, city, postal code or focus area…" autocomplete="off">
     </div>
     <button class="filters-btn" id="filtersBtn" type="button" aria-haspopup="true" aria-expanded="false">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
@@ -469,6 +497,7 @@
       </select>
     </div>
     <div class="grid" id="grid"></div>
+    <p class="vh" id="liveStatus" role="status" aria-live="polite"></p>
   </div>
 </main>
 
@@ -482,6 +511,7 @@
       <strong>How this stays current:</strong> listings refresh automatically each week — a script compiles practices from the Overture Maps Foundation's open places data and reads each practice's own website for contact details and focus areas. No one edits this page by hand.
       <br><strong>This is a directory, not a placement service.</strong> It does not record, confirm or advertise whether a practice is accepting practicum students. Contact a practice directly to ask.
       <br>Listings show business contact information published by the practices themselves. To request a correction or removal, contact <a href="mailto:counsellingpsychologypracticum@gmail.com">counsellingpsychologypracticum@gmail.com</a>.
+      <br>Check a practitioner&#39;s registration: Alberta — <a class="foot-link" href="https://cap.alinityapp.com/Client/PublicDirectory" target="_blank" rel="noopener">College of Alberta Psychologists</a>, <a class="foot-link" href="https://acsw.ab.ca/resource/verify-a-social-worker/" target="_blank" rel="noopener">Alberta College of Social Workers</a>; Ontario — <a class="foot-link" href="https://members.cpbao.ca/public_register/" target="_blank" rel="noopener">College of Psychologists and Behaviour Analysts of Ontario</a>, <a class="foot-link" href="https://my.crpo.ca/publicregister" target="_blank" rel="noopener">College of Registered Psychotherapists of Ontario</a>, <a class="foot-link" href="https://www.ocswssw.org/registrants/online-register/" target="_blank" rel="noopener">Ontario College of Social Workers and Social Service Workers</a>.
       <br><span id="updated"></span>
       <br><a class="foot-link" href="privacy.html">Privacy Policy</a> · <a class="foot-link" href="terms.html">Terms of Service</a>
     </p>
@@ -601,7 +631,8 @@ async function loadData(){
     const res = await fetch("data.json", {cache:"no-store"});
     if(res.ok){
       const json = await res.json();
-      if(Array.isArray(json) && json.length){ list = json.map(d=>({modalities:[],...d})); }
+      // Older data.json files have no contactUrl; default it so cards render.
+      if(Array.isArray(json) && json.length){ list = json.map(d=>({modalities:[],contactUrl:"",...d})); }
     }
   }catch(e){ /* falls back to sample below (e.g. opened via file://) */ }
   if(!list) return SAMPLE_DATA;
@@ -622,11 +653,16 @@ const ic = {
   phone:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>',
   mail:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6.5L21 6"/></svg>',
   web:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 6 3.8 9.5S14.5 18.9 12 21.5C9.5 18.9 8.2 15.5 8.2 12S9.5 5.1 12 2.5Z"/></svg>',
+  contact:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.1A8.5 8.5 0 1 1 21 12Z"/></svg>',
+  copy:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="8.5" y="8.5" width="12" height="12" rx="2.2"/><path d="M15.5 8.5V5.7a2.2 2.2 0 0 0-2.2-2.2H5.7a2.2 2.2 0 0 0-2.2 2.2v7.6a2.2 2.2 0 0 0 2.2 2.2h2.8"/></svg>',
   chevron:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
 };
 
 function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function hostOf(url){ try{ return new URL(url).hostname.replace(/^www\./,""); }catch(e){ return url; } }
+/* Links read from practices' websites are only used if they are plain
+   http(s) addresses, so a stray "javascript:" value can never become a link. */
+function webUrl(url){ const u = String(url||"").trim(); return /^https?:\/\//i.test(u) ? u : ""; }
 
 /* ---------- Location: province → city / main area ----------
    Google-formatted addresses look like
@@ -716,12 +752,16 @@ function passesLocation(d){
 /* ---------- Build option lists (label, value, count) per group,
    counted against the data that already passes every OTHER active
    filter — same "faceted count" behaviour PT's sidebar shows. ---------- */
-function passesExcept(d, exceptGroup){
+/* Free-text search looks at the name, the address and the focus-area tags,
+   ignoring case. */
+function matchesQuery(d){
   const q = state.q.trim().toLowerCase();
-  if(q){
-    const hay = (d.name+" "+(d.address||"")).toLowerCase();
-    if(!hay.includes(q)) return false;
-  }
+  if(!q) return true;
+  return [d.name, d.address, ...(d.modalities||[])].join(" ").toLowerCase().includes(q);
+}
+
+function passesExcept(d, exceptGroup){
+  if(!matchesQuery(d)) return false;
   if(exceptGroup!=="province" && !passesLocation(d)) return false;
   const modSet = new Set((d.modalities||[]));
   for(const g of ["issues","population","approach"]){
@@ -902,12 +942,8 @@ function renderActiveRow(){
 
 /* ---------- Results ---------- */
 function matchingList(){
-  const q = state.q.trim().toLowerCase();
   let list = DATA.filter(d=>{
-    if(q){
-      const hay=(d.name+" "+(d.address||"")).toLowerCase();
-      if(!hay.includes(q)) return false;
-    }
+    if(!matchesQuery(d)) return false;
     if(!passesLocation(d)) return false;
     const modSet = new Set(d.modalities||[]);
     for(const g of ["issues","population","approach"]){
@@ -939,13 +975,39 @@ function splitAddress(addr){
   return { city:`${m[2].trim()}, ${m[3]}`, street:m[1].trim() };
 }
 
+/* The Email action opens a draft with the enquiry already written. The
+   [bracketed] parts are left for the student to fill in. */
+const ENQUIRY_BODY = [
+  "Hello,",
+  "",
+  "My name is [your name], and I am a [year/program] student in counselling psychology at [institution]. I am looking for a practicum placement beginning [term] and would like to ask whether your practice considers practicum students.",
+  "",
+  "Thank you for your time,",
+  "[your name]"
+].join("\r\n");
+function mailtoHref(d){
+  return "mailto:" + String(d.email).trim()
+    + "?subject=" + encodeURIComponent("Practicum enquiry — " + (d.name||""))
+    + "&body=" + encodeURIComponent(ENQUIRY_BODY);
+}
+
+/* Copy buttons only appear where the browser offers the clipboard API
+   (it needs a secure https:// or localhost page). */
+const CAN_COPY = !!(window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText);
+function withCopy(actionHTML, value, what){
+  if(!CAN_COPY) return actionHTML;
+  return `<span class="act-pair">${actionHTML}<button type="button" class="copy-btn" data-copy="${esc(value)}" data-what="${esc(what)}" aria-label="Copy ${esc(what)}" title="Copy ${esc(what)}">${ic.copy}<span class="copied" aria-hidden="true">Copied</span></button></span>`;
+}
+
 function cardHTML(d, i, highlight){
   // Matched filters first, then cap at MAX_TAGS with a "+N" overflow chip.
   const MAX_TAGS = 8;
   const all = (d.modalities||[]).slice().sort((a,b)=>(highlight.has(b)?1:0)-(highlight.has(a)?1:0));
-  const shownTags = all.slice(0,MAX_TAGS), extra = all.length - shownTags.length;
-  const mods = shownTags.map(m=>`<span class="mod${highlight.has(m)?" match":""}">${esc(m)}</span>`).join("") +
-    (extra>0 ? `<span class="mod more" title="${esc(all.slice(MAX_TAGS).join(", "))}">+${extra}</span>` : "");
+  const extra = all.length - MAX_TAGS;
+  const tag = (m, hidden)=>`<span class="mod${highlight.has(m)?" match":""}"${hidden?" data-extra hidden":""}>${esc(m)}</span>`;
+  // Tags past MAX_TAGS are rendered hidden; the "+N" button reveals them.
+  const mods = all.map((m,j)=>tag(m, j>=MAX_TAGS)).join("") +
+    (extra>0 ? `<button type="button" class="mod more" data-more-tags="${extra}" aria-expanded="false" title="${esc(all.slice(MAX_TAGS).join(", "))}" aria-label="Show ${extra} more focus areas">+${extra}</button>` : "");
   const {city, street} = splitAddress(d.address);
   /* Google's official Maps URLs API (api=1). The older
      /maps/place/?q=place_id: form resolves in a desktop browser but often
@@ -957,14 +1019,18 @@ function cardHTML(d, i, highlight){
   const mapQuery = ((d.name||"") + " " + (d.address||"")).trim();
   const mapHref = "https://www.google.com/maps/search/?api=1&query="
     + encodeURIComponent(mapQuery || (d.name||""));
+  const website = webUrl(d.website), contactUrl = webUrl(d.contactUrl);
   const actions = [
-    d.website ? `<a class="act" href="${esc(d.website)}" target="_blank" rel="noopener">${ic.web}${esc(hostOf(d.website))}</a>` : "",
-    d.email   ? `<a class="act" href="mailto:${esc(d.email)}">${ic.mail}Email</a>` : "",
-    d.phone   ? `<a class="act" href="tel:${esc(String(d.phone).replace(/[^\d+]/g,""))}">${ic.phone}${esc(d.phone)}</a>` : "",
+    website ? `<a class="act" href="${esc(website)}" target="_blank" rel="noopener">${ic.web}${esc(hostOf(website))}</a>` : "",
+    d.email ? withCopy(`<a class="act" href="${esc(mailtoHref(d))}">${ic.mail}Email</a>`, d.email, "email address") : "",
+    !d.email && contactUrl ? `<a class="act" href="${esc(contactUrl)}" target="_blank" rel="noopener">${ic.contact}Contact page</a>` : "",
+    d.phone ? withCopy(`<a class="act" href="tel:${esc(String(d.phone).replace(/[^\d+]/g,""))}">${ic.phone}${esc(d.phone)}</a>`, d.phone, "phone number") : "",
     `<a class="act act-map" href="${esc(mapHref)}" target="_blank" rel="noopener noreferrer">${ic.pin}Map</a>`
   ].join("");
+  // The name opens the practice's own site, or the same map search as "Map".
+  const nameHref = website || mapHref;
   return `<article class="card" style="animation-delay:${Math.min(i*35,320)}ms">
-    <div class="card-top"><h2>${esc(d.name)}</h2></div>
+    <div class="card-top"><h2><a class="name-link" href="${esc(nameHref)}" target="_blank" rel="noopener">${esc(d.name)}</a></h2></div>
     <div class="place">
       <div class="city">${ic.pin}<span>${esc(city)}</span></div>
       ${street?`<div class="street">${esc(street)}</div>`:""}
@@ -1025,7 +1091,75 @@ function renderAll(){
   renderFilters();
   renderActiveRow();
   renderResults();
+  writeHash();
 }
+
+/* ---------- Card buttons: "+N" tags and copy ---------- */
+function announce(msg){
+  const live = document.getElementById("liveStatus");
+  live.textContent = "";
+  setTimeout(()=>{ live.textContent = msg; }, 30);
+}
+document.getElementById("grid").addEventListener("click",e=>{
+  const more = e.target.closest("[data-more-tags]");
+  if(more){
+    const open = more.getAttribute("aria-expanded")!=="true";
+    more.closest(".mods").querySelectorAll("[data-extra]").forEach(t=>{ t.hidden = !open; });
+    more.setAttribute("aria-expanded", String(open));
+    const n = more.dataset.moreTags;
+    more.textContent = open ? "Show less" : `+${n}`;
+    more.setAttribute("aria-label", open ? "Show fewer focus areas" : `Show ${n} more focus areas`);
+    return;
+  }
+  const copy = e.target.closest(".copy-btn");
+  if(copy){
+    const what = copy.dataset.what;
+    navigator.clipboard.writeText(copy.dataset.copy).then(()=>{
+      copy.classList.add("done");
+      announce(`Copied ${what}`);
+      clearTimeout(copy._t);
+      copy._t = setTimeout(()=>copy.classList.remove("done"), 1600);
+    }, ()=>announce(`Couldn't copy the ${what}`));
+  }
+});
+
+/* ---------- Shareable views ----------
+   The search text, filters and sort are mirrored into the page address
+   (#q=…&loc=…&sort=…) so a view can be bookmarked or sent to someone. Nothing
+   is stored in the browser and nothing is sent anywhere; the hash never
+   leaves the browser. Anything unrecognised in a hash is ignored. */
+const HASH_KEYS = { province:"loc", issues:"issue", population:"pop", approach:"approach" };
+function writeHash(){
+  const p = new URLSearchParams();
+  const q = state.q.trim();
+  if(q) p.set("q", q);
+  for(const [g,key] of Object.entries(HASH_KEYS)) [...state.filters[g]].sort().forEach(v=>p.append(key, v));
+  if(state.sort!=="name") p.set("sort", state.sort);
+  const hash = p.toString() ? "#" + p.toString() : "";
+  if(hash === location.hash || (!hash && !location.hash)) return;
+  history.replaceState(null, "", location.pathname + location.search + hash);
+}
+function validFilterValue(g, v){
+  if(g==="province"){
+    const [prov, area, rest] = v.split("|");
+    if(rest!==undefined || !PROVINCE_NAMES[prov]) return false;
+    return area===undefined || area===OTHER_AREA[prov] || Object.prototype.hasOwnProperty.call(AREA_MAP[prov], area);
+  }
+  return DATA.some(d=>(d.modalities||[]).includes(v)) && (CATEGORY_MAP[v]||"issues")===g;
+}
+function readHash(){
+  let p;
+  try{ p = new URLSearchParams(location.hash.replace(/^#/,"")); }catch(e){ p = new URLSearchParams(); }
+  const q = (p.get("q")||"").slice(0,100);
+  state.q = q;
+  document.getElementById("search").value = q;
+  for(const [g,key] of Object.entries(HASH_KEYS)){
+    state.filters[g] = new Set(p.getAll(key).filter(v=>validFilterValue(g, v)));
+  }
+  state.sort = p.get("sort")==="city" ? "city" : "name";
+  document.getElementById("sort").value = state.sort;
+}
+window.addEventListener("hashchange",()=>{ readHash(); renderAll(); });
 
 function setStats(){
   document.getElementById("stat-total").textContent = DATA.length;
@@ -1040,7 +1174,7 @@ function setStats(){
 
 /* ---------- Wire up top bar + mobile filter drawer ---------- */
 document.getElementById("search").addEventListener("input",e=>{ state.q=e.target.value; renderAll(); });
-document.getElementById("sort").addEventListener("change",e=>{ state.sort=e.target.value; renderResults(); });
+document.getElementById("sort").addEventListener("change",e=>{ state.sort=e.target.value; renderResults(); writeHash(); });
 document.getElementById("clearAll").addEventListener("click",clearAll);
 
 const toTop = document.getElementById("toTop");
@@ -1074,6 +1208,7 @@ window.addEventListener("resize",()=>{ if(window.innerWidth>860) closeSidebar();
 (async function init(){
   DATA = await loadData();
   setStats();
+  readHash();
   renderAll();
 })();
 </script>
