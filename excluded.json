@@ -2,9 +2,12 @@
   "_readme": [
     "Removal / suppression list. When a practice asks to be taken off the directory, add it here.",
     "Entries are honoured by the website immediately and by the weekly refresh script, so a removed practice is never re-added.",
-    "Add the practice's Google placeId to \"placeIds\" when you have it (most reliable), or its exact listed name to \"names\" (case-insensitive).",
+    "Add the practice's placeId (the Overture Maps id, as it appears in data.json) to \"placeIds\", and its exact listed name to \"names\" (case-insensitive).",
+    "Also add its phone number to \"phones\" and its website to \"websites\". Overture ids can change if a practice renames or moves; the phone and website keep the removal in force when that happens. The website only honours placeIds and names, but the weekly refresh honours all four.",
     "Keep this file in the repo - it is the record that the request was acted on."
   ],
   "placeIds": [],
-  "names": []
+  "names": [],
+  "phones": [],
+  "websites": []
 }

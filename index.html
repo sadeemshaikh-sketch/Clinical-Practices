@@ -479,14 +479,14 @@
 <footer>
   <div class="wrap foot-grid">
     <p class="foot-note">
-      <strong>How this stays current:</strong> listings refresh automatically each week — a script compiles practices from Google Maps and reads each practice's own website for contact details and focus areas. No one edits this page by hand.
+      <strong>How this stays current:</strong> listings refresh automatically each week — a script compiles practices from the Overture Maps Foundation's open places data and reads each practice's own website for contact details and focus areas. No one edits this page by hand.
       <br><strong>This is a directory, not a placement service.</strong> It does not record, confirm or advertise whether a practice is accepting practicum students. Contact a practice directly to ask.
       <br>Listings show business contact information published by the practices themselves. To request a correction or removal, contact <a href="mailto:counsellingpsychologypracticum@gmail.com">counsellingpsychologypracticum@gmail.com</a>.
       <br><span id="updated"></span>
       <br><a class="foot-link" href="privacy.html">Privacy Policy</a> · <a class="foot-link" href="terms.html">Terms of Service</a>
     </p>
     <div class="attr">
-      <span class="g">Powered by Google</span>
+      <span>Practice data: <a class="foot-link" href="https://overturemaps.org" target="_blank" rel="noopener">Overture Maps Foundation</a>, from Meta, Microsoft, PinMeTo, Krick, RenderSEO, DAC and BrightQuery (<a class="foot-link" href="licenses/CDLA-Permissive-2.0.txt">CDLA Permissive 2.0</a>), Foursquare (© 2026 Foursquare Labs, Inc., <a class="foot-link" href="licenses/Apache-2.0.txt">Apache 2.0</a>, <a class="foot-link" href="licenses/Foursquare-NOTICE.txt">NOTICE</a>) and AllThePlaces (CC0 1.0). Data has been filtered, de-duplicated and supplemented with information from practices&#39; own websites by the directory&#39;s maintainers.</span>
     </div>
   </div>
 </footer>
@@ -950,13 +950,13 @@ function cardHTML(d, i, highlight){
   /* Google's official Maps URLs API (api=1). The older
      /maps/place/?q=place_id: form resolves in a desktop browser but often
      fails once a phone hands the link to the Google Maps app, which is why
-     "Map" looked broken on mobile. search + query_place_id is the documented
-     form: it deep-links correctly on iOS and Android, still works on desktop,
-     and degrades to a name/address search when a listing has no place ID. */
+     "Map" looked broken on mobile. The documented search form deep-links
+     correctly on iOS and Android and still works on desktop. It searches by
+     name + address only: placeId is an Overture Maps id, which Google
+     doesn't know, so it must not be sent as query_place_id. */
   const mapQuery = ((d.name||"") + " " + (d.address||"")).trim();
   const mapHref = "https://www.google.com/maps/search/?api=1&query="
-    + encodeURIComponent(mapQuery || (d.name||""))
-    + (d.placeId ? "&query_place_id=" + encodeURIComponent(d.placeId) : "");
+    + encodeURIComponent(mapQuery || (d.name||""));
   const actions = [
     d.website ? `<a class="act" href="${esc(d.website)}" target="_blank" rel="noopener">${ic.web}${esc(hostOf(d.website))}</a>` : "",
     d.email   ? `<a class="act" href="mailto:${esc(d.email)}">${ic.mail}Email</a>` : "",
