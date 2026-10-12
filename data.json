@@ -337,10 +337,14 @@
     "name": "ABA Therapy Services",
     "address": "501 Campbell St #3, Cornwall, ON K6H 6T7, Canada",
     "phone": "(613) 209-4050",
-    "email": "",
+    "email": "tessa@abatherapyservices.ca",
     "website": "https://www.abatherapyservices.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "ADHD",
+      "Autism"
+    ],
     "placeId": "9ac1d7db-6453-46ac-92eb-7045a56a831b"
   },
   {
@@ -521,7 +525,9 @@
     "email": "",
     "website": "https://www.abmacounselling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Couples"
+    ],
     "placeId": "16254a1d-5235-44c9-a3d7-005c913dc968"
   },
   {
@@ -759,6 +765,7 @@
       "Teen",
       "Couples",
       "Family",
+      "ADHD",
       "Autism",
       "Relationship Issues",
       "Parenting"
@@ -869,10 +876,15 @@
     "name": "ADD Centre and Biofeedback Institute of Toronto",
     "address": "50 Village Centre Pl, Mississauga, ON L4Z 1V9, Canada",
     "phone": "(905) 803-8066",
-    "email": "",
+    "email": "addcentre@gmail.com",
     "website": "http://www.addcentre.com",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "ADHD",
+      "Autism",
+      "Assessment"
+    ],
     "placeId": "28d9e655-7d96-493c-8ad1-fc77521a589f"
   },
   {
@@ -998,13 +1010,10 @@
     "name": "Advance Wellness Centre",
     "address": "344 Riverside Dr, Greater Sudbury, ON P3E 1H7, Canada",
     "phone": "(249) 239-0268",
-    "email": "filler@godaddy.com",
+    "email": "",
     "website": "http://www.advancewellnesscentre.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "ADHD"
-    ],
+    "modalities": [],
     "placeId": "75fc9b35-1544-44b8-9296-5d114377f953"
   },
   {
@@ -1473,7 +1482,25 @@
     "email": "",
     "website": "https://www.alderwoodtherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "DBT",
+      "EMDR",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Eating Disorders",
+      "Addiction",
+      "Body Image",
+      "Teen",
+      "Couples",
+      "Family",
+      "ADHD",
+      "Parenting",
+      "Sex Therapy"
+    ],
     "placeId": "1f8f0158-44a2-446f-a2ee-528e2f834747"
   },
   {
@@ -1610,10 +1637,18 @@
     "name": "Align Supportive Therapy",
     "address": "55 Forest Street, Entrance C, Main floor, Chatham-Kent, ON N7L 1Z9, Canada",
     "phone": "(519) 809-1254",
-    "email": "",
+    "email": "kate.alignst@gmail.com",
     "website": "http://www.alignst.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "EMDR",
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Stress",
+      "Teen"
+    ],
     "placeId": "1d46d6f5-f7d3-4c80-89dc-05eb34760e5e"
   },
   {
@@ -1676,13 +1711,10 @@
     "name": "Alina Meloyan Counseling",
     "address": "22 Central Park Dr, Ottawa, ON K2C 3Z9, Canada",
     "phone": "(819) 449-8507",
-    "email": "contact@alinameloyan.com",
+    "email": "",
     "website": "http://alinameloyan.com/",
     "contactUrl": "",
-    "modalities": [
-      "Grief",
-      "Couples"
-    ],
+    "modalities": [],
     "placeId": "a94cc260-4a96-4ee0-ae68-76825ef21ed5"
   },
   {
@@ -1731,7 +1763,11 @@
     "email": "user@domain.com",
     "website": "https://allkindsclub.com",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD",
+      "LGBTQ+",
+      "Online / Virtual"
+    ],
     "placeId": "64690161-579b-4dc5-9e31-42ecaab12239"
   },
   {
@@ -1917,12 +1953,7 @@
     "email": "",
     "website": "https://x.com/Almaguinps76898",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief"
-    ],
+    "modalities": [],
     "placeId": "b7c9eabd-1f1f-4263-99ad-612ac7e66d95"
   },
   {
@@ -2239,7 +2270,7 @@
     "phone": "(905) 424-0234",
     "email": "",
     "website": "http://amwcounselling.ca/",
-    "contactUrl": "https://amwcounselling.ca/contact",
+    "contactUrl": "",
     "modalities": [
       "Somatic",
       "Anxiety",
@@ -2256,7 +2287,9 @@
     "email": "",
     "website": "http://www.marquiscc.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Autism"
+    ],
     "placeId": "95644e0d-3ed8-4184-bd37-dc7ede0fd6d1"
   },
   {
@@ -2542,9 +2575,9 @@
     "name": "Anchored Counselling and Psychotherapy",
     "address": "2236 Adullam Ave, Innisfil, ON L9S 2B2, Canada",
     "phone": "(249) 496-2069",
-    "email": "",
+    "email": "info@anchoredcp.ca",
     "website": "http://Anchoredcp.ca/",
-    "contactUrl": "",
+    "contactUrl": "https://www.anchoredcp.ca/contact",
     "modalities": [],
     "placeId": "a6464770-15cd-4e5a-b559-78affb7c88b9"
   },
@@ -2673,10 +2706,15 @@
     "name": "Andrea Frith",
     "address": "4711 Yonge St 10th Floor, Toronto, ON M2N 7E4, Canada",
     "phone": "(289) 278-3350",
-    "email": "",
+    "email": "arawson53@gmail.com",
     "website": "http://www.andrearawson.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.andrearawson.com/contact",
+    "modalities": [
+      "Grief",
+      "Teen",
+      "Family",
+      "ADHD"
+    ],
     "placeId": "11032377-4674-4bd0-a540-578d7a4ba6fc"
   },
   {
@@ -3625,19 +3663,10 @@
     "name": "Art of Wisdom Counselling",
     "address": "2405 Lake Shore Blvd W Ste 302, Toronto, ON M8V 1C5, Canada",
     "phone": "(365) 305-0113",
-    "email": "sonya@artofwisdomcounselling.com",
+    "email": "",
     "website": "http://www.artofwisdomcounselling.com/",
     "contactUrl": "",
-    "modalities": [
-      "Mindfulness",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Teen",
-      "ADHD",
-      "Relationship Issues"
-    ],
+    "modalities": [],
     "placeId": "7db479cb-9daa-46df-8cd1-5ba0ce26cde1"
   },
   {
@@ -3749,7 +3778,6 @@
       "EFT",
       "Anxiety",
       "Depression",
-      "Stress",
       "OCD",
       "Teen",
       "Perinatal"
@@ -3863,31 +3891,10 @@
     "name": "Ashley C",
     "address": "41 King St #1, Barrie, ON L4N 6B5, Canada",
     "phone": "(705) 985-7769",
-    "email": "info@indiantypefoundry.com",
+    "email": "",
     "website": "http://www.ashleybergmanchildandfamilytherapy.com/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "Solution-Focused",
-      "Play Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Self Esteem",
-      "Addiction",
-      "Child",
-      "Teen",
-      "Couples",
-      "Family",
-      "LGBTQ+",
-      "Indigenous",
-      "ADHD",
-      "Autism",
-      "Relationship Issues",
-      "Divorce",
-      "Parenting"
-    ],
+    "modalities": [],
     "placeId": "c18ba6cb-33d5-4931-814a-065ae1967f78"
   },
   {
@@ -4323,10 +4330,15 @@
     "website": "https://www.attunedfamilies.com/",
     "contactUrl": "",
     "modalities": [
+      "Anxiety",
+      "Stress",
       "Child",
+      "Teen",
       "Family",
+      "ADHD",
       "Autism",
-      "Assessment"
+      "Assessment",
+      "Parenting"
     ],
     "placeId": "bce9c701-05c5-477b-9154-148618f4d9ea"
   },
@@ -4538,7 +4550,8 @@
       "Family",
       "Seniors",
       "ADHD",
-      "Sex Therapy"
+      "Sex Therapy",
+      "Online / Virtual"
     ],
     "placeId": "f698ade6-1fe7-41b1-9940-739bd8891ea8"
   },
@@ -4569,25 +4582,10 @@
     "name": "Autism center for kids",
     "address": "323 Kerr St, Oakville, ON L6K 3B6, Canada",
     "phone": "(647) 692-0560",
-    "email": "info@autismcenterforkids.com",
+    "email": "",
     "website": "https://autismcenterforkids.com",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "Play Therapy",
-      "Art Therapy",
-      "Music Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "OCD",
-      "Child",
-      "Teen",
-      "Family",
-      "ADHD",
-      "Autism",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "1a21da74-09c5-4733-9692-247987456505"
   },
   {
@@ -4613,13 +4611,9 @@
       "Depression",
       "Trauma & PTSD",
       "Grief",
-      "Self Esteem",
       "Addiction",
-      "Chronic Pain",
       "Couples",
-      "Perinatal",
-      "Parenting",
-      "Online / Virtual"
+      "Perinatal"
     ],
     "placeId": "ea439361-08fa-451a-b605-55afc94b4d7e"
   },
@@ -6503,6 +6497,7 @@
       "ADHD",
       "Autism",
       "Assessment",
+      "Relationship Issues",
       "Divorce",
       "Sex Therapy",
       "Online / Virtual"
@@ -6513,10 +6508,12 @@
     "name": "Blank Canvas Therapy",
     "address": "257 Danforth Ave, Toronto, ON M4K 1N2, Canada",
     "phone": "(416) 629-1395",
-    "email": "",
+    "email": "info@blankcanvastherapy.ca",
     "website": "http://www.blankcanvastherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Online / Virtual"
+    ],
     "placeId": "a216b418-1122-40a6-86b0-31a72ed12d20"
   },
   {
@@ -6968,10 +6965,8 @@
     "website": "https://www.bluedoorpsychology.com/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
       "Teen",
       "ADHD",
-      "Autism",
       "Assessment"
     ],
     "placeId": "7a33d699-fe7c-4fec-832b-fb9e29da6c1d"
@@ -7185,8 +7180,7 @@
       "Couples",
       "ADHD",
       "Autism",
-      "Parenting",
-      "Online / Virtual"
+      "Parenting"
     ],
     "placeId": "27bd81ea-a7e3-4d44-8a44-34d3a375aa26"
   },
@@ -7408,7 +7402,7 @@
     "phone": "(403) 390-6550",
     "email": "",
     "website": "https://boundlesscounseling.ca/",
-    "contactUrl": "https://boundlesscounseling.ca/contact",
+    "contactUrl": "",
     "modalities": [
       "Couples",
       "Family"
@@ -7509,7 +7503,9 @@
     "email": "",
     "website": "http://www.brackenandbloom.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Couples"
+    ],
     "placeId": "12fecf37-bae1-40c0-8cef-fb13600b2307"
   },
   {
@@ -7742,12 +7738,11 @@
     "website": "https://brandonboorsma.ca/",
     "contactUrl": "https://brandonboorsma.ca/contact-us/",
     "modalities": [
+      "CBT",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Couples",
-      "Marriage",
-      "Relationship Issues",
       "Parenting"
     ],
     "placeId": "62f974dd-310a-4686-ad13-71dfa8045847"
@@ -7945,7 +7940,6 @@
       "Anxiety",
       "Trauma & PTSD",
       "Stress",
-      "OCD",
       "Eating Disorders",
       "Addiction",
       "Body Image",
@@ -8330,7 +8324,6 @@
     "modalities": [
       "Anxiety",
       "Depression",
-      "Addiction",
       "Teen",
       "Family",
       "ADHD"
@@ -8526,17 +8519,14 @@
     "website": "https://www.brooksidetherapy.com/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
       "Anxiety",
+      "Depression",
       "Teen",
-      "Couples",
       "Seniors",
       "LGBTQ+",
-      "Indigenous",
-      "Veterans & First Responders",
       "ADHD",
-      "Assessment",
-      "Online / Virtual"
+      "Autism",
+      "Assessment"
     ],
     "placeId": "991423c2-35ce-49b0-8797-f9e350af9420"
   },
@@ -8645,10 +8635,16 @@
     "name": "Building Better Bridges",
     "address": "8901 Woodbine Ave, Markham, ON L3R 9Y4, Canada",
     "phone": "(416) 450-3171",
-    "email": "",
+    "email": "Steven@BuildingBetterBridges.ca",
     "website": "http://www.buildingbetterbridges.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Psychodynamic",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD"
+    ],
     "placeId": "ade2388b-8d15-462e-a323-4034305cf925"
   },
   {
@@ -8698,11 +8694,9 @@
     "website": "http://www.bumbleberrycounselling.com/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
       "Trauma & PTSD",
       "Teen",
-      "Family",
-      "Parenting"
+      "Family"
     ],
     "placeId": "ea4d48e1-abd0-4afc-9156-cea8ff9de83e"
   },
@@ -9108,6 +9102,7 @@
       "Child",
       "Teen",
       "Couples",
+      "Veterans & First Responders",
       "ADHD",
       "Autism",
       "Assessment"
@@ -9351,7 +9346,10 @@
     "website": "https://calmingtreecounselling.ca/",
     "contactUrl": "",
     "modalities": [
+      "Anxiety",
+      "Self Esteem",
       "Teen",
+      "Divorce",
       "Parenting",
       "Online / Virtual"
     ],
@@ -10025,10 +10023,13 @@
     "name": "Canadian Mental Health Association Peel Dufferin",
     "address": "7700 Hurontario St #314, Brampton, ON L6Y 4M3, Canada",
     "phone": "(905) 451-2123",
-    "email": "",
+    "email": "ybranch@cmhask.com",
     "website": "http://cmhapeeldufferin.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Addiction",
+      "Indigenous"
+    ],
     "placeId": "b17fa3d6-141b-43cf-91cf-0cd48d27825d"
   },
   {
@@ -10254,20 +10255,26 @@
     "name": "Cardinal Counselling and Mediation",
     "address": "420 Weber St N #203, Waterloo, ON N2L 4E7, Canada",
     "phone": "(519) 746-9062",
-    "email": "",
+    "email": "cardinalcounsellinginfo@gmail.com",
     "website": "http://www.cardinalcounselling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "EMDR",
+      "Couples"
+    ],
     "placeId": "be490e26-b806-4d42-98e0-28807e278e06"
   },
   {
     "name": "CARE - Centre For Autism Remediation and Education",
     "address": "8611 Weston Rd, Vaughan, ON L4L 9P1, Canada",
     "phone": "(416) 828-1736",
-    "email": "",
+    "email": "info@careltd.ca",
     "website": "http://www.careltd.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Self Esteem",
+      "Autism"
+    ],
     "placeId": "be5c14f7-0adc-49ea-94c5-4b9d83da0427"
   },
   {
@@ -10319,13 +10326,10 @@
     "modalities": [
       "EMDR",
       "Play Therapy",
-      "Group Therapy",
-      "Anxiety",
       "Trauma & PTSD",
       "Teen",
       "Family",
-      "Assessment",
-      "Parenting"
+      "Assessment"
     ],
     "placeId": "b3c48c7f-4bc1-47b5-a33b-a1eb978dc3e1"
   },
@@ -10546,6 +10550,7 @@
       "EMDR",
       "ACT",
       "EFT",
+      "Narrative Therapy",
       "Psychodynamic",
       "Solution-Focused",
       "Mindfulness",
@@ -10577,10 +10582,10 @@
       "Perinatal",
       "LGBTQ+",
       "Indigenous",
-      "Newcomers",
       "Veterans & First Responders",
       "ADHD",
       "Autism",
+      "Assessment",
       "Relationship Issues",
       "Divorce",
       "Parenting",
@@ -10781,7 +10786,7 @@
     "phone": "(705) 255-5665",
     "email": "",
     "website": "http://www.caseyburgess.ca/",
-    "contactUrl": "http://www.caseyburgess.ca/about--contact.html",
+    "contactUrl": "https://www.caseyburgess.ca/about--contact.html",
     "modalities": [],
     "placeId": "01856654-5020-41b8-8c16-e587eed57efa"
   },
@@ -10789,10 +10794,14 @@
     "name": "CASON",
     "address": "60 James St, St. Catharines, ON L2R 7E7, Canada",
     "phone": "(905) 684-1183",
-    "email": "",
+    "email": "info@cason.ca",
     "website": "http://www.cason.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Grief",
+      "Addiction",
+      "Indigenous"
+    ],
     "placeId": "551f14f0-ce4a-49c9-90e2-1284402dc660"
   },
   {
@@ -11383,9 +11392,7 @@
     "contactUrl": "",
     "modalities": [
       "CBT",
-      "DBT",
       "EMDR",
-      "Narrative Therapy",
       "Psychodynamic",
       "Solution-Focused",
       "Mindfulness",
@@ -11394,8 +11401,6 @@
       "Trauma & PTSD",
       "Grief",
       "Stress",
-      "Addiction",
-      "Borderline (BPD)",
       "Sleep",
       "Teen",
       "Couples",
@@ -11403,8 +11408,7 @@
       "Seniors",
       "Indigenous",
       "ADHD",
-      "Assessment",
-      "Online / Virtual"
+      "Assessment"
     ],
     "placeId": "5e714d28-c65d-4e4b-b558-b89161f35260"
   },
@@ -11915,10 +11919,17 @@
     "name": "Centre for Treatment of Sexual Abuse and Childhood Trauma",
     "address": "11 Rosemount Ave Ste 302, Ottawa, ON K1Y 4R8, Canada",
     "phone": "(613) 233-4929",
-    "email": "",
+    "email": "info@centrefortreatment.com",
     "website": "http://centrefortreatment.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.centrefortreatment.com/contact",
+    "modalities": [
+      "Art Therapy",
+      "Group Therapy",
+      "Trauma & PTSD",
+      "Couples",
+      "ADHD",
+      "Sexual Abuse"
+    ],
     "placeId": "56dd6830-869d-4aea-b631-7cbe41257318"
   },
   {
@@ -12003,10 +12014,12 @@
     "name": "Centre-Abuse and Trauma Therapy",
     "address": "Parking lot, 234 Concession St, Kingston, ON K7K 6W6, Canada",
     "phone": "(613) 507-2288",
-    "email": "",
+    "email": "info@centrefortherapy.ca",
     "website": "http://www.centrefortherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD"
+    ],
     "placeId": "1007ac63-11a8-40b8-96b8-6bf1c7d5f8a8"
   },
   {
@@ -12179,7 +12192,7 @@
     "name": "Change Clinic",
     "address": "131 Bloor St W Ste 200 -303, Toronto, ON M5S 1S3, Canada",
     "phone": "(416) 944-9292",
-    "email": "info@changeclinic.ca",
+    "email": "",
     "website": "http://www.changeclinic.ca/",
     "contactUrl": "",
     "modalities": [],
@@ -12312,14 +12325,12 @@
     "website": "https://chapterscs.com/contact-us/",
     "contactUrl": "",
     "modalities": [
-      "DBT",
       "Anxiety",
       "Depression",
       "Grief",
       "Teen",
       "Couples",
-      "Family",
-      "ADHD"
+      "Family"
     ],
     "placeId": "f849dd09-7fe2-44fe-9953-4b1eac604365"
   },
@@ -12583,17 +12594,10 @@
     "website": "http://www.childinmind.com/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "OCD",
       "Teen",
       "Couples",
       "Family",
-      "ADHD",
-      "Assessment",
-      "Online / Virtual"
+      "ADHD"
     ],
     "placeId": "1f44c01e-af48-41bf-a0f7-cb27dc885880"
   },
@@ -12650,7 +12654,7 @@
     "name": "Children's Mental Health of Leeds and Grenville",
     "address": "779 Chelsea St, Brockville, ON K6V 6J8, Canada",
     "phone": "(613) 498-4844",
-    "email": "reachus@cmhlg.ca",
+    "email": "",
     "website": "http://www.cmhlg.ca/",
     "contactUrl": "https://cmhlg.ca/contact-us/",
     "modalities": [],
@@ -12664,6 +12668,7 @@
     "website": "http://www.cmho.org/",
     "contactUrl": "https://cmho.org/contact/",
     "modalities": [
+      "Addiction",
       "Child",
       "Autism"
     ],
@@ -12976,9 +12981,8 @@
     "website": "http://harrisonpsychology.ca/",
     "contactUrl": "https://www.harrisonpsychology.ca/contact",
     "modalities": [
-      "Anxiety",
-      "Assessment",
-      "Parenting"
+      "Perinatal",
+      "Assessment"
     ],
     "placeId": "ddaa63fe-3ed8-4c6b-a8e0-a6c8676e5749"
   },
@@ -13105,7 +13109,7 @@
     "phone": "(613) 404-4604",
     "email": "",
     "website": "http://www.christineskinner.ca/",
-    "contactUrl": "http://www.christineskinner.ca/contact.html",
+    "contactUrl": "https://www.christineskinner.ca/contact.html",
     "modalities": [],
     "placeId": "b23c9c48-26ab-4bce-8dc6-be66854267cc"
   },
@@ -13491,6 +13495,7 @@
     "contactUrl": "https://www.democracynow.org/contact",
     "modalities": [
       "Teen",
+      "Indigenous",
       "Veterans & First Responders"
     ],
     "placeId": "d0184f88-5c86-48b7-bbab-9c5760030bb5"
@@ -13502,7 +13507,10 @@
     "email": "user@domain.com",
     "website": "http://www.clarksonpsychologyforkids.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "Assessment"
+    ],
     "placeId": "d64b782b-e93d-460e-b81d-fd66a161920c"
   },
   {
@@ -13847,7 +13855,8 @@
       "Anxiety",
       "Depression",
       "Grief",
-      "Couples"
+      "Couples",
+      "Family"
     ],
     "placeId": "3567ccd0-c8b1-425c-9215-11c971327bf8"
   },
@@ -14024,12 +14033,12 @@
     "phone": "(519) 760-4245",
     "email": "",
     "website": "https://www.collaborationtherapy.ca/",
-    "contactUrl": "https://www.collaborationtherapy.ca/contact",
+    "contactUrl": "",
     "modalities": [
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
-      "Career"
+      "ADHD"
     ],
     "placeId": "6908bc7a-3e31-41f7-b8af-e50d3e296656"
   },
@@ -14527,6 +14536,7 @@
       "Depression",
       "Trauma & PTSD",
       "Couples",
+      "Indigenous",
       "Relationship Issues",
       "Parenting"
     ],
@@ -14570,20 +14580,10 @@
     "name": "Compassionate-Self Psychotherapy",
     "address": "20 De Boers Dr Suite #340, Toronto, ON M3J 0H1, Canada",
     "phone": "(647) 643-5637",
-    "email": "matt@pixelspread.com",
+    "email": "",
     "website": "http://www.compassionate-self.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Addiction",
-      "Teen",
-      "Couples",
-      "Divorce",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "230164cd-bbf4-4fc5-a31f-3c80680ec9f1"
   },
   {
@@ -15116,10 +15116,13 @@
     "name": "Consulting Psychology Associates",
     "address": "302 Kingsway Mall, Edmonton, AB T5G 3A6, Canada",
     "phone": "(780) 474-0341",
-    "email": "",
+    "email": "sample@gmail.com",
     "website": "http://www.consulting-psych.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.consulting-psych.com/contact",
+    "modalities": [
+      "Assessment",
+      "Online / Virtual"
+    ],
     "placeId": "bb92e699-08f6-428f-b706-69fd5463e674"
   },
   {
@@ -15774,7 +15777,14 @@
     "email": "user@domain.com",
     "website": "http://www.counsellingcentre.org/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Addiction",
+      "Indigenous"
+    ],
     "placeId": "a17018d9-e041-4a20-8947-74a2cb55f172"
   },
   {
@@ -16237,7 +16247,7 @@
     "name": "CP Psychotherapy-Janet Theobald MSW/RSW",
     "address": "20 Bennett St, Carleton Place, ON K7C 4J9, Canada",
     "phone": "(613) 858-9130",
-    "email": "cppsychotherapyoffice@gmail.com",
+    "email": "cppsychotherapy@gmail.com",
     "website": "http://cppsychotherapy.com/",
     "contactUrl": "https://www.cppsychotherapy.com/contact",
     "modalities": [
@@ -16455,16 +16465,10 @@
     "website": "https://www.creativeskypsychology.com/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
-      "EMDR",
-      "Narrative Therapy",
-      "Mindfulness",
       "Play Therapy",
       "Art Therapy",
       "Anxiety",
       "Depression",
-      "Trauma & PTSD",
       "Grief",
       "OCD",
       "Child",
@@ -16472,9 +16476,7 @@
       "Family",
       "ADHD",
       "Autism",
-      "Assessment",
-      "Parenting",
-      "Online / Virtual"
+      "Assessment"
     ],
     "placeId": "13368bf0-1b9f-4f45-98bc-c0c286b8b99f"
   },
@@ -16508,7 +16510,7 @@
     "phone": "(647) 244-3050",
     "email": "",
     "website": "http://www.creativitycounselling.com/",
-    "contactUrl": "http://www.creativitycounselling.com/contact.html",
+    "contactUrl": "https://www.creativitycounselling.com/contact.html",
     "modalities": [
       "Online / Virtual"
     ],
@@ -17064,17 +17066,17 @@
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
+      "Grief",
+      "Stress",
       "Anger Management",
       "Self Esteem",
       "Addiction",
       "Teen",
       "Couples",
       "Family",
-      "Marriage",
-      "LGBTQ+",
       "Indigenous",
-      "Newcomers",
-      "ADHD"
+      "ADHD",
+      "Parenting"
     ],
     "placeId": "067bedf0-a039-45b8-bf89-56d8e2d9ca8b"
   },
@@ -17169,7 +17171,9 @@
     "email": "",
     "website": "http://www.daniellesplace.org/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "ADHD"
+    ],
     "placeId": "6337bcd9-2bb1-482f-bfc6-24054b97d12b"
   },
   {
@@ -17188,6 +17192,8 @@
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
+      "OCD",
       "Perinatal",
       "Parenting"
     ],
@@ -17386,9 +17392,7 @@
     "email": "agoracounselling@gmail.com",
     "website": "https://linktr.ee/agoracounselling",
     "contactUrl": "",
-    "modalities": [
-      "Grief"
-    ],
+    "modalities": [],
     "placeId": "41fd19b5-3a99-4b0d-be45-0155ae8ab816"
   },
   {
@@ -17484,17 +17488,17 @@
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
+      "Grief",
+      "Stress",
       "Anger Management",
       "Self Esteem",
       "Addiction",
       "Teen",
       "Couples",
       "Family",
-      "Marriage",
-      "LGBTQ+",
       "Indigenous",
-      "Newcomers",
-      "ADHD"
+      "ADHD",
+      "Parenting"
     ],
     "placeId": "51f2d264-e901-454e-810d-1135b42a3e8f"
   },
@@ -17725,7 +17729,7 @@
     "phone": "(587) 557-8573",
     "email": "",
     "website": "http://www.deepseapsychology.com/",
-    "contactUrl": "http://www.deepseapsychology.com/connect.html",
+    "contactUrl": "https://www.deepseapsychology.com/connect.html",
     "modalities": [
       "CBT",
       "DBT",
@@ -17808,7 +17812,7 @@
     "name": "Delhi Counselling Services",
     "address": "84 1st Ave, Norfolk, ON N4B 1G3, Canada",
     "phone": "(519) 878-2217",
-    "email": "contact@delhicounselling.ca",
+    "email": "",
     "website": "http://delhicounselling.ca/",
     "contactUrl": "",
     "modalities": [],
@@ -17938,7 +17942,7 @@
     "name": "DeRubeis Maria",
     "address": "1670 Wyandotte St E Unit 103, Windsor, ON N8Y 1C7, Canada",
     "phone": "(519) 973-6161",
-    "email": "mariaderubeis.counselling@gmail.com",
+    "email": "",
     "website": "https://mariaderubeis.com/",
     "contactUrl": "",
     "modalities": [],
@@ -18277,9 +18281,7 @@
     "email": "",
     "website": "http://distresscentre.com",
     "contactUrl": "",
-    "modalities": [
-      "DBT"
-    ],
+    "modalities": [],
     "placeId": "6723f4aa-c347-446e-a987-5cb90ebe075b"
   },
   {
@@ -18360,6 +18362,7 @@
       "Couples",
       "Seniors",
       "Veterans & First Responders",
+      "ADHD",
       "Parenting",
       "Online / Virtual"
     ],
@@ -18385,6 +18388,7 @@
       "Couples",
       "Seniors",
       "Veterans & First Responders",
+      "ADHD",
       "Parenting",
       "Online / Virtual"
     ],
@@ -18672,19 +18676,10 @@
     "name": "Dr Stephen Shainbart",
     "address": "524 Yonge St, Toronto, ON M4Y 1X9, Canada",
     "phone": "(416) 568-5501",
-    "email": "shainbart@gmail.com",
+    "email": "",
     "website": "https://www.drstephenshainbart.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Self Esteem",
-      "Teen",
-      "Couples",
-      "Family",
-      "Relationship Issues"
-    ],
+    "modalities": [],
     "placeId": "ed1cf9d6-1050-432a-b9a2-0abd4cc1ec41"
   },
   {
@@ -18910,7 +18905,7 @@
     "phone": "(587) 205-9291",
     "email": "",
     "website": "https://podcasts.apple.com/ca/podcast/overpowering-emotions-podcast-helping-children-and/id1618828819",
-    "contactUrl": "https://podcasts.apple.com/ca/podcast/260-when-does-support-turn-into-anxiety-accommodation/id1618828819?i=1000792214875",
+    "contactUrl": "https://podcasts.apple.com/ca/podcast/261-why-can-my-child-do-it-one-day-but-not-the-next/id1618828819?i=1000793468388",
     "modalities": [
       "CBT",
       "DBT",
@@ -19083,10 +19078,12 @@
     "name": "Dr. Destun Lisa",
     "address": "529 Queens Ave # 200, London, ON N6B 1Y3, Canada",
     "phone": "(519) 670-6188",
-    "email": "",
+    "email": "user@domain.com",
     "website": "http://www.drdestun.com",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Couples"
+    ],
     "placeId": "cc37a181-63e3-4a3f-aa06-d38b78965f72"
   },
   {
@@ -19731,7 +19728,7 @@
     "phone": "(519) 878-4912",
     "email": "",
     "website": "http://www.drlisalee.com",
-    "contactUrl": "http://www.drlisalee.com/contact.html",
+    "contactUrl": "https://www.drlisalee.com/contact.html",
     "modalities": [
       "Couples"
     ],
@@ -19984,7 +19981,12 @@
     "email": "user@domain.com",
     "website": "http://www.drdoris.ca",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Relationship Issues",
+      "Online / Virtual"
+    ],
     "placeId": "59325db3-e96b-47ad-b13b-54d91065089a"
   },
   {
@@ -20284,7 +20286,7 @@
     "website": "http://www.drvirginiasouth.com/",
     "contactUrl": "",
     "modalities": [
-      "Assessment"
+      "Teen"
     ],
     "placeId": "bf05d5c6-660e-4779-9be5-f3300067cb0a"
   },
@@ -20476,7 +20478,7 @@
     "phone": "(780) 809-1047",
     "email": "",
     "website": "http://www.dreamcatcherassociation.com/",
-    "contactUrl": "http://www.dreamcatcherassociation.com/contactus.html",
+    "contactUrl": "https://www.dreamcatcherassociation.com/contactus.html",
     "modalities": [
       "EMDR",
       "Trauma & PTSD",
@@ -20512,10 +20514,16 @@
     "name": "Drybrough Dan",
     "address": "7370 Sierra Morena Blvd SW # 102, Calgary, AB T3H 4H9, Canada",
     "phone": "(403) 685-0880",
-    "email": "",
+    "email": "ddrybrough@me.com",
     "website": "http://www.learningsolutionsps.com",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Teen",
+      "ADHD",
+      "Parenting"
+    ],
     "placeId": "6433bd5f-c079-47ff-a9d2-7de926333c03"
   },
   {
@@ -20618,7 +20626,8 @@
       "Addiction",
       "Teen",
       "Couples",
-      "Family"
+      "Family",
+      "ADHD"
     ],
     "placeId": "6a477c9c-a303-409e-be58-ac6573ec5ece"
   },
@@ -20724,12 +20733,10 @@
     "name": "Durham Psychologists",
     "address": "230 Westney Rd S, Ajax, ON L1S 7P9, Canada",
     "phone": "(905) 683-2678",
-    "email": "admin@durhampschologists.ca",
+    "email": "",
     "website": "http://durhampsychologists.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Assessment"
-    ],
+    "modalities": [],
     "placeId": "d76a952f-7d73-4042-b2c7-ade582f7a6c9"
   },
   {
@@ -21455,9 +21462,9 @@
     "name": "Elena Petrescu Hypnotist",
     "address": "2145 Dunwin Dr #11, Mississauga, ON L5L 4L9, Canada",
     "phone": "(905) 813-8178",
-    "email": "elena@elenapetrescu.com",
+    "email": "",
     "website": "http://elenapetrescu.com/",
-    "contactUrl": "",
+    "contactUrl": "https://elenapetrescu.com/contact-elena/",
     "modalities": [
       "Anxiety",
       "Depression",
@@ -21537,6 +21544,7 @@
     "website": "https://linktr.ee/elevatedabilities?utm_source=linktree_profile_share&ltsid=d2ac99c8-864f-46dc-b6e4-753173539cc5",
     "contactUrl": "https://linktr.ee/features/contact-forms",
     "modalities": [
+      "Trauma & PTSD",
       "Parenting"
     ],
     "placeId": "90f3d5a2-18d2-41f8-9aa3-544a365500ce"
@@ -22107,7 +22115,9 @@
     "website": "http://www.emergingminds.ca/",
     "contactUrl": "",
     "modalities": [
-      "Autism"
+      "Teen",
+      "Autism",
+      "Assessment"
     ],
     "placeId": "29836457-fb87-4552-8202-4a545e8674d4"
   },
@@ -22170,7 +22180,6 @@
     "contactUrl": "https://www.emmaus.on.ca/contact-us/",
     "modalities": [
       "Family",
-      "Divorce",
       "Sex Therapy"
     ],
     "placeId": "ec08a82f-c766-464a-8362-f3725e1847fc"
@@ -22223,6 +22232,7 @@
     "modalities": [
       "CBT",
       "EMDR",
+      "Psychodynamic",
       "Somatic",
       "Anxiety",
       "Depression",
@@ -22247,6 +22257,7 @@
     "modalities": [
       "CBT",
       "EMDR",
+      "Psychodynamic",
       "Somatic",
       "Anxiety",
       "Depression",
@@ -22319,12 +22330,10 @@
     "name": "Empowered Academy",
     "address": "1035 March Rd, Ottawa, ON K2K 1X7, Canada",
     "phone": "(613) 907-4052",
-    "email": "hello@empowered-academy.com",
+    "email": "",
     "website": "http://empowered-academy.com/",
-    "contactUrl": "https://empowered-academy.com/contact-us",
-    "modalities": [
-      "Teen"
-    ],
+    "contactUrl": "",
+    "modalities": [],
     "placeId": "28a14dae-a392-4f66-b8bd-7696c44000e6"
   },
   {
@@ -22694,10 +22703,19 @@
     "name": "Erica Berman",
     "address": "324 Bloor St W 2nd floor, Toronto, ON M5S 1W5, Canada",
     "phone": "(647) 271-6364",
-    "email": "",
+    "email": "ericabermancorp@gmail.com",
     "website": "http://www.healthcounsellingtoronto.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "EMDR",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "OCD",
+      "Perinatal"
+    ],
     "placeId": "29e1ac3e-a0c1-4b9d-8430-bded603ce798"
   },
   {
@@ -23192,10 +23210,38 @@
     "name": "Evolution Therapies",
     "address": "2965 Kingston Rd Unit 2 b, Toronto, ON M1N 1P1, Canada",
     "phone": "(416) 618-0770",
-    "email": "",
+    "email": "evolutiontherapies.vs@gmail.com",
     "website": "http://www.evolutiontherapies-vs.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "DBT",
+      "ACT",
+      "EFT",
+      "Somatic",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Anger Management",
+      "Self Esteem",
+      "OCD",
+      "Addiction",
+      "Chronic Pain",
+      "Body Image",
+      "Teen",
+      "Couples",
+      "Family",
+      "Marriage",
+      "LGBTQ+",
+      "Newcomers",
+      "Veterans & First Responders",
+      "ADHD",
+      "Assessment",
+      "Online / Virtual"
+    ],
     "placeId": "a5eba0ab-6904-43cc-a19d-5c1320abc860"
   },
   {
@@ -23774,10 +23820,26 @@
     "name": "Family Matters Centre Inc.",
     "address": "2349 Fairview Street, suite 205, Burlington, ON L7R 2E3, Canada",
     "phone": "(905) 466-8023",
-    "email": "",
+    "email": "info@familymatterscentre.ca",
     "website": "https://familymatterscentre.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Mindfulness",
+      "Anxiety",
+      "Trauma & PTSD",
+      "Anger Management",
+      "Self Esteem",
+      "Chronic Pain",
+      "Teen",
+      "Couples",
+      "Family",
+      "Marriage",
+      "ADHD",
+      "Autism",
+      "Divorce",
+      "Parenting",
+      "Online / Virtual"
+    ],
     "placeId": "e7aa6373-8e98-4191-9653-56c2e8f45ef9"
   },
   {
@@ -23797,7 +23859,15 @@
     "email": "contact@familysupportniagara.com",
     "website": "http://familysupportniagara.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "DBT",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Addiction",
+      "Bipolar"
+    ],
     "placeId": "c412a96b-05e6-463e-bddb-96eb3ccae575"
   },
   {
@@ -23869,7 +23939,7 @@
     "website": "http://www.fsyr.ca",
     "contactUrl": "https://www.fsyr.ca/contact/get-started/",
     "modalities": [
-      "Stress",
+      "Teen",
       "Couples",
       "Parenting"
     ],
@@ -24078,11 +24148,9 @@
       "Anxiety",
       "Trauma & PTSD",
       "Grief",
-      "Teen",
       "Couples",
       "Family",
       "Newcomers",
-      "Divorce",
       "Spirituality",
       "Online / Virtual"
     ],
@@ -24449,6 +24517,8 @@
     "website": "http://tiffanyburtch.com/",
     "contactUrl": "",
     "modalities": [
+      "Trauma & PTSD",
+      "Family",
       "Indigenous",
       "Autism"
     ],
@@ -24616,14 +24686,10 @@
     "name": "Fish Creek Psychology",
     "address": "259 Midpark Way Southeast, Unit 315, Calgary, AB T2X 1M2, Canada",
     "phone": "(403) 214-7590",
-    "email": "impallari@gmail.com",
+    "email": "",
     "website": "http://www.fishcreekpsychology.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD"
-    ],
+    "modalities": [],
     "placeId": "7fe83ae3-2fa3-4ef4-a9ed-957d4f83351a"
   },
   {
@@ -24633,7 +24699,15 @@
     "email": "",
     "website": "https://www.ingersollwellness.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Couples",
+      "LGBTQ+",
+      "Relationship Issues",
+      "Sex Therapy"
+    ],
     "placeId": "33957ade-bea0-447a-ada0-77300e87d5f0"
   },
   {
@@ -24972,10 +25046,7 @@
     "email": "",
     "website": "https://www.futfs.org/",
     "contactUrl": "",
-    "modalities": [
-      "Family",
-      "Seniors"
-    ],
+    "modalities": [],
     "placeId": "fa6ff2a4-1b39-4bd7-91ad-d8b73c253f76"
   },
   {
@@ -25018,10 +25089,18 @@
     "name": "Forest City Neurofeedback",
     "address": "190 Wortley Rd Suite 9 9, London, ON N6C 4Y7, Canada",
     "phone": "(548) 689-9688",
-    "email": "",
+    "email": "forestcityneurofeedback@gmail.com",
     "website": "http://www.fcneurofeedback.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Stress",
+      "Teen",
+      "Veterans & First Responders",
+      "ADHD"
+    ],
     "placeId": "2d6c1ba9-3663-45ba-85e0-8dcac68b9446"
   },
   {
@@ -25091,6 +25170,7 @@
       "CBT",
       "EMDR",
       "ACT",
+      "Art Therapy",
       "Group Therapy",
       "Anxiety",
       "Depression",
@@ -25100,6 +25180,7 @@
       "Anger Management",
       "Addiction",
       "Couples",
+      "Men's Issues",
       "Veterans & First Responders",
       "ADHD",
       "Relationship Issues",
@@ -25169,10 +25250,17 @@
     "name": "Foundations Counselling",
     "address": "5028 50 Ave Unit 206, Bonnyville, AB T9N 2P8, Canada",
     "phone": "(780) 207-3830",
-    "email": "",
+    "email": "info@mydomain.com",
     "website": "http://Foundationscounsellingservices.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Couples",
+      "ADHD"
+    ],
     "placeId": "41ee3363-bb2b-4647-8dc5-f7243e806f99"
   },
   {
@@ -25333,14 +25421,7 @@
     "email": "hello@francispsychotherapy.com",
     "website": "http://www.francispsychotherapy.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Teen",
-      "Couples",
-      "Family",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "ea13645f-9af1-47a9-92cb-1ce073da370b"
   },
   {
@@ -25571,10 +25652,14 @@
     "name": "Fritzke Counselling & Psychological Services",
     "address": "9728 101 Ave #405, Grande Prairie, AB T8V 5B6, Canada",
     "phone": "(780) 533-3370",
-    "email": "",
+    "email": "fcps@telus.net",
     "website": "http://fritzkecounselling.ca",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.fritzkecounselling.ca/contact-us",
+    "modalities": [
+      "Teen",
+      "Couples",
+      "Assessment"
+    ],
     "placeId": "24cf04f4-b0ab-407d-9fd5-6231a5efa6ab"
   },
   {
@@ -26216,8 +26301,9 @@
       "Anxiety",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
+      "OCD",
       "Teen",
-      "Family",
       "Veterans & First Responders"
     ],
     "placeId": "a004542d-f740-4543-97df-0d727bc8a89b"
@@ -26452,7 +26538,7 @@
     "name": "Gio's Counselling Services",
     "address": "101 Poplar St, Chatham-Kent, ON N7L 1K2, Canada",
     "phone": "(226) 626-5121",
-    "email": "marthagiovanna1979@outlook.com",
+    "email": "giovanna@gioscounsellingservices.com",
     "website": "http://gioscounsellingservices.com/",
     "contactUrl": "",
     "modalities": [],
@@ -26693,8 +26779,10 @@
     "website": "https://goldenleaftherapy.com/",
     "contactUrl": "https://goldenleaftherapy.com/contact-us/",
     "modalities": [
-      "Grief",
+      "Psychodynamic",
+      "Anxiety",
       "Couples",
+      "Relationship Issues",
       "Online / Virtual"
     ],
     "placeId": "8a07f20b-a2ae-4396-abb6-ec41a9d8fcf8"
@@ -26832,8 +26920,7 @@
     "modalities": [
       "Anxiety",
       "Depression",
-      "Trauma & PTSD",
-      "Teen"
+      "Trauma & PTSD"
     ],
     "placeId": "eb64f80e-95ee-41a1-b200-1af2f878e8ad"
   },
@@ -26948,7 +27035,6 @@
       "OCD",
       "Teen",
       "Perinatal",
-      "LGBTQ+",
       "ADHD"
     ],
     "placeId": "911e43c3-d2be-4c74-9da3-2863a8e4065b"
@@ -26967,22 +27053,10 @@
     "name": "Greatlife Psychology Centre",
     "address": "80 Chippewa Rd #206, Sherwood Park, AB T8A 4W6, Canada",
     "phone": "(780) 570-5544",
-    "email": "greatlifepsychologycentre@gmail.com",
+    "email": "",
     "website": "http://www.greatlifepsychologycentre.ca/",
-    "contactUrl": "https://greatlifepsychologycentre.ca/contact-us",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Stress",
-      "Self Esteem",
-      "Couples",
-      "Family",
-      "Veterans & First Responders",
-      "Parenting",
-      "Spirituality",
-      "Online / Virtual"
-    ],
+    "contactUrl": "",
+    "modalities": [],
     "placeId": "8e692f1b-89c7-4741-bf72-625d203df8eb"
   },
   {
@@ -27510,10 +27584,23 @@
     "name": "Guided Path Counselling Group",
     "address": "200 Carnegie Dr Suite 228, St. Albert, AB T8N 5A7, Canada",
     "phone": "(587) 598-4293",
-    "email": "",
+    "email": "admin@guidedpathcg.ca",
     "website": "http://www.guidedpathcg.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "EMDR",
+      "EFT",
+      "Somatic",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Stress",
+      "Teen",
+      "Couples",
+      "Indigenous",
+      "ADHD",
+      "Online / Virtual"
+    ],
     "placeId": "07babf84-82f6-4b7c-b26a-ca5597d8b475"
   },
   {
@@ -27548,7 +27635,6 @@
       "Couples",
       "Family",
       "LGBTQ+",
-      "Autism",
       "Divorce",
       "Parenting"
     ],
@@ -28144,10 +28230,16 @@
     "name": "Haven Psychological Services",
     "address": "612 Colborne St #202, London, ON N6B 2V2, Canada",
     "phone": "(226) 448-0360",
-    "email": "",
+    "email": "info@havenpsychservices.com",
     "website": "http://www.havenpsychservices.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "Couples",
+      "ADHD",
+      "Autism",
+      "Assessment"
+    ],
     "placeId": "cbbb18be-8f97-4460-8be2-e2ac6a3e54c3"
   },
   {
@@ -28342,10 +28434,13 @@
     "name": "Heal 2 inc.",
     "address": "206 Locke St S, Hamilton, ON L8P 4B4, Canada",
     "phone": "(905) 512-1233",
-    "email": "user@domain.com",
+    "email": "paulineobrienrp@gmail.com",
     "website": "http://www.paulineobrienrp.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD",
+      "Autism"
+    ],
     "placeId": "79bd50bb-028e-490b-ac39-758eab3fa198"
   },
   {
@@ -28432,9 +28527,9 @@
     "name": "Healice",
     "address": "5 Broadway Ave, Toronto, ON M4P 1T7, Canada",
     "phone": "(647) 781-2791",
-    "email": "",
+    "email": "info@healice.com",
     "website": "http://healice.com/",
-    "contactUrl": "https://healice.com/contacts/",
+    "contactUrl": "",
     "modalities": [],
     "placeId": "97c3404b-84e8-4c65-91ca-c8be898edf50"
   },
@@ -28627,12 +28722,16 @@
     "name": "Healing Hearts Play Therapy | Guerison du Coeur",
     "address": "435 Notre Dame Ave, Greater Sudbury, ON P3C 5K6, Canada",
     "phone": "(249) 360-0981",
-    "email": "",
+    "email": "esther@healingheartsplaytherapy.ca",
     "website": "https://www.healingheartsplaytherapy.ca/",
-    "contactUrl": "https://www.healingheartsplaytherapy.ca/contact",
+    "contactUrl": "",
     "modalities": [
+      "EMDR",
       "Play Therapy",
+      "Anxiety",
+      "Trauma & PTSD",
       "Teen",
+      "Indigenous",
       "ADHD"
     ],
     "placeId": "f92095d5-aebf-4648-bd6f-512fcfd5357b"
@@ -29019,9 +29118,7 @@
       "Depression",
       "Trauma & PTSD",
       "Grief",
-      "Couples",
-      "Divorce",
-      "Parenting"
+      "Divorce"
     ],
     "placeId": "d08b2c52-9acc-409b-baa7-4e7fa771cb63"
   },
@@ -29949,14 +30046,10 @@
     "name": "Holland Hypnotherapy",
     "address": "1 Lake St, Prince Edward, ON K0K 2T0, Canada",
     "phone": "(647) 205-4161",
-    "email": "impallari@gmail.com",
+    "email": "",
     "website": "http://www.hollandhypnotherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD"
-    ],
+    "modalities": [],
     "placeId": "75dd990e-5070-4d06-94cd-bf534c89697e"
   },
   {
@@ -29996,7 +30089,6 @@
       "Trauma & PTSD",
       "Grief",
       "Teen",
-      "ADHD",
       "Online / Virtual"
     ],
     "placeId": "2fce1bde-0fae-44ab-b8e8-58909c94edf2"
@@ -30182,24 +30274,10 @@
     "name": "Hope Counseling Centre",
     "address": "559 Forsyth Farm Dr, Whitchurch-Stouffville, ON L4A 0N3, Canada",
     "phone": "(416) 854-7390",
-    "email": "micah@micahrich.com",
+    "email": "",
     "website": "http://www.hopecounselingcentre.ca/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "EFT",
-      "Solution-Focused",
-      "Play Therapy",
-      "Anxiety",
-      "Trauma & PTSD",
-      "Grief",
-      "Anger Management",
-      "Addiction",
-      "Teen",
-      "Couples",
-      "ADHD",
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "7700dc28-fd46-4f90-b35e-86fa98fc1623"
   },
   {
@@ -30636,7 +30714,10 @@
     "email": "",
     "website": "https://hummingbirdpsychology.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "Assessment"
+    ],
     "placeId": "af21e99e-6c0d-4661-ba6c-82471d0f46f8"
   },
   {
@@ -30701,18 +30782,10 @@
     "name": "Hypno Healing Institute",
     "address": "355 Keele St, Toronto, ON M6P 2K6, Canada",
     "phone": "(416) 760-8996",
-    "email": "info@hypno-healing.com",
+    "email": "",
     "website": "http://www.hypno-healing.com/",
     "contactUrl": "",
-    "modalities": [
-      "Mindfulness",
-      "Trauma & PTSD",
-      "Stress",
-      "Anger Management",
-      "Sleep",
-      "Indigenous",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "23078c4e-552a-4f09-8bac-441450c7e60f"
   },
   {
@@ -30891,10 +30964,12 @@
     "name": "IBI Behavioural Services",
     "address": "55 Cedar Pointe Dr Ste 620, Barrie, ON L4N 5R7, Canada",
     "phone": "(705) 503-9563",
-    "email": "",
+    "email": "ibibehaviouralservices@gmail.com",
     "website": "http://www.ibibehaviouralservices.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.ibibehaviouralservices.com/contact-4",
+    "modalities": [
+      "Autism"
+    ],
     "placeId": "2052a2f6-8379-4193-9be7-f53a1361fb2f"
   },
   {
@@ -31205,7 +31280,6 @@
       "Play Therapy",
       "Group Therapy",
       "Trauma & PTSD",
-      "Teen",
       "Couples",
       "Family",
       "LGBTQ+",
@@ -31316,15 +31390,10 @@
     "name": "Inner Calm Counselling",
     "address": "155 Front St N #108, Sarnia, ON N7V 3C5, Canada",
     "phone": "(519) 331-8113",
-    "email": "myinnercalm@icloud.com",
+    "email": "",
     "website": "http://www.OurInnerCalm.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Mindfulness",
-      "Teen",
-      "Couples",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "4c78313a-1233-4a11-bac8-63e718349a76"
   },
   {
@@ -32008,7 +32077,8 @@
       "Veterans & First Responders",
       "ADHD",
       "Autism",
-      "Sex Therapy"
+      "Sex Therapy",
+      "Online / Virtual"
     ],
     "placeId": "d2ca7834-6c61-4a18-b035-8035b6d63b1e"
   },
@@ -32035,7 +32105,8 @@
       "Veterans & First Responders",
       "ADHD",
       "Autism",
-      "Sex Therapy"
+      "Sex Therapy",
+      "Online / Virtual"
     ],
     "placeId": "5ddcc86e-db08-4313-9ff3-21108fb2df7a"
   },
@@ -32072,7 +32143,8 @@
       "Veterans & First Responders",
       "ADHD",
       "Autism",
-      "Sex Therapy"
+      "Sex Therapy",
+      "Online / Virtual"
     ],
     "placeId": "745060b6-2964-40fc-ba36-e2c3c6950096"
   },
@@ -32269,7 +32341,7 @@
     "name": "Institute for Advancements in Mental Health",
     "address": "95 King St E Ste 300, Toronto, ON M5C 1G4, Canada",
     "phone": "(800) 449-6367",
-    "email": "support@iamstagingsite.wpenginepowered.com",
+    "email": "support@iamentalhealth.ca",
     "website": "https://www.iamentalhealth.ca/",
     "contactUrl": "",
     "modalities": [],
@@ -32870,10 +32942,6 @@
     "website": "http://www.islandwaterscounselling.ca/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
-      "Narrative Therapy",
-      "Mindfulness",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -32947,8 +33015,7 @@
       "Body Image",
       "Indigenous",
       "Domestic Abuse",
-      "Sex Therapy",
-      "Online / Virtual"
+      "Sex Therapy"
     ],
     "placeId": "016b2dd3-97b1-46f8-a98c-98106d79cce5"
   },
@@ -33260,16 +33327,10 @@
     "name": "Janine Fischer Therapy",
     "address": "42 Grand Ave N, Cambridge, ON N1S 2K9, Canada",
     "phone": "(519) 497-6860",
-    "email": "graham457@msn.com",
+    "email": "",
     "website": "http://www.JanineFischerTherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "EMDR",
-      "Trauma & PTSD",
-      "Grief",
-      "Addiction",
-      "Couples"
-    ],
+    "modalities": [],
     "placeId": "5b6cd903-9293-4369-88c2-697460f22bfa"
   },
   {
@@ -33997,14 +34058,7 @@
     "email": "jordan@jctherapy.ca",
     "website": "http://jctherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Addiction",
-      "Teen"
-    ],
+    "modalities": [],
     "placeId": "1cd4af93-593f-4e0b-b716-d7d3201008df"
   },
   {
@@ -34242,10 +34296,13 @@
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
       "Addiction",
       "Teen",
       "Couples",
-      "ADHD"
+      "ADHD",
+      "Autism",
+      "Parenting"
     ],
     "placeId": "a3834073-ba29-486d-94e6-f3c979587870"
   },
@@ -34659,6 +34716,7 @@
     "website": "http://kharriscounsellingservices.ca/",
     "contactUrl": "",
     "modalities": [
+      "DBT",
       "Anxiety",
       "Trauma & PTSD",
       "Eating Disorders",
@@ -34842,10 +34900,14 @@
     "name": "Kanata South Counselling and Psychotherapy Centre",
     "address": "150 Terence Matthews Crescent Unit F2, Ottawa, ON K2M 1X4, Canada",
     "phone": "(613) 963-4369",
-    "email": "",
+    "email": "info@kscpc.ca",
     "website": "http://kscpc.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "Couples",
+      "Family"
+    ],
     "placeId": "3188cc53-a1da-483f-a147-2eaa07f04b29"
   },
   {
@@ -35723,10 +35785,25 @@
     "name": "Kelly Mental Health",
     "address": "1216 Dawson Rd, Thunder Bay, ON P7G 1H7, Canada",
     "phone": "(807) 767-3888",
-    "email": "",
+    "email": "info@kellymentalhealth.com",
     "website": "http://www.kellymentalhealth.com",
-    "contactUrl": "http://www.kellymentalhealth.com/contact.html",
-    "modalities": [],
+    "contactUrl": "",
+    "modalities": [
+      "CBT",
+      "DBT",
+      "EMDR",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "OCD",
+      "Teen",
+      "Couples",
+      "Family",
+      "Veterans & First Responders",
+      "ADHD"
+    ],
     "placeId": "e7f5f089-3047-41c4-a09a-b229f07cf668"
   },
   {
@@ -35924,15 +36001,12 @@
     "name": "Ketamine Health",
     "address": "8920 Woodbine Ave #102, Markham, ON L3R 9W9, Canada",
     "phone": "(416) 343-0074",
-    "email": "hello@ketamindhealth.ca",
+    "email": "",
     "website": "http://www.ketamindhealth.ca/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
       "Depression",
-      "Trauma & PTSD",
-      "Bipolar",
-      "Veterans & First Responders"
+      "Trauma & PTSD"
     ],
     "placeId": "ee0d614b-e319-4352-9ee1-d3cf3378a1a0"
   },
@@ -36371,8 +36445,6 @@
     "website": "http://klaasjeprins.com/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
       "Anxiety",
       "OCD",
       "LGBTQ+",
@@ -36405,6 +36477,7 @@
       "Chronic Pain",
       "Couples",
       "Family",
+      "Perinatal",
       "Divorce",
       "Online / Virtual"
     ],
@@ -36605,10 +36678,12 @@
     "name": "Krist​a Huyer",
     "address": "5405 Eglinton Ave W Ste 110, Mississauga, ON M9C 5K6, Canada",
     "phone": "(647) 408-1325",
-    "email": "",
+    "email": "huyerkrista@gmail.com",
     "website": "http://www.kristahuyer.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Somatic"
+    ],
     "placeId": "1408b1e6-07d3-4c2e-9302-1be2f0c6fceb"
   },
   {
@@ -36901,8 +36976,6 @@
       "EFT",
       "Trauma & PTSD",
       "Couples",
-      "Marriage",
-      "Perinatal",
       "Autism",
       "Sex Therapy"
     ],
@@ -37334,10 +37407,13 @@
     "name": "Laura Turnbull Psychology",
     "address": "55 Eglinton Ave E #705, Toronto, ON M4P 1G8, Canada",
     "phone": "(647) 463-2765",
-    "email": "",
+    "email": "info@lauragothreaupsychology.com",
     "website": "http://www.lauraturnbullpsychology.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "EMDR",
+      "Trauma & PTSD"
+    ],
     "placeId": "9d371e8c-27c0-478b-9301-1fb6e9304a3b"
   },
   {
@@ -37505,7 +37581,6 @@
       "Trauma & PTSD",
       "Couples",
       "Family",
-      "Marriage",
       "Newcomers",
       "Relationship Issues",
       "Sexual Abuse",
@@ -38058,7 +38133,6 @@
       "Trauma & PTSD",
       "Grief",
       "Bipolar",
-      "Body Image",
       "Couples",
       "Family",
       "Marriage",
@@ -38326,7 +38400,6 @@
       "Teen",
       "Couples",
       "Family",
-      "ADHD",
       "Domestic Abuse",
       "Spirituality"
     ],
@@ -38336,10 +38409,16 @@
     "name": "Life Switch Coaching & Counselling",
     "address": "108 Edmonton Trail NE, Airdrie, AB T4B 1S1, Canada",
     "phone": "(587) 583-2273",
-    "email": "",
+    "email": "gholmes@mylifeswitch.com",
     "website": "http://www.mylifeswitch.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://mylifeswitch.com/contact-us/",
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Teen",
+      "Couples",
+      "Family"
+    ],
     "placeId": "ff53d9eb-7e9f-4f31-beac-423ab5b19f28"
   },
   {
@@ -38590,16 +38669,8 @@
     "website": "https://lihtantherapy.com/",
     "contactUrl": "",
     "modalities": [
-      "DBT",
-      "Somatic",
-      "Mindfulness",
-      "Art Therapy",
-      "Group Therapy",
       "Trauma & PTSD",
       "Addiction",
-      "Couples",
-      "Family",
-      "Indigenous",
       "ADHD"
     ],
     "placeId": "d3053103-add3-476a-9eb8-0ae289d6a53d"
@@ -38786,8 +38857,10 @@
     "phone": "(705) 478-9240",
     "email": "api-services-support@amazon.com",
     "website": "https://a.co/d/h0CmIzf",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.amazon.ca/hz/contact-us/foresight/hubgateway?_encoding=UTF8&nodeId=643004",
+    "modalities": [
+      "ADHD"
+    ],
     "placeId": "c1474a13-57c1-4530-8c0b-394afece95c7"
   },
   {
@@ -38876,13 +38949,9 @@
     "contactUrl": "",
     "modalities": [
       "Group Therapy",
-      "Anxiety",
-      "Depression",
-      "Stress",
-      "Teen",
       "Couples",
       "Family",
-      "Marriage"
+      "Assessment"
     ],
     "placeId": "11987cea-a082-41be-b93c-7ff706256ede"
   },
@@ -39297,6 +39366,7 @@
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
+      "Self Esteem",
       "Chronic Pain",
       "ADHD"
     ],
@@ -39439,8 +39509,10 @@
     "modalities": [
       "Anxiety",
       "Depression",
+      "Stress",
       "Couples",
-      "Perinatal"
+      "Perinatal",
+      "Online / Virtual"
     ],
     "placeId": "3367ef25-259f-4649-a635-fa2e76b35a84"
   },
@@ -39897,10 +39969,18 @@
     "name": "Lynn Lightfoot",
     "address": "345 Lakeshore Road East, Oakville, ON L6J 1J5, Canada",
     "phone": "(905) 815-0818",
-    "email": "",
+    "email": "lightft@bellnet.ca",
     "website": "http://drlightfoot.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Addiction",
+      "Teen",
+      "Couples",
+      "Assessment"
+    ],
     "placeId": "9edc4b51-122f-4d0f-b678-d7999567a8ca"
   },
   {
@@ -39981,7 +40061,10 @@
       "Anxiety",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
       "Eating Disorders",
+      "Body Image",
+      "LGBTQ+",
       "Indigenous"
     ],
     "placeId": "6129e044-14f6-4b2d-9adf-b2156f3dd745"
@@ -40054,6 +40137,7 @@
     "website": "http://www.therapywithmaggie.ca/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
       "Anxiety",
       "Trauma & PTSD",
       "Parenting"
@@ -40298,7 +40382,8 @@
       "Depression",
       "LGBTQ+",
       "Indigenous",
-      "Autism"
+      "Autism",
+      "Parenting"
     ],
     "placeId": "05b10357-a794-45de-abf1-080259f72ba6"
   },
@@ -40911,10 +40996,15 @@
     "name": "Martha7",
     "address": "1001 1st St SE, Calgary, AB T2G 5G3, Canada",
     "phone": "(403) 701-2262",
-    "email": "",
+    "email": "mark@martha7.com",
     "website": "https://www.martha7.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD",
+      "Addiction",
+      "Couples",
+      "Spirituality"
+    ],
     "placeId": "1d1b81f6-94f6-4494-b096-e820c4ec4d45"
   },
   {
@@ -41106,6 +41196,8 @@
     "modalities": [
       "Anxiety",
       "Depression",
+      "Trauma & PTSD",
+      "Grief",
       "Perinatal",
       "Parenting"
     ],
@@ -41315,7 +41407,6 @@
     "website": "https://mcbehaviourservices.com",
     "contactUrl": "",
     "modalities": [
-      "Art Therapy",
       "Autism"
     ],
     "placeId": "28cafaa8-b3eb-437c-a520-e2334b5083fd"
@@ -41394,15 +41485,19 @@
     "phone": "(416) 485-5555",
     "email": "hello@mcdowallhealth.com",
     "website": "http://www.mcdowallhealth.com/",
-    "contactUrl": "https://mcdowallhealth.com/generic-contact-us/",
+    "contactUrl": "",
     "modalities": [
       "Mindfulness",
+      "Art Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
       "Stress",
       "Anger Management",
+      "Self Esteem",
+      "Addiction",
+      "Bipolar",
       "Chronic Pain",
       "Child",
       "Teen",
@@ -41410,7 +41505,8 @@
       "Family",
       "Newcomers",
       "ADHD",
-      "Assessment"
+      "Assessment",
+      "Online / Virtual"
     ],
     "placeId": "d08d09b0-d72e-439f-a64b-30e982c647c0"
   },
@@ -41452,16 +41548,10 @@
     "name": "McKenzie Child Psychology Services",
     "address": "402 Inverness Park SE, Calgary, AB T2Z 3P5, Canada",
     "phone": "(403) 836-7677",
-    "email": "astigma@astigmatic.com",
+    "email": "",
     "website": "http://www.mckenziecps.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Teen",
-      "Autism",
-      "Assessment"
-    ],
+    "modalities": [],
     "placeId": "5cbe020d-dd3a-4842-ac7d-1ed3b43b2abb"
   },
   {
@@ -41983,15 +42073,26 @@
     "name": "Mental Care",
     "address": "7 Argyle St S, Renfrew, ON K7V 1R3, Canada",
     "phone": "(613) 570-1700",
-    "email": "",
+    "email": "mentalcare@practicelovingcaring.info",
     "website": "http://www.practicelovingcaring.com/",
     "contactUrl": "",
     "modalities": [
-      "Teen",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Anger Management",
+      "Eating Disorders",
+      "Addiction",
+      "Sleep",
+      "Child",
       "Couples",
+      "Family",
       "ADHD",
-      "Divorce",
-      "Parenting"
+      "Assessment",
+      "Parenting",
+      "Career",
+      "Domestic Abuse"
     ],
     "placeId": "48316885-d39c-43af-b781-ddfdf71309f1"
   },
@@ -42381,7 +42482,7 @@
     "phone": "(819) 230-8882",
     "email": "michelle.theburrow@gmail.com",
     "website": "http://www.michelleapril.com",
-    "contactUrl": "http://www.michelleapril.com/contact.html",
+    "contactUrl": "https://www.michelleapril.com/contact.html",
     "modalities": [
       "Art Therapy"
     ],
@@ -42416,9 +42517,9 @@
     "name": "Michelle Harris & Associates",
     "address": "48 Alliance Blvd Unit A204, Barrie, ON L4M 5K3, Canada",
     "phone": "(705) 795-9708",
-    "email": "filler@godaddy.com",
+    "email": "info@michelleharris.ca",
     "website": "http://michelleharris.ca/",
-    "contactUrl": "",
+    "contactUrl": "https://michelleharris.ca/contact",
     "modalities": [
       "Anxiety",
       "Depression",
@@ -42428,6 +42529,7 @@
       "Family",
       "ADHD",
       "Relationship Issues",
+      "Divorce",
       "Online / Virtual"
     ],
     "placeId": "72dbabbe-a3cc-42ba-bfe8-ed9fa416add2"
@@ -42631,8 +42733,12 @@
     "contactUrl": "",
     "modalities": [
       "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
       "Stress",
-      "Perinatal"
+      "Perinatal",
+      "Online / Virtual"
     ],
     "placeId": "e1d21b59-d151-4159-857f-1f6e118f8fad"
   },
@@ -42729,6 +42835,7 @@
     "modalities": [
       "Anxiety",
       "Depression",
+      "Trauma & PTSD",
       "Teen"
     ],
     "placeId": "a13adf49-9423-491b-9dff-57630fe52fc4"
@@ -43026,10 +43133,24 @@
     "name": "Mind Voice Psychotherapy",
     "address": "245 Fairview Mall Dr Ste 504, Toronto, ON M2J 4T1, Canada",
     "phone": "(855) 855-9520",
-    "email": "",
+    "email": "info@mindvoice.ca",
     "website": "http://www.mindvoice.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Self Esteem",
+      "Addiction",
+      "Teen",
+      "Couples",
+      "Family",
+      "ADHD",
+      "Online / Virtual"
+    ],
     "placeId": "c42e454f-79ea-44e4-b057-e56571a1e335"
   },
   {
@@ -43754,23 +43875,8 @@
     "website": "https://www.mindshifttherapy.ca",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
       "EMDR",
-      "Solution-Focused",
-      "Mindfulness",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "OCD",
-      "Eating Disorders",
-      "Addiction",
-      "Couples",
-      "Perinatal",
-      "Veterans & First Responders",
-      "Relationship Issues",
-      "Divorce",
-      "Online / Virtual"
+      "Trauma & PTSD"
     ],
     "placeId": "049d7585-6e87-4c99-bee9-e3c00edadb99"
   },
@@ -43903,7 +44009,10 @@
       "Anxiety",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
       "Eating Disorders",
+      "Body Image",
+      "LGBTQ+",
       "Indigenous"
     ],
     "placeId": "500f26a7-a673-43ba-8a4b-7b873c9d3628"
@@ -43912,39 +44021,20 @@
     "name": "Miriam Schacter, Registered Psychotherapist",
     "address": "204 St George St, Toronto, ON M5R 2N5, Canada",
     "phone": "",
-    "email": "impallari@gmail.com",
+    "email": "",
     "website": "http://miriamschacter.com/",
     "contactUrl": "",
-    "modalities": [
-      "DBT",
-      "EFT",
-      "Psychodynamic",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Addiction",
-      "Couples",
-      "Divorce"
-    ],
+    "modalities": [],
     "placeId": "4659048e-f55d-4f15-b9c4-af5c8da6d9b4"
   },
   {
     "name": "Mission Empowerment",
     "address": "356 Ontario St Ste 227, Stratford, ON N5A 7X6, Canada",
     "phone": "",
-    "email": "info@missionempowerment.ca",
+    "email": "",
     "website": "http://www.missionempowerment.ca/",
-    "contactUrl": "https://www.missionempowerment.ca/contact-us2.html",
-    "modalities": [
-      "CBT",
-      "DBT",
-      "Somatic",
-      "Addiction",
-      "Sleep",
-      "Family",
-      "ADHD",
-      "Autism"
-    ],
+    "contactUrl": "",
+    "modalities": [],
     "placeId": "3533617b-2a72-4c64-8063-f922f152cc21"
   },
   {
@@ -44597,10 +44687,21 @@
     "name": "MP Psychology",
     "address": "14165 162 Ave NW, Edmonton, AB T6V 1H6, Canada",
     "phone": "(780) 456-0017",
-    "email": "",
+    "email": "penstockstudio@gmail.com",
     "website": "http://www.mppsychology.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "DBT",
+      "EMDR",
+      "Play Therapy",
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Teen",
+      "Couples",
+      "Indigenous",
+      "ADHD"
+    ],
     "placeId": "42ac2688-3420-4459-a975-5c579a84206d"
   },
   {
@@ -44770,6 +44871,23 @@
     "website": "http://www.myinnerpeacetherapy.ca/",
     "contactUrl": "",
     "modalities": [
+      "EMDR",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Self Esteem",
+      "Eating Disorders",
+      "Addiction",
+      "Teen",
+      "Couples",
+      "Family",
+      "Seniors",
+      "Autism",
+      "Relationship Issues",
+      "Divorce",
+      "Parenting",
       "Online / Virtual"
     ],
     "placeId": "c7daba56-ae0c-4f5a-9c39-9216827babd2"
@@ -45025,7 +45143,19 @@
     "website": "https://www.nataliefreiberg.com/",
     "contactUrl": "",
     "modalities": [
-      "Group Therapy"
+      "CBT",
+      "ACT",
+      "Narrative Therapy",
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Teen",
+      "Marriage",
+      "Perinatal",
+      "Online / Virtual"
     ],
     "placeId": "d94f8ba6-7095-4c69-969c-7a32d307302f"
   },
@@ -45100,9 +45230,7 @@
     "website": "https://www.anotherpath.ca/",
     "contactUrl": "",
     "modalities": [
-      "Narrative Therapy",
       "Psychodynamic",
-      "Mindfulness",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -45194,7 +45322,7 @@
     "phone": "(647) 952-1931",
     "email": "",
     "website": "http://www.negarsadeghipsychotherapy.ca/",
-    "contactUrl": "http://www.negarsadeghipsychotherapy.ca/contact.html",
+    "contactUrl": "https://www.negarsadeghipsychotherapy.ca/contact.html",
     "modalities": [
       "CBT",
       "Solution-Focused",
@@ -45223,10 +45351,26 @@
     "name": "Nest Family Counselling",
     "address": "897 Pembina Rd Unit 121, Sherwood Park, AB T8H 3A5, Canada",
     "phone": "(587) 714-2412",
-    "email": "",
+    "email": "contact@nestfamilycounselling.com",
     "website": "https://www.nestfamilycounselling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Self Esteem",
+      "Teen",
+      "Couples",
+      "Family",
+      "Veterans & First Responders",
+      "Relationship Issues",
+      "Divorce",
+      "Parenting"
+    ],
     "placeId": "32e3a1e4-cb20-41f0-903a-dd2b0de4b240"
   },
   {
@@ -45426,8 +45570,7 @@
       "OCD",
       "Child",
       "Teen",
-      "Parenting",
-      "Online / Virtual"
+      "Parenting"
     ],
     "placeId": "31a12c20-dfb6-47d6-8f91-b7484cc320f4"
   },
@@ -45514,16 +45657,9 @@
     "modalities": [
       "EMDR",
       "Anxiety",
-      "Depression",
       "Trauma & PTSD",
-      "Grief",
-      "Anger Management",
-      "Eating Disorders",
-      "Addiction",
-      "Bipolar",
       "Couples",
       "Marriage",
-      "ADHD",
       "Online / Virtual"
     ],
     "placeId": "57d852d6-f0d1-4324-b097-c35c96f63a98"
@@ -45538,16 +45674,9 @@
     "modalities": [
       "EMDR",
       "Anxiety",
-      "Depression",
       "Trauma & PTSD",
-      "Grief",
-      "Anger Management",
-      "Eating Disorders",
-      "Addiction",
-      "Bipolar",
       "Couples",
       "Marriage",
-      "ADHD",
       "Online / Virtual"
     ],
     "placeId": "63c8f33c-2abb-41bd-b03b-91a3063c3878"
@@ -45570,17 +45699,7 @@
     "website": "http://www.newhorizonspsychology.ca/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
-      "Grief",
-      "Self Esteem",
-      "Teen",
-      "Indigenous",
-      "ADHD",
-      "Autism",
-      "Assessment",
-      "Divorce",
-      "Parenting",
-      "Online / Virtual"
+      "Teen"
     ],
     "placeId": "2d5961dc-fdce-4b60-a355-3026694144ab"
   },
@@ -45883,12 +46002,7 @@
     "email": "user@domain.com",
     "website": "http://www.newcastlecounsellingservices.ca/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "Solution-Focused",
-      "Teen",
-      "Parenting"
-    ],
+    "modalities": [],
     "placeId": "0618b075-4218-4d6e-a637-049008710f8b"
   },
   {
@@ -45917,10 +46031,7 @@
     "email": "",
     "website": "http://www.newleaf-counselling.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Teen",
-      "Couples"
-    ],
+    "modalities": [],
     "placeId": "9d233cea-ff82-4fdf-8eff-25225555e132"
   },
   {
@@ -46419,7 +46530,16 @@
     "website": "http://www.noema.care/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
+      "DBT",
+      "EMDR",
+      "ACT",
+      "EFT",
+      "Psychodynamic",
+      "Solution-Focused",
       "Somatic",
+      "Mindfulness",
+      "Play Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -46730,15 +46850,10 @@
     "name": "Northern Therapy Practice",
     "address": "3664 HWY-542, Central Manitoulin, ON P0P 1S0, Canada",
     "phone": "(705) 282-7198",
-    "email": "info@indiantypefoundry.com",
+    "email": "",
     "website": "http://www.northerntherapypractice.ca/",
     "contactUrl": "",
-    "modalities": [
-      "EMDR",
-      "Anger Management",
-      "Addiction",
-      "Couples"
-    ],
+    "modalities": [],
     "placeId": "dec69c10-1b17-4ba9-a8e4-93a6464b6017"
   },
   {
@@ -46931,10 +47046,19 @@
     "name": "Nurse Psychotherapist Association",
     "address": "295 Queen St E #175, Brampton, ON L6W 4S6, Canada",
     "phone": "(647) 676-8467",
-    "email": "",
+    "email": "eben@eyebytes.com",
     "website": "https://nursepsychotherapist.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "EMDR",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Addiction",
+      "Couples",
+      "Indigenous"
+    ],
     "placeId": "96e048c4-b38b-43d7-8c01-5e0850c9a63f"
   },
   {
@@ -47749,10 +47873,15 @@
     "name": "On The Pulse Counselling Services",
     "address": "8197 A Victoria St, Ottawa, ON K0A 2P0, Canada",
     "phone": "(613) 416-9511",
-    "email": "",
+    "email": "hello@onthepulsecs.ca",
     "website": "http://www.onthepulsecs.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Stress",
+      "Teen",
+      "Perinatal"
+    ],
     "placeId": "2b6cf487-66ca-45e6-be2d-b829b03aab85"
   },
   {
@@ -47985,20 +48114,10 @@
     "name": "Ontario Structured Psychotherapy - Central North",
     "address": "500 Church St, Penetanguishene, ON L9M 1G3, Canada",
     "phone": "",
-    "email": "OSP@waypointcentre.ca",
+    "email": "",
     "website": "https://www.therapyontario.ca/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "Group Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "OCD",
-      "Eating Disorders",
-      "Perinatal",
-      "Indigenous"
-    ],
+    "modalities": [],
     "placeId": "0c979010-35b6-44f0-b735-235faad4c1f1"
   },
   {
@@ -48161,18 +48280,11 @@
     "name": "Open Heart Therapy Inc.",
     "address": "263106 Range Rd 12, Rocky View County, AB T4B 2Z8, Canada",
     "phone": "(587) 707-2779",
-    "email": "Y@OPENHEARTHERAPY.CA",
+    "email": "",
     "website": "https://www.openheartherapy.ca/",
     "contactUrl": "",
     "modalities": [
-      "Art Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Stress",
-      "Self Esteem",
-      "LGBTQ+"
+      "Art Therapy"
     ],
     "placeId": "5df99fe8-feab-46d8-b752-578dc958ecb5"
   },
@@ -48278,32 +48390,10 @@
     "name": "Oscar Izquierdo",
     "address": "10328 81 Ave NW, Edmonton, AB T6E 1X2, Canada",
     "phone": "(780) 433-1666",
-    "email": "accessibility@psychologytoday.com",
+    "email": "",
     "website": "https://www.psychologytoday.com/profile/1695453",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "Narrative Therapy",
-      "Psychodynamic",
-      "Art Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Addiction",
-      "Child",
-      "Teen",
-      "Couples",
-      "Family",
-      "Marriage",
-      "LGBTQ+",
-      "ADHD",
-      "Relationship Issues",
-      "Divorce",
-      "Sex Therapy",
-      "Spirituality",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "d6db5b97-62a1-4fec-83f5-ce909093fcb4"
   },
   {
@@ -48472,10 +48562,18 @@
     "name": "Ottawa Men's Counseling",
     "address": "307C Richmond Rd Unit 215, Ottawa, ON K2H 8T5, Canada",
     "phone": "(613) 252-2972",
-    "email": "",
+    "email": "ottawamenscounseling@gmail.com",
     "website": "http://www.ottawamenscounseling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD",
+      "Grief",
+      "Addiction",
+      "Teen",
+      "Couples",
+      "ADHD",
+      "Parenting"
+    ],
     "placeId": "2d40ed2d-4772-408b-b31f-677dc7323a10"
   },
   {
@@ -48850,6 +48948,7 @@
       "Music Therapy",
       "Anxiety",
       "Depression",
+      "Trauma & PTSD",
       "Teen",
       "Couples",
       "Family",
@@ -49143,10 +49242,12 @@
     "name": "Paradigm Counselling",
     "address": "200 Carnegie Dr, St. Albert, AB T8N 5A8, Canada",
     "phone": "(780) 777-1829",
-    "email": "",
+    "email": "Kirsten@ParadigmCounselling.ca",
     "website": "http://www.ParadigmCounselling.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Trauma & PTSD"
+    ],
     "placeId": "f0f36399-c16f-425a-a914-2559c420e994"
   },
   {
@@ -49410,10 +49511,23 @@
     "name": "Path to Empowerment",
     "address": "5500 N Service Road, Suite 300, Burlington, ON L7L 6W6, Canada",
     "phone": "(289) 779-2550",
-    "email": "",
+    "email": "therapy@pathtoempowerment.ca",
     "website": "http://www.pathtoempowerment.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Teen",
+      "Couples",
+      "Perinatal",
+      "ADHD",
+      "Relationship Issues",
+      "Divorce",
+      "Parenting"
+    ],
     "placeId": "32e7addd-d84c-48fe-884a-a7c757d858f6"
   },
   {
@@ -49433,7 +49547,6 @@
       "Depression",
       "Trauma & PTSD",
       "Stress",
-      "Teen",
       "Couples",
       "ADHD",
       "Autism",
@@ -49499,8 +49612,21 @@
     "website": "https://pathwaytoself.ca/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
+      "DBT",
+      "Mindfulness",
       "Anxiety",
-      "Trauma & PTSD"
+      "Depression",
+      "Trauma & PTSD",
+      "Stress",
+      "Anger Management",
+      "OCD",
+      "Addiction",
+      "Bipolar",
+      "Borderline (BPD)",
+      "LGBTQ+",
+      "Veterans & First Responders",
+      "Students"
     ],
     "placeId": "e7a43577-329c-44bd-a50f-6fdc2272c14d"
   },
@@ -49754,15 +49880,7 @@
     "email": "user@domain.com",
     "website": "http://pattersonpsychotherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Stress",
-      "Teen",
-      "Couples",
-      "Perinatal",
-      "Parenting",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "5db2d920-7d32-44c4-aa49-093441ccf430"
   },
   {
@@ -50101,7 +50219,7 @@
     "phone": "(416) 477-0639",
     "email": "",
     "website": "http://www.peartreecounselling.com/",
-    "contactUrl": "http://www.peartreecounselling.com/contact.html",
+    "contactUrl": "https://www.peartreecounselling.com/contact.html",
     "modalities": [
       "Couples"
     ],
@@ -50166,6 +50284,8 @@
     "website": "http://peggydavis.ca/",
     "contactUrl": "https://peggydavis.ca/contact/",
     "modalities": [
+      "Anxiety",
+      "Couples",
       "Family"
     ],
     "placeId": "42eece36-ca31-4f53-add7-a470c79e62e4"
@@ -50366,10 +50486,12 @@
     "name": "Peter J Bucciachio",
     "address": "180 Talbot St S, Essex, ON N8M 1X4, Canada",
     "phone": "(226) 757-0839",
-    "email": "",
+    "email": "peter@bucciachio.com",
     "website": "https://www.bucciachio.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.bucciachio.com/contact",
+    "modalities": [
+      "Autism"
+    ],
     "placeId": "3bf86142-13b5-49ea-9dbf-97bcc671fcbf"
   },
   {
@@ -50609,20 +50731,34 @@
     "name": "Pilowsky Psychology",
     "address": "4 Beamish Drive, Toronto, ON M9B 3P3, Canada",
     "phone": "(416) 239-9042",
-    "email": "",
+    "email": "info@pilowsky.com",
     "website": "http://www.pilowsky.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Anger Management",
+      "Self Esteem",
+      "Assessment"
+    ],
     "placeId": "96a26f72-656c-485c-b7c4-744e69f6dd5d"
   },
   {
     "name": "Pilowsky Psychology Professional Corporation",
     "address": "4905 Dundas St W, Toronto, ON M9A 1B2, Canada",
     "phone": "(416) 239-9042",
-    "email": "",
+    "email": "info@pilowsky.com",
     "website": "http://www.pilowsky.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Anger Management",
+      "Self Esteem",
+      "Assessment"
+    ],
     "placeId": "b3d57d51-9a7e-4d2b-80a0-bec1ef2c1d80"
   },
   {
@@ -50738,10 +50874,13 @@
     "name": "Play Therapy for Children",
     "address": "466 Speers Rd, Oakville, ON L6K 3W9, Canada",
     "phone": "(905) 580-7529",
-    "email": "",
+    "email": "info@mydomain.com",
     "website": "http://www.playtherapyforchildren.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Play Therapy",
+      "Self Esteem"
+    ],
     "placeId": "d1b55a75-6af2-49a0-b55f-b62b7ca7553b"
   },
   {
@@ -51313,18 +51452,10 @@
     "name": "Prince Edward County Counselling and Psychotherapy",
     "address": "Armoury Mall, 206 Picton Main St Unit 2N, Prince Edward, ON K0K 2T0, Canada",
     "phone": "(613) 476-8850",
-    "email": "info@peccp.ca",
+    "email": "",
     "website": "http://www.peccp.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Music Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "LGBTQ+",
-      "Indigenous",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "9fafe0a9-5c56-49c1-8d0a-120004db929b"
   },
   {
@@ -51473,12 +51604,10 @@
     "name": "Progressive Behavior Therapy",
     "address": "871 Victoria St N, Kitchener, ON N2B 3C1, Canada",
     "phone": "(519) 722-9470",
-    "email": "progressivebehaviortherapy@bell.net",
+    "email": "",
     "website": "http://progressivebehaviortherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "bc0a70e1-34b0-4398-babc-ba0eb8953099"
   },
   {
@@ -51524,9 +51653,6 @@
     "website": "http://www.prusikyouthservices.com/",
     "contactUrl": "https://prusikyouthservices.com/faq-2/",
     "modalities": [
-      "CBT",
-      "DBT",
-      "Solution-Focused",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -51534,7 +51660,9 @@
       "OCD",
       "Eating Disorders",
       "Addiction",
-      "Spirituality"
+      "Indigenous",
+      "Spirituality",
+      "Online / Virtual"
     ],
     "placeId": "28adc8a8-661e-43d7-becf-e9dded393e61"
   },
@@ -51561,11 +51689,8 @@
     "modalities": [
       "EMDR",
       "Trauma & PTSD",
-      "Grief",
       "Addiction",
       "Couples",
-      "Divorce",
-      "Parenting",
       "Sexual Abuse",
       "Online / Virtual"
     ],
@@ -51934,10 +52059,18 @@
     "name": "Psychology Works",
     "address": "2800 John St, Markham, ON L3R 0E2, Canada",
     "phone": "(905) 946-8007",
-    "email": "",
+    "email": "info@psychologyworks.net",
     "website": "http://www.psychologyworks.net/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://psychologyworks.net/contact-us/",
+    "modalities": [
+      "CBT",
+      "EMDR",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Seniors",
+      "Veterans & First Responders"
+    ],
     "placeId": "37563efe-4453-481d-bf9d-ff06f301528d"
   },
   {
@@ -52201,6 +52334,7 @@
       "Narrative Therapy",
       "Solution-Focused",
       "Somatic",
+      "Mindfulness",
       "Play Therapy",
       "Anxiety",
       "Depression",
@@ -52214,6 +52348,8 @@
       "Chronic Pain",
       "Teen",
       "Couples",
+      "Newcomers",
+      "Veterans & First Responders",
       "ADHD",
       "Relationship Issues",
       "Divorce",
@@ -52360,7 +52496,7 @@
     "phone": "(519) 968-3410",
     "email": "",
     "website": "http://mypurementality.ca/",
-    "contactUrl": "",
+    "contactUrl": "https://www.mypurementality.ca/contact-us",
     "modalities": [],
     "placeId": "24cff66e-1679-4243-b1be-bb77f91ec243"
   },
@@ -52626,11 +52762,7 @@
     "website": "http://www.radiantpsychotherapy.ca/",
     "contactUrl": "",
     "modalities": [
-      "Anxiety",
-      "Self Esteem",
-      "Chronic Pain",
-      "Couples",
-      "Relationship Issues"
+      "Chronic Pain"
     ],
     "placeId": "efefc726-ff12-4b07-8922-70f4ceb96675"
   },
@@ -52715,7 +52847,7 @@
     "phone": "(613) 345-7259",
     "email": "rikmmarypramcorp2016@gmail.com",
     "website": "http://RikMacDonald.website2.me/",
-    "contactUrl": "http://RikMacDonald.website2.me/contact",
+    "contactUrl": "https://rikmacdonald.website2.me/contact",
     "modalities": [
       "Teen"
     ],
@@ -52815,10 +52947,23 @@
     "name": "Raphah Psychotherapy and Counselling",
     "address": "4711 Yonge St, Toronto, ON M2N 7E4, Canada",
     "phone": "(416) 712-8619",
-    "email": "",
+    "email": "RAPHA.AILEEN.YU@GMAIL.COM",
     "website": "https://www.raphah-psychotherapy-counselling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "DBT",
+      "ACT",
+      "EFT",
+      "Narrative Therapy",
+      "Solution-Focused",
+      "Anxiety",
+      "Trauma & PTSD",
+      "Grief",
+      "Addiction",
+      "Couples",
+      "Relationship Issues"
+    ],
     "placeId": "4c332f10-e283-435d-a757-c0f16694e9a4"
   },
   {
@@ -52920,6 +53065,7 @@
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Addiction",
       "Teen",
       "Couples",
       "Divorce",
@@ -52976,9 +53122,7 @@
     "email": "user@domain.com",
     "website": "https://www.realignwellnesscentre.com/",
     "contactUrl": "",
-    "modalities": [
-      "EMDR"
-    ],
+    "modalities": [],
     "placeId": "f8cf8a17-1f3f-4c1d-b761-2dc73eb9ae1a"
   },
   {
@@ -53434,9 +53578,9 @@
     "name": "Redbird Therapy",
     "address": "720 Spadina Ave. #509, Toronto, ON M5S 2T9, Canada",
     "phone": "(416) 912-7087",
-    "email": "intake@redbirdtherapy.ca",
+    "email": "press@linktr.ee",
     "website": "https://linktr.ee/redbirdtherapy",
-    "contactUrl": "",
+    "contactUrl": "https://linktr.ee/features/contact-forms",
     "modalities": [
       "Trauma & PTSD",
       "Couples"
@@ -53886,7 +54030,7 @@
     "phone": "(403) 358-9768",
     "email": "",
     "website": "http://www.maribelaarrudablock.ca/",
-    "contactUrl": "http://www.maribelaarrudablock.ca/contact.html",
+    "contactUrl": "https://www.maribelaarrudablock.ca/contact.html",
     "modalities": [
       "Play Therapy",
       "Anxiety",
@@ -54017,7 +54161,7 @@
     "name": "Relationship Network",
     "address": "377 MacKenzie Ave, Ajax, ON L1S 2G2, Canada",
     "phone": "(705) 426-7353",
-    "email": "davfam708@gmail.com",
+    "email": "",
     "website": "http://www.relationsnet.org/",
     "contactUrl": "",
     "modalities": [],
@@ -54073,9 +54217,7 @@
     "email": "press@linktr.ee",
     "website": "https://linktr.ee/relearninghuman",
     "contactUrl": "https://linktr.ee/features/contact-forms",
-    "modalities": [
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "145754cc-3ab2-40b1-85fd-5f369209acca"
   },
   {
@@ -54388,7 +54530,9 @@
     "website": "http://www.resiliencyandme.com/",
     "contactUrl": "https://www.resiliencyandme.com/contact-8",
     "modalities": [
-      "Teen"
+      "Anxiety",
+      "Teen",
+      "ADHD"
     ],
     "placeId": "33ac0dc8-cc8f-4596-a1b5-ff13a68c23c4"
   },
@@ -54632,8 +54776,7 @@
       "Mindfulness",
       "Depression",
       "Couples",
-      "ADHD",
-      "Parenting"
+      "ADHD"
     ],
     "placeId": "30b8ca84-1422-427f-9787-e1eed064d3b1"
   },
@@ -54712,10 +54855,12 @@
       "EMDR",
       "ACT",
       "Psychodynamic",
+      "Mindfulness",
       "Group Therapy",
       "Anxiety",
       "Depression",
-      "Trauma & PTSD"
+      "Trauma & PTSD",
+      "Indigenous"
     ],
     "placeId": "9991293d-dbee-412b-8e5d-4336af6f150a"
   },
@@ -55059,17 +55204,10 @@
     "name": "Rise Up Center for Emotionally Focused Therapy, Coaching and Consulting",
     "address": "52 Woodburn Ave, St. Catharines, ON L2P 0B8, Canada",
     "phone": "(855) 857-4459",
-    "email": "info@riseup-coaching.ca",
+    "email": "",
     "website": "http://riseup-coaching.ca/",
     "contactUrl": "",
-    "modalities": [
-      "EFT",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Couples",
-      "Family"
-    ],
+    "modalities": [],
     "placeId": "2991d599-41c0-438a-91be-f15cfba5cadb"
   },
   {
@@ -55288,7 +55426,10 @@
     "email": "user@domain.com",
     "website": "https://robbiedeancentre.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Family",
+      "Indigenous"
+    ],
     "placeId": "d1b8bfe8-9914-46d2-9134-bb1af39347bf"
   },
   {
@@ -55603,14 +55744,26 @@
     "website": "http://rmpsychservices.com/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
+      "DBT",
+      "Mindfulness",
       "Play Therapy",
+      "Art Therapy",
       "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
       "Self Esteem",
+      "Addiction",
       "Teen",
+      "Couples",
       "Family",
+      "Indigenous",
       "ADHD",
       "Autism",
       "Assessment",
+      "Relationship Issues",
+      "Divorce",
       "Parenting"
     ],
     "placeId": "f08002c0-d4c7-44b5-a8f7-2a099b4895c1"
@@ -55774,17 +55927,14 @@
       "DBT",
       "EMDR",
       "EFT",
-      "Narrative Therapy",
       "Psychodynamic",
       "Solution-Focused",
       "Mindfulness",
-      "Play Therapy",
       "Art Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
-      "Stress",
       "Anger Management",
       "Eating Disorders",
       "Addiction",
@@ -55810,7 +55960,7 @@
     "phone": "(587) 577-3886",
     "email": "",
     "website": "http://www.rootedambition.ca/",
-    "contactUrl": "http://www.rootedambition.ca/contact.html",
+    "contactUrl": "https://www.rootedambition.ca/contact.html",
     "modalities": [
       "EMDR",
       "Somatic",
@@ -56488,7 +56638,6 @@
       "DBT",
       "Group Therapy",
       "Depression",
-      "Borderline (BPD)",
       "Teen",
       "Couples",
       "Family",
@@ -56551,15 +56700,22 @@
     "contactUrl": "",
     "modalities": [
       "CBT",
+      "DBT",
+      "EMDR",
+      "Mindfulness",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
+      "Self Esteem",
       "OCD",
       "Eating Disorders",
       "Addiction",
       "Alcohol Use",
       "Chronic Pain",
+      "Body Image",
+      "Teen",
       "Couples",
       "Family",
       "ADHD",
@@ -56933,17 +57089,11 @@
     "website": "http://sarahghorsford.com/",
     "contactUrl": "",
     "modalities": [
-      "Solution-Focused",
       "Anxiety",
       "Depression",
-      "Trauma & PTSD",
       "Grief",
-      "Eating Disorders",
-      "Addiction",
       "Couples",
-      "ADHD",
-      "Career",
-      "Domestic Abuse"
+      "ADHD"
     ],
     "placeId": "f1d17f7c-54d8-443e-ae12-30baf7485018"
   },
@@ -56961,10 +57111,14 @@
     "name": "Sarah Johnson, Registered Psychotherapist",
     "address": "537 Main St, Halton Hills, ON L7G 3T1, Canada",
     "phone": "(289) 351-0958",
-    "email": "",
+    "email": "sarah@sltherapy.ca",
     "website": "http://www.sltherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Depression",
+      "Teen",
+      "ADHD"
+    ],
     "placeId": "1d0d0dd1-205a-4768-8b5d-fadbd7293510"
   },
   {
@@ -57418,9 +57572,8 @@
       "Trauma & PTSD",
       "Grief",
       "Addiction",
+      "Teen",
       "Couples",
-      "Relationship Issues",
-      "Parenting",
       "Sex Therapy",
       "Online / Virtual"
     ],
@@ -57488,7 +57641,9 @@
     "email": "contact@sentacounselling.com",
     "website": "http://www.sentacounselling.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Grief"
+    ],
     "placeId": "6b25622f-0eab-4d8a-9ddb-eb357025c098"
   },
   {
@@ -57670,10 +57825,10 @@
     "modalities": [
       "Anxiety",
       "Trauma & PTSD",
+      "Grief",
       "Anger Management",
       "Couples",
-      "Family",
-      "Marriage"
+      "Family"
     ],
     "placeId": "0c579425-84a5-4639-89c9-09ee088cd37d"
   },
@@ -57705,15 +57860,7 @@
     "email": "",
     "website": "http://sptherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "DBT",
-      "Mindfulness",
-      "Depression",
-      "Trauma & PTSD",
-      "Borderline (BPD)",
-      "Teen"
-    ],
+    "modalities": [],
     "placeId": "f6d8a37d-4b9e-403d-a670-5e3db5d019ef"
   },
   {
@@ -58022,20 +58169,10 @@
     "name": "SHE Psychotherapy",
     "address": "171 Main St S, Newmarket, ON L3Y 3Y6, Canada",
     "phone": "(905) 806-9570",
-    "email": "jonpinhorn.typedesign@gmail.com",
+    "email": "",
     "website": "http://www.shepsychotherapy.com/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "DBT",
-      "Psychodynamic",
-      "Mindfulness",
-      "Art Therapy",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief"
-    ],
+    "modalities": [],
     "placeId": "e78dc4a4-2640-461e-8f7c-62131e7188d2"
   },
   {
@@ -58046,10 +58183,13 @@
     "website": "http://www.peakpsychsolutions.ca/",
     "contactUrl": "",
     "modalities": [
+      "EMDR",
       "Trauma & PTSD",
       "Addiction",
       "LGBTQ+",
-      "Indigenous"
+      "Indigenous",
+      "ADHD",
+      "Autism"
     ],
     "placeId": "f804c0e2-18ad-4ba7-812d-b6b77d7cd7a5"
   },
@@ -58450,10 +58590,11 @@
     "modalities": [
       "Art Therapy",
       "Trauma & PTSD",
-      "Grief",
       "Eating Disorders",
       "Addiction",
+      "Perinatal",
       "Veterans & First Responders",
+      "ADHD",
       "Parenting"
     ],
     "placeId": "2fc4ee4c-85f5-4169-80bd-86140cef27cd"
@@ -58466,7 +58607,6 @@
     "website": "http://sidekicktool.com/fb",
     "contactUrl": "https://sidekicktool.com/pages/contact-us",
     "modalities": [
-      "Chronic Pain",
       "ADHD"
     ],
     "placeId": "fda01087-770b-4e1b-88f2-aa501a64c72e"
@@ -58998,7 +59138,7 @@
       "Family",
       "Indigenous",
       "ADHD",
-      "Autism"
+      "Assessment"
     ],
     "placeId": "627d001d-2d6a-48e1-bd79-35b8085318fb"
   },
@@ -59156,9 +59296,7 @@
     "email": "",
     "website": "https://www.tiktok.com/@solutionfirsttherapy",
     "contactUrl": "",
-    "modalities": [
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "3ed68384-3cd2-416d-bd98-0c2dde3a9d6e"
   },
   {
@@ -59170,7 +59308,8 @@
     "contactUrl": "",
     "modalities": [
       "Anxiety",
-      "Trauma & PTSD"
+      "Trauma & PTSD",
+      "ADHD"
     ],
     "placeId": "edbcab53-fee5-4b3b-9c74-5fa729a57d6c"
   },
@@ -59193,7 +59332,7 @@
     "name": "SomaSol Wellness",
     "address": "740 4 Ave S, Lethbridge, AB T1J 0N9, Canada",
     "phone": "(403) 942-7529",
-    "email": "danielleolivieriptc@gmail.com",
+    "email": "danielle@somasol.ca",
     "website": "http://www.flourishplaytherapy.ca/",
     "contactUrl": "",
     "modalities": [
@@ -59458,7 +59597,6 @@
     "contactUrl": "",
     "modalities": [
       "CBT",
-      "EMDR",
       "EFT",
       "Somatic",
       "Mindfulness",
@@ -59526,10 +59664,12 @@
     "name": "Southern Alberta Self Help Association",
     "address": "1239 5 Ave S, Lethbridge, AB T1J 0V6, Canada",
     "phone": "(403) 942-2263",
-    "email": "",
+    "email": "info@mysite.com",
     "website": "https://www.sashasupports.org/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.sashasupports.org/copy-of-contact",
+    "modalities": [
+      "Indigenous"
+    ],
     "placeId": "b3c77d2d-e861-4a02-81f2-aa52b035fff9"
   },
   {
@@ -59580,9 +59720,7 @@
     "email": "patientrelations@sjhc.london.on.ca",
     "website": "http://sjhc.london.on.ca",
     "contactUrl": "",
-    "modalities": [
-      "Seniors"
-    ],
+    "modalities": [],
     "placeId": "990763b6-833a-4fa7-9d2d-23d91bb3a584"
   },
   {
@@ -59720,10 +59858,22 @@
     "name": "spark wellness therapy",
     "address": "517 10th St, Hanover, ON N4N, Canada",
     "phone": "(226) 668-2742",
-    "email": "webmaster@sparktherapy.ca",
+    "email": "alison@sparktherapy.ca",
     "website": "http://www.sparktherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "OCD",
+      "Addiction",
+      "Body Image",
+      "Teen",
+      "Couples",
+      "Parenting",
+      "Online / Virtual"
+    ],
     "placeId": "8c7fbe32-1385-4c39-beed-10584e6dbd8b"
   },
   {
@@ -59733,12 +59883,7 @@
     "email": "",
     "website": "https://sparklingseeds.com/",
     "contactUrl": "",
-    "modalities": [
-      "Child",
-      "Teen",
-      "Family",
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "4a8887dc-4434-4dfb-83cb-31cdb864a417"
   },
   {
@@ -59874,10 +60019,14 @@
     "website": "http://www.springbankpsychology.com/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
+      "EMDR",
+      "Mindfulness",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Stress",
       "Self Esteem",
       "OCD",
       "Teen",
@@ -59885,7 +60034,8 @@
       "ADHD",
       "Autism",
       "Assessment",
-      "Divorce"
+      "Divorce",
+      "Parenting"
     ],
     "placeId": "48c4e22c-ab3c-43fa-8091-4eb8347fb0c4"
   },
@@ -60752,7 +60902,11 @@
     "website": "http://www.straightuphealth.ca/",
     "contactUrl": "",
     "modalities": [
-      "Teen"
+      "Solution-Focused",
+      "Anxiety",
+      "Teen",
+      "Couples",
+      "Family"
     ],
     "placeId": "9a7fa57d-a517-4c31-99be-3a4ee9121b5b"
   },
@@ -60808,6 +60962,7 @@
     "website": "http://strengthzonerelationships.ca/",
     "contactUrl": "",
     "modalities": [
+      "Anxiety",
       "Couples"
     ],
     "placeId": "cd8caf49-586c-4874-822a-f17871f9165b"
@@ -61116,13 +61271,10 @@
     "name": "Summit Hypnotherapy",
     "address": "6307 Sunbrook Way, Sherwood Park, AB T8H 0J8, Canada",
     "phone": "(780) 909-2454",
-    "email": "filler@godaddy.com",
+    "email": "",
     "website": "http://www.summithypnotherapy.com/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Trauma & PTSD"
-    ],
+    "modalities": [],
     "placeId": "9e4e6927-07cb-4854-8a8c-a53c2036748e"
   },
   {
@@ -61229,7 +61381,8 @@
     "modalities": [
       "Anxiety",
       "Stress",
-      "Self Esteem"
+      "Self Esteem",
+      "Couples"
     ],
     "placeId": "949fa948-427a-4f9b-8802-34dc8c521d8b"
   },
@@ -61401,12 +61554,10 @@
     "name": "Supportive Family Services",
     "address": "8760 Jane St, Vaughan, ON L4K 2M9, Canada",
     "phone": "(289) 236-3253",
-    "email": "info@naturopathicsolutions.ca",
+    "email": "",
     "website": "http://www.naturopathicsolutions.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Teen"
-    ],
+    "modalities": [],
     "placeId": "a9a1af27-2bf3-4398-bf10-78300347db1b"
   },
   {
@@ -62040,10 +62191,18 @@
     "name": "Tangled Roots Psychology",
     "address": "Suite 205 200 Country Hills Landing NW, Calgary, AB T3K 5P3, Canada",
     "phone": "(403) 703-2949",
-    "email": "",
+    "email": "sally@tangledrootspsychology.com",
     "website": "https://www.tangledrootspsychology.com",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Teen",
+      "Indigenous",
+      "ADHD"
+    ],
     "placeId": "1038ac94-38ed-4b1f-9436-61ace723a72c"
   },
   {
@@ -62369,14 +62528,14 @@
     "phone": "(647) 366-8447",
     "email": "Todd@theanxiety.clinic",
     "website": "http://www.TheAnxiety.Clinic/",
-    "contactUrl": "https://theanxiety.clinic/about-us/",
+    "contactUrl": "https://theanxiety.clinic/contact-us/",
     "modalities": [
       "CBT",
-      "EMDR",
       "Mindfulness",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
+      "Grief",
       "Addiction"
     ],
     "placeId": "adb370fd-c1be-42f0-a159-346128dd7d73"
@@ -62401,15 +62560,7 @@
     "email": "user@domain.com",
     "website": "http://www.arterie.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Psychodynamic",
-      "Art Therapy",
-      "Trauma & PTSD",
-      "Teen",
-      "Couples",
-      "Indigenous",
-      "Parenting"
-    ],
+    "modalities": [],
     "placeId": "5f1012c3-ace7-4cfb-81af-9f3e95965173"
   },
   {
@@ -62448,10 +62599,7 @@
     "email": "user@domain.com",
     "website": "http://www.thebehaviourteam.com/",
     "contactUrl": "",
-    "modalities": [
-      "Teen",
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "8feb910a-ab6a-45c7-9f40-7968aa8849a4"
   },
   {
@@ -62566,14 +62714,10 @@
     "name": "The Centre for Dynamic Mental Health",
     "address": "11062 156 St #209A, Edmonton, AB T5P 2W4, Canada",
     "phone": "(780) 243-5509",
-    "email": "user@domain.com",
+    "email": "",
     "website": "http://www.dynamicmentalhealth.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Psychodynamic",
-      "Trauma & PTSD",
-      "Assessment"
-    ],
+    "modalities": [],
     "placeId": "58ee242a-f007-4738-b2e4-5a5239c32e95"
   },
   {
@@ -63032,10 +63176,7 @@
     "email": "staffnorth@familypsychologyplace.com",
     "website": "http://WWW.FAMILYPSYCHOLOGYPLACE.COM/",
     "contactUrl": "https://familypsychologyplace.com/contact/",
-    "modalities": [
-      "Parenting",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "596dfd73-316f-4ed0-9d51-f8a79ffa384c"
   },
   {
@@ -63045,10 +63186,7 @@
     "email": "staffnorth@familypsychologyplace.com",
     "website": "http://WWW.FAMILYPSYCHOLOGYPLACE.COM/",
     "contactUrl": "https://familypsychologyplace.com/contact/",
-    "modalities": [
-      "Parenting",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "fad401ef-9e19-450f-b407-fa589eb4b518"
   },
   {
@@ -63101,10 +63239,19 @@
     "name": "The Giving Tree Centre",
     "address": "300 Bloor St E, Toronto, ON M4W 3Y2, Canada",
     "phone": "(647) 490-2040",
-    "email": "",
+    "email": "info@thegivingtreecentre.ca",
     "website": "http://www.thegivingtreecentre.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Teen",
+      "Couples",
+      "Family",
+      "ADHD",
+      "Assessment"
+    ],
     "placeId": "2408f2b3-86c0-4b8e-8797-b48848d4c2b8"
   },
   {
@@ -63159,7 +63306,9 @@
       "Couples",
       "Family",
       "Indigenous",
+      "Veterans & First Responders",
       "Divorce",
+      "Sexual Abuse",
       "Online / Virtual"
     ],
     "placeId": "7a6f6ee5-d720-40ae-af39-fd51c7aa3731"
@@ -63288,10 +63437,14 @@
     "name": "The Help Hub - West",
     "address": "2364A Bloor St W, Toronto, ON M6P 1Z3, Canada",
     "phone": "(647) 793-8172",
-    "email": "",
+    "email": "info@thehelphub.ca",
     "website": "http://www.thehelphub.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Family",
+      "Indigenous",
+      "Parenting"
+    ],
     "placeId": "129bd7e3-8f9b-43ce-b37a-7e0aaaa63f53"
   },
   {
@@ -63304,8 +63457,9 @@
     "modalities": [
       "Art Therapy",
       "Trauma & PTSD",
-      "Grief",
       "Addiction",
+      "Perinatal",
+      "ADHD",
       "Parenting"
     ],
     "placeId": "c4519488-cb12-4561-8257-efe6ae6bb38d"
@@ -63429,10 +63583,25 @@
     "name": "The Lighthouse",
     "address": "212 Van Buren St #6, North Grenville, ON K0G 1J0, Canada",
     "phone": "(613) 258-0880",
-    "email": "",
+    "email": "info@thelighthouse-lephare.ca",
     "website": "https://www.thelighthouse-lephare.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Self Esteem",
+      "Chronic Pain",
+      "Body Image",
+      "Couples",
+      "Family",
+      "LGBTQ+",
+      "Veterans & First Responders",
+      "Autism",
+      "Online / Virtual"
+    ],
     "placeId": "ff986d58-2232-4892-a502-748b493e8395"
   },
   {
@@ -63441,7 +63610,7 @@
     "phone": "(613) 499-9880",
     "email": "",
     "website": "http://www.thelockstherapy.ca/",
-    "contactUrl": "http://www.thelockstherapy.ca/contactus.html",
+    "contactUrl": "https://www.thelockstherapy.ca/contactus.html",
     "modalities": [
       "CBT",
       "DBT",
@@ -63513,9 +63682,11 @@
     "contactUrl": "",
     "modalities": [
       "Anxiety",
+      "Grief",
       "Self Esteem",
       "Addiction",
-      "Teen"
+      "Teen",
+      "Online / Virtual"
     ],
     "placeId": "323333bd-d88a-4e32-8507-3e855ae012ac"
   },
@@ -63693,10 +63864,17 @@
     "name": "The Nest Psychotherapy",
     "address": "1188 St Jerome St Unit 106b, Greater Sudbury, ON P3A 2V9, Canada",
     "phone": "(705) 586-0096",
-    "email": "",
+    "email": "info@thenestpsychotherapy.com",
     "website": "http://www.thenestpsychotherapy.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Teen",
+      "ADHD",
+      "Autism"
+    ],
     "placeId": "96ab6116-7806-4c7d-9bdf-af4f36380705"
   },
   {
@@ -63903,27 +64081,18 @@
     "website": "http://www.therelationshipagency.com/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
-      "EMDR",
       "Psychodynamic",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
-      "Stress",
-      "Self Esteem",
-      "Addiction",
-      "Body Image",
       "Child",
       "Teen",
       "Couples",
       "Family",
       "LGBTQ+",
       "ADHD",
-      "Relationship Issues",
       "Divorce",
-      "Parenting",
       "Online / Virtual"
     ],
     "placeId": "a014f614-fcfe-49fe-a0a3-8b5068dfb033"
@@ -63942,17 +64111,10 @@
     "name": "The Roaming Psychotherapist",
     "address": "222 Main St E, North Bay, ON P1B 1B1, Canada",
     "phone": "(249) 802-8475",
-    "email": "impallari@gmail.com",
+    "email": "",
     "website": "http://roamingpsychotherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "EMDR",
-      "Trauma & PTSD",
-      "Stress",
-      "Addiction",
-      "Couples",
-      "Autism"
-    ],
+    "modalities": [],
     "placeId": "3b1e43bf-1e51-4194-a55d-3aaf2e163dc2"
   },
   {
@@ -64263,15 +64425,9 @@
     "contactUrl": "",
     "modalities": [
       "CBT",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "OCD",
       "Couples",
       "Family",
       "Perinatal",
-      "LGBTQ+",
       "Parenting"
     ],
     "placeId": "88df89bd-b0fe-4547-9660-d7af91c7a3d3"
@@ -64345,7 +64501,8 @@
       "Teen",
       "Couples",
       "ADHD",
-      "Assessment"
+      "Assessment",
+      "Divorce"
     ],
     "placeId": "04b9f385-9e3d-4810-a01b-a7754015a64a"
   },
@@ -64366,7 +64523,21 @@
     "email": "connect@thewitchstherapist.com",
     "website": "https://www.thewitchstherapist.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "ACT",
+      "Somatic",
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Self Esteem",
+      "Chronic Pain",
+      "LGBTQ+",
+      "Autism",
+      "Online / Virtual"
+    ],
     "placeId": "33a4b373-6485-4663-9b3b-f45ae6908ee1"
   },
   {
@@ -64440,6 +64611,9 @@
     "website": "https://theragen.ca/",
     "contactUrl": "",
     "modalities": [
+      "CBT",
+      "EFT",
+      "Solution-Focused",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -64457,11 +64631,31 @@
     "name": "Therapedia Centre",
     "address": "769A Pape Ave, Toronto, ON M4K 3T2, Canada",
     "phone": "(416) 877-0137",
-    "email": "",
+    "email": "info@therapediacentre.com",
     "website": "http://www.therapediacentre.com/",
     "contactUrl": "",
     "modalities": [
-      "Art Therapy"
+      "Play Therapy",
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Anger Management",
+      "Self Esteem",
+      "Chronic Pain",
+      "Teen",
+      "Couples",
+      "Family",
+      "Seniors",
+      "LGBTQ+",
+      "Indigenous",
+      "Newcomers",
+      "ADHD",
+      "Autism",
+      "Relationship Issues",
+      "Parenting"
     ],
     "placeId": "ae8d1241-ac96-4683-b5d5-ea4881d4b98f"
   },
@@ -64469,11 +64663,31 @@
     "name": "Therapedia Centre (Yonge and Bloor)",
     "address": "2 Bloor St W suite 700, Toronto, ON M4W 3E2, Canada",
     "phone": "(416) 877-0137",
-    "email": "",
+    "email": "info@therapediacentre.com",
     "website": "http://www.therapediacentre.com/",
     "contactUrl": "",
     "modalities": [
-      "Art Therapy"
+      "Play Therapy",
+      "Art Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Stress",
+      "Anger Management",
+      "Self Esteem",
+      "Chronic Pain",
+      "Teen",
+      "Couples",
+      "Family",
+      "Seniors",
+      "LGBTQ+",
+      "Indigenous",
+      "Newcomers",
+      "ADHD",
+      "Autism",
+      "Relationship Issues",
+      "Parenting"
     ],
     "placeId": "b61f560b-9a63-4f34-8f92-47f907d13961"
   },
@@ -64501,6 +64715,7 @@
       "Grief",
       "Couples",
       "Marriage",
+      "Men's Issues",
       "ADHD",
       "Autism"
     ],
@@ -64632,6 +64847,7 @@
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
+      "Addiction",
       "Parenting"
     ],
     "placeId": "c4ebb313-3d1e-4235-a8ab-37dfdee76bd2"
@@ -64708,11 +64924,10 @@
     "name": "Therapy Helps",
     "address": "420 Main St E Ste 565, Milton, ON L9T 1P9, Canada",
     "phone": "(289) 409-9868",
-    "email": "",
+    "email": "snowballtherapy@gmail.com",
     "website": "http://www.therapy-helps.ca/",
-    "contactUrl": "https://www.therapy-helps.ca/contact-payment/",
+    "contactUrl": "https://www.therapy-helps.ca/payment/",
     "modalities": [
-      "Veterans & First Responders",
       "Divorce",
       "Online / Virtual"
     ],
@@ -64746,13 +64961,9 @@
     "website": "http://therapyintoronto.com",
     "contactUrl": "",
     "modalities": [
-      "Psychodynamic",
       "Play Therapy",
-      "Depression",
       "Child",
       "Teen",
-      "Couples",
-      "Family",
       "ADHD"
     ],
     "placeId": "de2705dc-8e95-4479-939d-bb6d880b98ed"
@@ -64811,7 +65022,8 @@
     "website": "http://therapytoronto.ca/",
     "contactUrl": "",
     "modalities": [
-      "Psychodynamic"
+      "Psychodynamic",
+      "Online / Virtual"
     ],
     "placeId": "4733c6a8-6b8c-4c4f-99c6-f00bddd5be31"
   },
@@ -65434,6 +65646,7 @@
       "Chronic Pain",
       "Body Image",
       "Teen",
+      "Family",
       "LGBTQ+",
       "Indigenous",
       "Students",
@@ -65447,9 +65660,9 @@
     "name": "Thrive Therapy",
     "address": "2908 S Sheridan Way #102, Oakville, ON L6J 7T4, Canada",
     "phone": "(647) 931-5590",
-    "email": "hello@thrivetherapycentre.ca",
+    "email": "",
     "website": "http://www.thrivetherapycentre.ca/",
-    "contactUrl": "https://www.thrivetherapycentre.ca/contact-us",
+    "contactUrl": "",
     "modalities": [
       "Anxiety",
       "Depression",
@@ -65484,8 +65697,12 @@
     "phone": "(343) 882-6766",
     "email": "",
     "website": "http://www.thrivetogether.ca/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://thrivetogether.ca/contact/",
+    "modalities": [
+      "Trauma & PTSD",
+      "Sleep",
+      "Teen"
+    ],
     "placeId": "d2e96b31-c1d1-47b2-a76f-13f2f803e86c"
   },
   {
@@ -65820,7 +66037,14 @@
     "website": "http://tizzypsychology.com/",
     "contactUrl": "",
     "modalities": [
-      "Relationship Issues"
+      "ACT",
+      "Mindfulness",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Stress",
+      "Relationship Issues",
+      "Online / Virtual"
     ],
     "placeId": "78509d8d-5343-43a2-b965-41d1165c4730"
   },
@@ -66092,6 +66316,7 @@
     "modalities": [
       "Anxiety",
       "Depression",
+      "Trauma & PTSD",
       "Stress",
       "Eating Disorders",
       "Addiction",
@@ -66115,6 +66340,7 @@
     "modalities": [
       "Anxiety",
       "Depression",
+      "Trauma & PTSD",
       "Stress",
       "Eating Disorders",
       "Addiction",
@@ -66489,10 +66715,12 @@
       "EFT",
       "Psychodynamic",
       "Mindfulness",
+      "Art Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
       "Grief",
+      "Self Esteem",
       "Couples",
       "Perinatal",
       "LGBTQ+",
@@ -66730,10 +66958,17 @@
     "name": "Tranquil Pathways Counselling",
     "address": "108 Edmonton Trail NE, Airdrie, AB T4B 1S1, Canada",
     "phone": "(867) 334-9524",
-    "email": "",
+    "email": "katie@tranquilpathways.ca",
     "website": "http://www.tranquilpathways.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "CBT",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Self Esteem"
+    ],
     "placeId": "d90fb085-d369-477d-8ff1-5d85dfd01e2e"
   },
   {
@@ -66809,8 +67044,7 @@
     "website": "https://linktr.ee/transcendenceholistic",
     "contactUrl": "https://linktr.ee/features/contact-forms",
     "modalities": [
-      "Mindfulness",
-      "Teen"
+      "Mindfulness"
     ],
     "placeId": "df975ab4-fd72-49d3-88b6-db4e1793a712"
   },
@@ -67137,7 +67371,9 @@
     "modalities": [
       "CBT",
       "DBT",
+      "EMDR",
       "Solution-Focused",
+      "Play Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -67271,9 +67507,9 @@
     "name": "Tristan's Place",
     "address": "76 Colborne St E, Oshawa, ON L1G 1L9, Canada",
     "phone": "(289) 600-1007",
-    "email": "mentalhealthsupport@tristansplace.ca",
+    "email": "",
     "website": "http://tristansplace.ca/",
-    "contactUrl": "https://tristansplace.ca/contact-us",
+    "contactUrl": "",
     "modalities": [],
     "placeId": "e7d71007-2cdb-4466-88e2-b5b42f806f2d"
   },
@@ -67419,10 +67655,16 @@
     "name": "True North Wellness Therapy",
     "address": "150 Terence Matthews Crescent A1, Ottawa, ON K2M 0B2, Canada",
     "phone": "(613) 663-1013",
-    "email": "",
+    "email": "hello@tnwt.ca",
     "website": "https://truenorthwellnesstherapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Solution-Focused",
+      "Anxiety",
+      "Trauma & PTSD",
+      "Stress",
+      "Couples"
+    ],
     "placeId": "a729dfe1-051e-4825-8f62-f9eaea1cae47"
   },
   {
@@ -67764,23 +68006,10 @@
     "name": "Two Trees Psychotherapy",
     "address": "Barrie, ON, Canada",
     "phone": "(705) 795-2125",
-    "email": "eben@eyebytes.com",
+    "email": "",
     "website": "http://www.twotreestherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "CBT",
-      "EMDR",
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Self Esteem",
-      "Couples",
-      "LGBTQ+",
-      "Veterans & First Responders",
-      "Relationship Issues",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "097c2673-b5cb-4073-b4f6-2b6c09995d29"
   },
   {
@@ -68300,10 +68529,24 @@
     "name": "Valley Counselling and Psychotherapy",
     "address": "1515 Pitt St, Cornwall, ON K6J 3T9, Canada",
     "phone": "(613) 363-4973",
-    "email": "",
+    "email": "sample@gmail.com",
     "website": "http://www.valleycounsellingpsychotherapy.com/",
-    "contactUrl": "",
-    "modalities": [],
+    "contactUrl": "https://www.valleycounsellingpsychotherapy.com/contact",
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Self Esteem",
+      "OCD",
+      "Addiction",
+      "Couples",
+      "Family",
+      "ADHD",
+      "Divorce",
+      "Parenting",
+      "Domestic Abuse"
+    ],
     "placeId": "9ed7ed68-9782-4b9a-9768-5f39817afc48"
   },
   {
@@ -68328,7 +68571,7 @@
     "name": "Valley of Growth Psychotherapy",
     "address": "1900 City Park Dr Ste 300, Ottawa, ON K1J 1G7, Canada",
     "phone": "(873) 660-0847",
-    "email": "accessibility@psychologytoday.com",
+    "email": "",
     "website": "https://www.psychologytoday.com/ca/therapists/valerie-boisvert-ottawa-on/1202926",
     "contactUrl": "",
     "modalities": [
@@ -68969,7 +69212,6 @@
       "Family",
       "Perinatal",
       "LGBTQ+",
-      "Indigenous",
       "Veterans & First Responders",
       "ADHD",
       "Autism",
@@ -69052,10 +69294,8 @@
       "Family",
       "Seniors",
       "Students",
-      "Relationship Issues",
       "Parenting",
-      "Domestic Abuse",
-      "Sexual Abuse"
+      "Domestic Abuse"
     ],
     "placeId": "b69c3616-b875-4cdf-9373-7b7f0df2e292"
   },
@@ -69104,7 +69344,6 @@
       "Borderline (BPD)",
       "Sleep",
       "Body Image",
-      "Child",
       "Teen",
       "Couples",
       "Family",
@@ -69112,7 +69351,6 @@
       "LGBTQ+",
       "ADHD",
       "Autism",
-      "Parenting",
       "Online / Virtual"
     ],
     "placeId": "7324911e-ccc4-4fc1-8585-569e99615500"
@@ -69352,7 +69590,6 @@
       "Teen",
       "Couples",
       "Family",
-      "Newcomers",
       "ADHD",
       "Divorce",
       "Parenting",
@@ -69374,10 +69611,21 @@
     "name": "VSMITH Counselling",
     "address": "165 Hollinger Crescent Unit 6, Kitchener, ON N2K 2Z2, Canada",
     "phone": "(519) 664-0514",
-    "email": "",
+    "email": "vsmithcounselling@gmail.com",
     "website": "http://Vsmithcounselling.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "OCD",
+      "Eating Disorders",
+      "Child",
+      "Teen",
+      "Family",
+      "ADHD",
+      "Parenting"
+    ],
     "placeId": "1b1fa02b-3ef1-4a28-8c5b-eef3a9de6bcb"
   },
   {
@@ -70180,7 +70428,7 @@
     "phone": "",
     "email": "",
     "website": "https://www.westborovillagetherapyassessment.ca/",
-    "contactUrl": "",
+    "contactUrl": "https://www.westborovillagetherapyassessment.ca/blank-2",
     "modalities": [],
     "placeId": "62b7b437-a977-4252-86fc-b6d0c742765f"
   },
@@ -70244,8 +70492,7 @@
       "ADHD",
       "Autism",
       "Assessment",
-      "Parenting",
-      "Online / Virtual"
+      "Parenting"
     ],
     "placeId": "b5fd26cc-fff3-4580-8681-cf5075bafd75"
   },
@@ -70257,8 +70504,6 @@
     "website": "http://www.wgpsychology.com/",
     "contactUrl": "",
     "modalities": [
-      "CBT",
-      "DBT",
       "Group Therapy",
       "Anxiety",
       "Depression",
@@ -70269,7 +70514,6 @@
       "OCD",
       "Addiction",
       "Bipolar",
-      "Men's Issues",
       "Relationship Issues"
     ],
     "placeId": "24fe562e-e47e-4300-a18f-45cd18deffe5"
@@ -70587,10 +70831,30 @@
     "name": "Wild Heart Psychology",
     "address": "909 17 Ave SW Ste 400, Calgary, AB T2T 0A4, Canada",
     "phone": "",
-    "email": "",
+    "email": "wildheartpsychology@gmail.com",
     "website": "https://www.wildheartpsychology.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "DBT",
+      "Solution-Focused",
+      "Somatic",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Anger Management",
+      "Bipolar",
+      "Borderline (BPD)",
+      "Teen",
+      "Couples",
+      "Family",
+      "Perinatal",
+      "LGBTQ+",
+      "Indigenous",
+      "ADHD",
+      "Domestic Abuse",
+      "Online / Virtual"
+    ],
     "placeId": "a0cb1307-de7c-4002-9534-96b2f3e32138"
   },
   {
@@ -70654,6 +70918,8 @@
       "Anxiety",
       "Depression",
       "Stress",
+      "Couples",
+      "LGBTQ+",
       "Online / Virtual"
     ],
     "placeId": "ee6dcb94-33d2-48da-b3d2-6f31600cffad"
@@ -70674,16 +70940,10 @@
     "name": "Wilde Oak Counselling Services",
     "address": "10127 121 Ave Unit 201, Grande Prairie, AB T8V 7V3, Canada",
     "phone": "(780) 933-3079",
-    "email": "eleanor@wildeoakcounsellingservices.ca",
+    "email": "",
     "website": "http://www.wildeoakcounsellingservices.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "Grief",
-      "Self Esteem"
-    ],
+    "modalities": [],
     "placeId": "270fa49a-57ca-4237-b298-404dab9bbbe6"
   },
   {
@@ -70703,7 +70963,11 @@
     "email": "",
     "website": "http://www.wildwood-therapy.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Play Therapy",
+      "Group Therapy",
+      "Teen"
+    ],
     "placeId": "abb7d634-2036-46f0-813b-4735ff5333eb"
   },
   {
@@ -70783,7 +71047,6 @@
     "website": "http://www.willowtree-mindwellness.ca/",
     "contactUrl": "",
     "modalities": [
-      "Group Therapy",
       "Anxiety",
       "Teen",
       "ADHD",
@@ -70807,7 +71070,7 @@
     "phone": "(587) 777-3807",
     "email": "",
     "website": "http://www.windrosecounselling.com/",
-    "contactUrl": "http://www.windrosecounselling.com/contact-me.html",
+    "contactUrl": "https://www.windrosecounselling.com/contact-me.html",
     "modalities": [
       "Trauma & PTSD",
       "Addiction",
@@ -70870,10 +71133,13 @@
     "name": "Wings of Change St. Thomas",
     "address": "192 Talbot St, St. Thomas, ON N5P 1A9, Canada",
     "phone": "",
-    "email": "",
+    "email": "info@mysite.com",
     "website": "http://wingsofchange.ca/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "Teen",
+      "ADHD"
+    ],
     "placeId": "810fe566-ce55-4721-ba8c-f2230b1b307c"
   },
   {
@@ -71058,15 +71324,7 @@
     "email": "user@domain.com",
     "website": "http://wisewellpsychotherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Stress",
-      "Teen",
-      "Couples",
-      "Perinatal",
-      "Parenting",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "e175e8e0-dc3e-4b7b-8c7e-ab2790034cca"
   },
   {
@@ -71222,20 +71480,10 @@
     "name": "Woodland Psychotherapy",
     "address": "333 Vickers St S, Thunder Bay, ON P7E 5H8, Canada",
     "phone": "(807) 358-0306",
-    "email": "team@latofonts.com",
+    "email": "",
     "website": "http://goyanpsychotherapy.ca/",
     "contactUrl": "",
-    "modalities": [
-      "Anxiety",
-      "Depression",
-      "Trauma & PTSD",
-      "OCD",
-      "Addiction",
-      "Teen",
-      "ADHD",
-      "Relationship Issues",
-      "Online / Virtual"
-    ],
+    "modalities": [],
     "placeId": "18995701-a838-4928-993d-99803629f20b"
   },
   {
@@ -71332,7 +71580,7 @@
     "phone": "",
     "email": "",
     "website": "http://www.wounds2wings.com/",
-    "contactUrl": "http://www.wounds2wings.com/contact.html",
+    "contactUrl": "https://www.wounds2wings.com/contact.html",
     "modalities": [
       "Trauma & PTSD",
       "Domestic Abuse"
@@ -71623,8 +71871,8 @@
     "contactUrl": "",
     "modalities": [
       "CBT",
+      "Psychodynamic",
       "Mindfulness",
-      "Art Therapy",
       "Anxiety",
       "Depression",
       "Trauma & PTSD",
@@ -71633,7 +71881,6 @@
       "OCD",
       "Sleep",
       "Teen",
-      "Seniors",
       "Autism",
       "Relationship Issues"
     ],
@@ -71776,7 +72023,15 @@
     "website": "https://youngmindspsychology.ca/",
     "contactUrl": "",
     "modalities": [
-      "Teen"
+      "CBT",
+      "DBT",
+      "Anxiety",
+      "Trauma & PTSD",
+      "Teen",
+      "Family",
+      "ADHD",
+      "Autism",
+      "Parenting"
     ],
     "placeId": "5f697ced-a9da-4035-a441-afa39e470fee"
   },
@@ -71882,7 +72137,18 @@
     "email": "",
     "website": "https://yourhealingtherapy.com/",
     "contactUrl": "",
-    "modalities": [],
+    "modalities": [
+      "DBT",
+      "EMDR",
+      "Narrative Therapy",
+      "Group Therapy",
+      "Anxiety",
+      "Depression",
+      "Trauma & PTSD",
+      "Grief",
+      "Anger Management",
+      "Couples"
+    ],
     "placeId": "858d677f-3cf0-4fd8-9c07-f83690ec03b2"
   },
   {
@@ -71955,7 +72221,6 @@
       "Couples",
       "Family",
       "Autism",
-      "Sex Therapy",
       "Online / Virtual"
     ],
     "placeId": "3183c097-37c9-4ce2-82f9-e547f2280e9d"
@@ -72138,6 +72403,7 @@
       "Sleep",
       "Chronic Pain",
       "Perinatal",
+      "ADHD",
       "Parenting",
       "Online / Virtual"
     ],
@@ -72255,9 +72521,8 @@
       "Trauma & PTSD",
       "Grief",
       "Addiction",
+      "Teen",
       "Couples",
-      "Relationship Issues",
-      "Parenting",
       "Sex Therapy",
       "Online / Virtual"
     ],
